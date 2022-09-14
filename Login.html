@@ -1,0 +1,88 @@
+<html>
+
+<head>
+    <title>Log in</title>
+    <link rel="stylesheet" href="register.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+</head>
+
+<body>
+    <section id="navbar" class="sticky">
+        <div class="topnav">
+            <a style="float: left;" class="active" href="Home.html">CodeSkills</a>
+            <a href="Register.html">Register</a>
+            <a href="Login.html">Login</a>
+            <a style="pointer-events: none;">|</a>
+            <a href="#">Download</a>
+            <a href="#">Contact</a>
+            <a href="#">About</a>
+        </div>
+    </section>
+    <div class="heading">
+        <h1>CodeSkills</h1>
+        <h2>Register for free to start learning.</h2>
+    </div>
+    <div class="box">
+        <form method="get" action="Home.html" onsubmit="return validate();">
+            <div class="form-content">
+                <h3>Enter the following details: </h3>
+                <label>Email Address: </label><br>
+                <input type="email" size="40px" name="email" id="em" onkeyup="validatemail()" autocomplete="off"
+                    required><br>
+                <label>Password: </label><br>
+                <input type="password" size="40px" name="pass" id="psw" onkeyup="validatepass()" required><br>
+            </div>
+            <center>
+                <button type="submit" class="login-button">Log in</button>
+            </center>
+        </form>
+        <p class="para-2">New to CodeSkills? <a href="Register.html">Create an account</a>.</p>
+    </div>
+    <footer>
+        <div class="cont">
+            <i class="social-icon fab fa-facebook-f"></i>
+            <i class="social-icon fab fa-twitter"></i>
+            <i class="social-icon fab fa-instagram"></i>
+            <i class="social-icon fas fa-envelope"></i>
+            <p>© Copyright 2022 CodeSkills</p>
+        </div>
+    </footer>
+    <script type="text/javascript">
+        var flag = 1;
+        function validatemail() {
+            var user = document.getElementById("em").value;
+            var user2 = document.getElementById("em");
+            var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (re.test(user)) {
+                user2.style.border = "green solid 3px";
+                flag = 1;
+            }
+            else {
+                user2.style.border = "red solid 3px";
+                flag = 0;
+            }
+        }
+        function validatepass() {
+            var user = document.getElementById("psw").value;
+            var user2 = document.getElementById("psw");
+            var re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+            if (re.test(user)) {
+                user2.style.border = "green solid 3px";
+                flag = 1;
+            }
+            else {
+                user2.style.border = "red solid 3px";
+                flag = 0;
+            }
+        }
+        function validate() {
+            if (!flag) {
+                alert("Please fill the valid details!");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+
+</html>

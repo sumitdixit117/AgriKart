@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AgriKart</title>
+    <link rel="stylesheet" href="home.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+</head>
+
+<body>
+    <table class="front-table">
+        <tr>
+            <td class="left-div">
+                <div class="heading">
+                    <img src="Logo.jpeg" class="logo">
+                    <h1>AgriKart</h1>
+                    <h2>Register for free to start trading.</h2>
+                </div>
+            </td>
+            <td class="right-div">
+                <div class="topnav">
+                    <a href="Register.html" style="margin-right: 40px">Register</a>
+                    <a href="Login.html">Login</a>
+                    <a style="pointer-events: none;">|</a>
+                    <a href="#download">Download</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#about">About</a>
+                </div>
+                <div class="about">
+                    <h2>ABOUT US</h2>
+                    <p>AgriKart is a technology hiring platform that is the standard for assessing developer skills
+                        for
+                        <b>over 3,000+ companies </b>around the world. By enabling tech recruiters and hiring managers
+                        to
+                        objectively evaluate talent at every stage of the recruiting process, CodeSkills helps companies
+                        hire
+                        skilled developers and innovate faster!
+                    </p>
+                    <button class="contact-button">CONTACT US</button>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <section id="table">
+        <div class="tab">
+            <table>
+                <tr>
+                    <td class="table-heading">Courses offered</td>
+                    <td class="table-heading">Our Values</td>
+                    <td class="table-heading">Resources</td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Data Structures</li>
+                            <li>Algorithms</li>
+                            <li>Artificial Intelligence</li>
+                            <li>Linux Shell</li>
+                            <li>Java</li>
+                            <li>SQL and Databases</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>15+ Years of Experience</li>
+                            <li>10+ Million Developers</li>
+                            <li>Data Driven</li>
+                            <li>Extreme Ownership</li>
+                            <li>Customer Delight</li>
+                            <li>Giver</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>Projects</li>
+                            <li>Interview Challenges</li>
+                            <li>Docs</li>
+                            <li>Cheatsheets</li>
+                            <li>Articles</li>
+                            <li>Videos</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <section id="download">
+        <div class="cont">
+            <h3>Get the app now.</h3>
+            <button class="download apple" onclick="downloadPara()" type="button"><i class="fab fa-apple"></i>
+                Download</button>
+            <button class="download g-play" onclick="downloadPara()" type="button"><i class="fab fa-google-play"></i>
+                Download</button><br>
+            <i>
+                <p id="download-para"></p>
+            </i>
+        </div>
+    </section>
+    <section id="car">
+        <div class="loop-wrapper">
+            <div class="mountain"></div>
+            <div class="hill"></div>
+            <div class="tree"></div>
+            <div class="tree"></div>
+            <div class="tree"></div>
+            <div class="rock"></div>
+            <div class="truck"></div>
+            <div class="wheels"></div>
+        </div>
+    </section>
+    <footer id="contact">
+        <div class="cont">
+            <i class="social-icon fab fa-facebook-f"></i>
+            <i class="social-icon fab fa-twitter"></i>
+            <i class="social-icon fab fa-instagram"></i>
+            <i class="social-icon fas fa-envelope"></i>
+            <p class="cpyrght">© Copyright 2022 AgriKart</p>
+        </div>
+    </footer>
+    <script>
+        function downloadPara() {
+            document.getElementById("download-para").innerHTML = "Your file will start downloading automatically...";
+        }
+    </script>
+</body>
+
+</html>
