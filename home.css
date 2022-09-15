@@ -7,13 +7,14 @@ body {
     margin: 0;
     width: 100%;
     padding: 0;
-    background-image: url("blonde-brunette.jpg");
+    height: 100vh;
+    background-image: url("images/blonde-brunette.jpg");
 }
 
 .left-div {
     padding-top: 0px;
     width: 50%;
-    background: linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.7)), url("blonde-brunette.jpg");
+    background: linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.7)), url("images/blonde-brunette.jpg");
 }
 .right-div {
     padding: 0;
@@ -62,7 +63,7 @@ body {
 
 
 .about {
-    padding: 27% 15%;
+    padding: 26% 15%;
     color: white;
 }
 
@@ -78,7 +79,7 @@ body {
 }
 
 .contact-button {
-    padding: 10px;
+    padding: 13px;
     font-size: 18px;
     font-family: "Montserrat-Black";
     border: none;
@@ -87,23 +88,66 @@ body {
     letter-spacing: 1px;
 }
 
-.table-heading {
+.contact-button:hover {
+    color: white;
+    background-color: #404040;
+}
+
+.equipments{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color:rgba(228, 224, 224, 0.825);
+}
+ 
+.equipments img{
+    width: 340px;
+    height: 250px;
+    border-radius: 10px;
+}
+
+.temp {
+    border-radius: 10px;
+    padding: 1.5% 1%;
+}
+
+.equipments .temp p{
+    text-align: center;
+    margin: 0;
+    padding-top: 5px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: gray;
+}
+.equipments .temp:hover{
+    transition: 0.7s;
+    box-shadow: 0 0 10px gray;
+}
+
+.tab th {
     font-size: 32px;
     height: 80px;
     font-weight: 700;
-    padding-left: 2.5%;
 }
 
 .tab {
     background-color: #009688;
     color: white;
+    padding-top: 4%;
 }
 
-table {
+.tab table {
     width: 75%;
     margin: auto;
-    padding-top: 4%;
     font-size: 17px;
+    border: solid #165941;
+    border-width: 0 7px 0 7px;
+}
+
+.tab ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
 }
 
 #download {
@@ -111,6 +155,9 @@ table {
     color: #fff;
 }
 
+.tab li {
+    padding: 4px;
+}
 
 .cont {
     padding: 2.5% 15%;
