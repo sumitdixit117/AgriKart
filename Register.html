@@ -3,27 +3,23 @@
 <head>
     <title>Register</title>
     <link rel="stylesheet" href="register.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <script src="https://kit.fontawesome.com/2cf05c34d2.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <section id="navbar" class="sticky">
-        <div class="topnav">
-            <a class="active" href="Home.html">CodeSkills</a>
-            <a href="Register.html">Register</a>
-            <a href="Login.html">Login</a>
-            <a style="pointer-events: none;">|</a>
-            <a href="#">Download</a>
-            <a href="#">Contact</a>
-            <a href="#">About</a>
-    </section>
+    <div class="topnav">
+        <a class="active" href="Explore.html"><img src="images/logo.png" alt="AgriKart" width="170px"></a>
+        <a href="Login.html">Login</a>
+        <a style="pointer-events: none;">|</a>
+        <a href="Home.html">Home</a>
+    </div>
     </div>
     <div class="heading">
-        <h1>CodeSkills</h1>
-        <h2>Register for free to start learning.</h2>
+        <h1>AgriKart</h1>
+        <h2>Register to Buy Farming Essentials at Best Price.</h2>
     </div>
     <div class="box">
-        <form method="get" action="HomePage.html" onsubmit="return validate();">
+        <form method="get" action="Explore.html" onsubmit="return validate();">
             <div class="form-content">
                 <h3>Enter the following details: </h3>
                 <fieldset>
@@ -46,17 +42,84 @@
                 <fieldset>
                     <legend>Contact Details</legend>
                     <label for="pnum">Phone Number: </label><br>
-                    <span class="inp">
-                        <input type="text" name="country code" value="+91" size="1" maxlength="3">
-                        <input type="tel" id="phn" name="pnum" onkeyup="validatenum()" placeholder="e.g. 9876543210"
-                            size="30.5px" required>
-                    </span><br>
-                    <label>Address: </label><br>
-                    <input type="text" placeholder="e.g. 2x, Tilak Nagar" size="40px" required><br>
-                    <label>City: </label><br>
-                    <input type="text" name="city" maxlength="15"><br>
-                    <label>Pincode: </label><br>
-                    <input type="text" name="pin" placeholder="e.g. 207xxx" pattern="[0-9]{6}" maxlength="6">
+                    <select id="code" name="code">
+                        <option value="+91">+91 IND</option>
+                        <option value="+1">+1 USA</option>
+                        <option value="+32">+32 BEL</option>
+                        <option value="+92">+92 PAK</option>
+                        <option value="+93">+93 AFG </option>
+                        <option value="+54">+54 ARG</option>
+                        <option value="+2">+2 ALAS</option>
+                        <option value="+3">+3 ALB</option>
+                    </select>
+                    <input type="tel" style="margin: 7px;" name="phno" placeholder="9876543210" required><br>
+                    <label for="stname">Street Name:</label>
+                    <input type="text" name="stname" maxlength="50"><br><br>
+                    <label for="Arname">Area Name:</label>
+                    <input type="text" name="Arname" maxlength="50"><br><br>
+                    <label for="city">City:</label>
+                    <input type="text" name="city" maxlength="15"><br><br>
+                    <label for="State">State:</label>
+                    <select name="state">
+                        <option value="-1">Select</option>
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar</option>
+                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option value="Assam">Assam</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Chandigarh">Chandigarh</option>
+                        <option value="Chhattisgarh">Chhattisgarh</option>
+                        <option value="Daman and Diu">Daman and Diu</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Lakshadweep">Lakshadweep</option>
+                        <option value="Puducherry">Puducherry</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Manipur">Manipur</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Mizoram">Mizoram</option>
+                        <option value="Nagaland">Nagaland</option>
+                        <option value="Odisha">Odisha</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Telangana">Telangana</option>
+                        <option value="Tripura">Tripura</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="Uttarakhand">Uttarakhand</option>
+                        <option value="West Bengal">West Bengal</option>
+                    </select><br><br>
+                    <label for="pincode">Pincode:</label>
+                    <input type="text" name="pin" pattern="[0-9]{6}" maxlength="6"><br>
+                    <label for="country">Country:</label>
+                    <select name="country">
+                        <option value="india">India</option>
+                        <option value="usa">USA</option>
+                        <option value="china">China</option>
+                        <option value="japan">Japan</option>
+                        <option value="brazil">Brazil</option>
+                        <option value="africa">Africa</option>
+                        <option value="ireland">Ireland</option>
+                        <option value="australia">Australia</option>
+                        <option value="england">England</option>
+                        <option value="pakistan">Pakistan</option>
+                        <option value="nepal">Nepal</option>
+                        <option value="bhutan">Bhutan</option>
+                        <option value="uk">UK</option>
+                        <option value="korea">Korea</option>
+                        <option value="bangladesh">Bangladesh</option>
+                        <option value="malaysia">Malaysia</option>
+                        <option value="srilanka">Sri Lanka</option>
+                    </select>
                 </fieldset>
                 <fieldset>
                     <legend>Login Details</legend>
@@ -67,51 +130,10 @@
                     <input type="password" size="40px" name="pass" id="psw" onkeyup="validatepass()" required><br>
                     <label> Confirm Password: </label><br>
                     <input type="password" size="40px" name="c-pass" id="c-psw" required><br>
-                    <span class="warning">* Must contain at least one uppercase, lowercase, digit, special character and min 8 characters</span><br>
+                    <span class="warning">* Must contain at least one uppercase, lowercase, digit, special character and
+                        min 8 characters</span><br>
                 </fieldset>
-                <fieldset>
-                    <legend>Academic Qualifications</legend>
-                    <label>Select your Degree:</label>
-                    <select name="stream" class="drop" required>
-                        <option value="">- Select -</option>
-                        <option value="diploma">Diploma</option>
-                        <option value="be">BE</option>
-                        <option value="btech">BTech</option>
-                        <option value="me">ME</option>
-                        <option value="mtech">MTech</option>
-                        <option value="ms">MS</option>
-                        <option value="phd">PhD</option>
-                        <option value="arts-humanities">Arts and Humanities</option>
-                        <option value="others">Others</option>
-                    </select><br>
 
-                    <label>Select your stream: </label>
-                    <select name="stream" class="drop" required>
-                        <option value="">- Select - </option>
-                        <option value="cse">CSE</option>
-                        <option value="ece">ECE</option>
-                        <option value="mech">Mechanical</option>
-                    </select><br>
-                    <label>Enter your CGPA: </label>
-                    <input type="text" id="range-gpa" size="1" maxlength="3" value="5" onkeyup="getRange()"><br>
-                    <input type="range" name="cgpa" id="gpa" onclick="getGPA()" onmousemove="getGPA()" min="0" max="10" step="0.1"><br>
-                    <label>Select your subjects: </label><br>
-                    <div class="subs">
-                        <input type="checkbox" name="dsa" value="dsa">
-                        <label for="dsa">Data structures and Algorithms</label><br>
-                        <input type="checkbox" name="os" value="os">
-                        <label for="os">Operating Systems</label><br>
-                        <input type="checkbox" name="iwp" value="iwp">
-                        <label for="iwp">Internet and Web Programming</label><br>
-                        <input type="checkbox" name="ai" value="ai">
-                        <label for="ai">Artificial Intelligence</label><br>
-                        <input type="checkbox" name="se" value="se">
-                        <label for="se">Software Engineering</label>
-                    </div><br>
-
-                    <label>Upload your resume: </label><br>
-                    <input type="file" name="resume"><br>
-                </fieldset>
             </div>
             <center>
                 <button type="submit">Submit</button><br>
@@ -122,30 +144,44 @@
                 href="#">Policy Privacy.</a></p>
         <p class="para-2">Already have an account? <a href="Login.html">Log in</a>.</p>
     </div>
-    <footer>
-        <div class="cont">
-            <i class="social-icon fab fa-facebook-f"></i>
-            <i class="social-icon fab fa-twitter"></i>
-            <i class="social-icon fab fa-instagram"></i>
-            <i class="social-icon fas fa-envelope"></i>
-            <p>© Copyright 2022 CodeSkills</p>
+    <footer class="footer-distributed">
+        <div class="footer-left">
+            <img src="images/Logo.png" alt="Logo">
+            <p class="footer-para">
+                Online Shop for complete Agriculture and Gardening needs.
+            </p>
+            <p class="footer-copyright">Copyright © 2022 AgriKart. All Rights Reserved.</p>
+        </div>
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>J Block, Men's Hostel</span> VIT, Vellore</p>
+            </div>
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>+91 9876543210</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:support@AgriKart.com">support@AgriKart.com</a></p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>Our Vision</span>
+            <p>Our goal is to make sure that farmers in India should be able to do ease of farming by providing advanced
+                technology in agricultural machinery and equipment at affordable prices.</p>
+            </p>
+            <div class="footer-icons">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a href="#"><i class="fa fa-github"></i></a>
+            </div>
         </div>
     </footer>
     <script type="text/javascript">
         var flag = 1;
-        function validatenum() {
-            var user = document.getElementById("phn").value;
-            var user2 = document.getElementById("phn");
-            var re = /^0?(\d{10})$/;
-            if (re.test(user)) {
-                user2.style.border = "green solid 3px";
-                flag = 1;
-            }
-            else {
-                user2.style.border = "red solid 3px";
-                flag = 0;
-            }
-        }
         function validatemail() {
             var user = document.getElementById("em").value;
             var user2 = document.getElementById("em");

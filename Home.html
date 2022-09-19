@@ -5,109 +5,100 @@
     <meta charset="UTF-8">
     <title>AgriKart</title>
     <link rel="stylesheet" href="home.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <script src="https://kit.fontawesome.com/2cf05c34d2.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <table class="front-table">
         <tr>
             <td class="left-div">
-                <div class="heading">
-                    <img src="images/Logo.jpeg" class="logo">
-                    <h1>AgriKart</h1>
-                    <h2>Register for free to start trading.</h2>
+                <div class="logo-div">
+                    <img src="images/Logo.png" class="logo">
                 </div>
             </td>
             <td class="right-div">
                 <div class="topnav">
                     <a href="Register.html" style="margin-right: 40px">Register</a>
-                    <a href="Login.html">Login</a>
                     <a style="pointer-events: none;">|</a>
-                    <a href="#">Download</a>
-                    <a href="#">Contact</a>
-                    <a href="#">Cart</a>
+                    <a href="Login.html">Login</a>
                 </div>
                 <div class="about">
                     <h2>ABOUT US</h2>
-                    <p>AgriKart is a technology hiring platform that is the standard for assessing developer skills
-                        for
-                        <b>over 3,000+ companies </b>around the world. By enabling tech recruiters and hiring managers
-                        to
-                        objectively evaluate talent at every stage of the recruiting process, CodeSkills helps companies
-                        hire
-                        skilled developers and innovate faster!
+
+                    <p>AgriKart is India's 1st online shop for Agriculture and Gardening inputs at affordable prices. It
+                        was established in 2013 and is based in Namma Bengaluru. AgriKart believes in farming being a
+                        pillar for the world and farmers are the backbone of the nation.
                     </p>
-                    <button class="contact-button">EXPLORE</button>
+                    <a href="#contact"><button class="contact-button">CONTACT US</button></a>
                 </div>
             </td>
         </tr>
     </table>
-    <div class="equipments">
-        <div class="temp">
-            <img src="images/pesticide.jpg" alt="pest">
-            <p>Pesticides</p>
+    <div class="middle-section">
+        <div class="features">
+            <div class="feature">
+                <div class="feature-div">
+                    <i class="fas fa-undo-alt"></i>
+                </div>
+                <div class="feature-div">
+                    <h2>Return</h2>
+                    <h6>Within 7 days</h6>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-div">
+                    <i class="fas fa-shipping-fast"></i>
+                </div>
+                <div class="feature-div">
+                    <h2>Free Shipping</h2>
+                    <h6>on order Above Rs 500</h6>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-div">
+                    <i class="fas fa-rupee-sign"></i>
+                </div>
+                <div class="feature-div">
+                    <h2>Get Rs 100 off First order</h2>
+                    <h6>When you register</h6>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-div">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="feature-div">
+                    <h2>Customer Support</h2>
+                    <h6>24/7 Service</h6>
+                </div>
+            </div>
         </div>
-        <div class="temp">
-            <img src="images/seeds.jpg" alt="seed">
-            <p>Seeds</p>
-        </div>
-        <div class="temp">
-            <img src="images/equipment.webp" alt="equi1">
-            <p>Farming Tools</p>
-        </div>
-        <div class="temp">
-            <img src="images/equipment2.jpg" alt="equi2">
-            <p>Equipments</p>
+        <h1>Our Products</h1>
+        <div class="equipments">
+            <div class="temp">
+                <img src="images/pesticide.jpg" alt="pest">
+                <p>Pesticides</p>
+            </div>
+            <div class="temp">
+                <img src="images/seeds.jpg" alt="seed">
+                <p>Seeds</p>
+            </div>
+            <div class="temp">
+                <img src="images/equipment.webp" alt="equi1">
+                <p>Farming Tools</p>
+            </div>
+            <div class="temp">
+                <img src="images/equipment2.jpg" alt="equi2">
+                <p>Equipments</p>
+            </div>
         </div>
     </div>
-    <div class="tab">
-        <table>
-            <tr>
-                <th>Pesticides</th>
-                <th>Crops</th>
-                <th>Equipments</th>
-            </tr>
-            <tr>
-                <td>
-                    <ul>
-                        <li>Insecticides</li>
-                        <li>Herbicides</li>
-                        <li>Rodenticides</li>
-                        <li>Bactericides</li>
-                        <li>Fungicides</li>
-                        <li>Larvicides</li>
-                    </ul>
-                </td>
-                <td id="middle-column">
-                    <ul>
-                        <li>Wheat</li>
-                        <li>Corn</li>
-                        <li>Rice</li>
-                        <li>Soyabean</li>
-                        <li>Cotton</li>
-                        <li>Pulses</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Plough</li>
-                        <li>Rotavator</li>
-                        <li>Cultivator</li>
-                        <li>Digger</li>
-                        <li>Sprayer</li>
-                        <li>Harvester</li>
-                    </ul>
-                </td>
-            </tr>
-        </table>
-    </div>
+
     <section id="download">
         <div class="cont">
-            <h3>Get the app now.</h3>
-            <button class="download apple" onclick="downloadPara()" type="button"><i class="fab fa-apple"></i>
-                Download</button>
-            <button class="download g-play" onclick="downloadPara()" type="button"><i class="fab fa-google-play"></i>
-                Download</button><br>
+            <h3>Sign up now.</h3>
+            <button class="download login " type="button"><i class="fas fa-sign-in-alt"></i> Login</button>
+            <button class="download register" type="button"><i class="fas fa-user-plus"></i> Register</button><br>
             <i>
                 <p id="download-para"></p>
             </i>
@@ -125,20 +116,42 @@
             <div class="wheels"></div>
         </div>
     </section>
-    <footer id="contact">
-        <div class="cont">
-            <i class="social-icon fab fa-facebook-f"></i>
-            <i class="social-icon fab fa-twitter"></i>
-            <i class="social-icon fab fa-instagram"></i>
-            <i class="social-icon fas fa-envelope"></i>
-            <p class="cpyrght">© Copyright 2022 AgriKart</p>
+    <footer class="footer-distributed">
+        <div class="footer-left">
+            <img src="images/Logo.png" alt="Logo">
+            <p class="footer-para">
+                Online Shop for complete Agriculture and Gardening needs.
+            </p>
+            <p class="footer-copyright">Copyright © 2022 AgriKart. All Rights Reserved.</p>
+        </div>
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>J Block, Men's Hostel</span> VIT, Vellore</p>
+            </div>
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>+91 9876543210</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:support@AgriKart.com">support@AgriKart.com</a></p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>Our Vision</span>
+            <p>Our goal is to make sure that farmers in India should be able to do ease of farming by providing advanced
+                technology in agricultural machinery and equipment at affordable prices.</p>
+            </p>
+            <div class="footer-icons">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a href="#"><i class="fa fa-github"></i></a>
+            </div>
         </div>
     </footer>
-    <script>
-        function downloadPara() {
-            document.getElementById("download-para").innerHTML = "Your file will start downloading automatically...";
-        }
-    </script>
 </body>
 
 </html>

@@ -8,21 +8,22 @@ body {
     width: 100%;
     padding: 0;
     height: 100vh;
-    background-image: url("images/blonde-brunette.jpg");
+    background-image: url("images/bg.png");
 }
 
 .left-div {
-    padding-top: 0px;
+    padding: 0;
     width: 50%;
-    background: linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.7)), url("images/blonde-brunette.jpg");
+    color: #404040;
+    background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url("images/bg.png");
 }
+
 .right-div {
     padding: 0;
 }
 
 .logo {
-    width: 120px;
-    margin-bottom: -15px; 
+    width: 300px;
 }
 
 .topnav {
@@ -32,44 +33,29 @@ body {
 
 .topnav a {
     float: right;
-    padding-top: 35px;
     padding: 4% 3%;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 23px;
     color: white;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .topnav a:hover {
-    background-color: #a3e5d9;
     color: black;
 }
 
-.heading {
-    line-height: 55px;
+.logo-div {
     text-align: center;
 }
 
-.heading h1 {
-    font-weight: 800;
-    margin: 0;
-    font-size: 3.5rem;
-}
-
-.heading h2 {
-    font-weight: 700;
-    margin: 0;
-    font-size: 1.5rem;
-}
-
-
 .about {
-    padding: 26% 15%;
+    padding: 25% 15%;
     color: white;
 }
 
 .about h2 {
     font-size: 2.5rem;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Cambria;
     margin: 0;
 }
 
@@ -78,13 +64,15 @@ body {
     padding-top: 1.5%;
 }
 
+.about a {
+    text-decoration: none;
+}
+
 .contact-button {
-    padding: 13px;
+    padding: 11px;
     font-size: 18px;
-    font-family: "Montserrat-Black";
     border: none;
     border-radius: 20px;
-    font-weight: 400;
     letter-spacing: 1px;
 }
 
@@ -93,16 +81,60 @@ body {
     background-color: #404040;
 }
 
-.equipments{
+.middle-section {
+    background-color: white;
+    padding-top: 6%;
+}
+
+.middle-section h1 {
+    font-size: 2.3rem;
+    text-align: center;
+}
+
+.features {
+    padding: 2.3% 5%;
+    margin-bottom: 5%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    background-color:rgba(228, 224, 224, 0.825);
+    background-color: whitesmoke;
 }
- 
-.equipments img{
-    width: 340px;
-    height: 250px;
+
+.features h2 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.features h6 {
+    margin: 10px 0;
+    font-size: 15px;
+    color: grey;
+}
+
+.feature {
+    display: flex;
+}
+
+
+.feature-div i {
+    margin-top: 10px;
+    font-size: 28px;
+}
+
+.feature-div {
+    padding: 12px;
+}
+
+.equipments {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 2%;
+}
+
+.equipments img {
+    width: 320px;
+    height: 230px;
     border-radius: 10px;
 }
 
@@ -111,52 +143,23 @@ body {
     padding: 1.5% 1%;
 }
 
-.equipments .temp p{
+.equipments .temp p {
     text-align: center;
     margin: 0;
     padding-top: 5px;
     font-weight: 600;
     font-size: 1.2rem;
-    color: gray;
+    color: color;
 }
-.equipments .temp:hover{
+
+.equipments .temp:hover {
     transition: 0.7s;
     box-shadow: 0 0 10px gray;
-}
-
-.tab th {
-    font-size: 32px;
-    height: 80px;
-    font-weight: 700;
-}
-
-.tab {
-    background-color: #009688;
-    color: white;
-    padding-top: 4%;
-}
-
-.tab table {
-    width: 75%;
-    margin: auto;
-    font-size: 17px;
-    border: solid #165941;
-    border-width: 0 7px 0 7px;
-}
-
-.tab ul {
-    list-style-type: none;
-    padding: 0;
-    text-align: center;
 }
 
 #download {
     background-color: #009688;
     color: #fff;
-}
-
-.tab li {
-    padding: 4px;
 }
 
 .cont {
@@ -174,20 +177,19 @@ h3 {
 .download {
     margin: 0 2% 2.5%;
     padding: 15px;
-    font-size: 18px;
+    font-size: 20px;
     font-family: "Montserrat-Black";
     border: none;
     border-radius: 8px;
-    font-weight: 400;
     letter-spacing: 1px;
 }
 
-.apple {
+.login {
     color: white;
     background-color: #404040;
 }
 
-.g-play:hover {
+.register:hover {
     color: white;
     background-color: #404040;
 }
@@ -412,22 +414,140 @@ h3 {
     }
 }
 
-.social-icon {
-    margin: 13px 10px;
+.footer-distributed {
+    font-family: Open Sans;
+    text-align: left;
+    font: bold 16px sans-serif;
+    padding: 5%;
 }
 
-.social-icon:hover {
-    -ms-transform: scale(1.5);
-    -webkit-transform: scale(1.5);
-    transform: scale(1.5);
-    transition: all 300ms ease;
-    -o-transition: all 300ms ease;
-    -ms-transition: all 300ms ease;
-    -moz-transition: all 300ms ease;
-    -webkit-transition: all 300ms ease;
+.footer-left,
+.footer-center,
+.footer-right {
+    display: inline-block;
+    vertical-align: top;
 }
 
-.cpyrght {
-    color: #8f8f8f;
+.footer-left {
+    width: 40%;
+}
+
+.footer-left img {
+    width: 30%;
+}
+
+.footer-distributed .footer-para {
+    margin: 0 0 10px;
+    padding: 0;
+    font-weight: 400;
+}
+
+.footer-distributed .footer-copyright {
     font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+    color:#a0a1a1;
+}
+
+.footer-distributed .footer-center {
+    width: 35%;
+}
+
+.footer-distributed .footer-center i {
+    background-color: #33383b;
+    color: #ffffff;
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope {
+    font-size: 17px;
+    line-height: 38px;
+}
+
+.footer-distributed .footer-center p {
+    display: inline-block;
+    font-weight: 400;
+    vertical-align: middle;
+    margin: 0;
+}
+
+.footer-distributed .footer-center p span {
+    display: block;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.footer-distributed .footer-center p a {
+    color: lightseagreen;
+    text-decoration: none;
+}
+
+.footer-distributed .footer-right {
+    width: 20%;
+}
+
+.footer-right p {
+    font-size: 0.9rem;
+    font-weight: normal;
+}
+
+.footer-distributed .footer-company-about {
+    line-height: 20px;
+    color: #a0a1a1;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.footer-distributed .footer-company-about span {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons {
+    margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-color: #33383b;
+    border-radius: 50%;
+    font-size: 18px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+    margin-right: 3px;
+}
+
+@media (max-width: 880px) {
+
+    .footer-distributed {
+        font: bold 14px sans-serif;
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        display: block;
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .footer-center i {
+        margin-left: 0;
+    }
+
 }
