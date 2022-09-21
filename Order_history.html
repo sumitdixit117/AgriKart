@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Order history</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+<nav>
+    <div class="topnav">
+        <a href="Login.html">Logout</a>
+        <a href="Account.html">My Account</a>
+        <a style="pointer-events: none;">|</a>
+        <a href="Home.html">Home</a>
+    </div>
+</nav>
+
+<body>
+    <link rel="stylesheet" type="text/css"
+        href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+    <div class="container bootdey">
+        <strong id="title">Order history</strong>
+        <div class="btn-group pull-right">
+            <div class="btn-group" style="margin-top: 35%;">
+                <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown"><i
+                        class="fa fa-filter"></i></button>
+                <ul class="dropdown-menu dropdown-menu-right">
+                    <li><a href="#">Approved orders</a></li>
+                    <li><a href="#">in transit orders</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="panel panel-default panel-order">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-1"><img
+                            src="https://thefactfactor.com/wp-content/uploads/2019/07/Chemical-Fertilizers.png"
+                            class="media-object img-thumbnail" /></div>
+                    <div class="col-md-11">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="pull-right"><label class="label label-success">Delivered</label></div>
+                                <span><strong>Fertilizer</strong></span> <span class="label label-info"></span><br />
+                                Quantity : 2, cost: ₹2490 <br />
+                            </div>
+                            <div class="col-md-12">order made on: 05/31/2022<a href="#"> </a></div>
+                            <div class="col-md-12"> <a href="#">Check order details</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-1"><img src="https://5.imimg.com/data5/CL/WI/MY-11397962/tomato-seed-500x500.jpg"
+                            class="media-object img-thumbnail" /></div>
+                    <div class="col-md-11">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="pull-right"><label class="label label-success">Delivered</label></div>
+                                <span><strong>Tomato Seeds</strong></span> <span class="label label-info"></span><br />
+                                Quantity : 12, cost: ₹120<br />
+                            </div>
+                            <div class="col-md-12">order made on: 06/12/2022<a href="#"> </a></div>
+                            <div class="col-md-12"> <a href="#">Check order details</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-1"><img src="https://m.media-amazon.com/images/I/61itLoCAIlL._SX466_.jpg"
+                            class="media-object img-thumbnail" /></div>
+                    <div class="col-md-11">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="pull-right"><label class="label label-warning">Processing</label></div>
+                                <span><strong>Shovel</strong></span> <span class="label label-info"></span><br />
+                                Quantity : 4, cost: ₹8000<br />
+                            </div>
+                            <div class="col-md-12">order made on: 06/20/2022<a href="#"></a></div>
+                            <div class="col-md-12"> <a href="#">Check order details</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-1"><img
+                            src="https://post.healthline.com/wp-content/uploads/2020/08/766x415_THUMBNAIL_how-many-calories-in-sunflower-seeds-732x415.jpg"
+                            class="media-object img-thumbnail" /></div>
+                    <div class="col-md-11">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="pull-right"><label class="label label-warning">Procesing</label></div>
+                                <span><strong>Sunflower Seeds</strong></span> <span
+                                    class="label label-info"></span><br />
+                                Quantity : 4, cost: ₹160<br />
+                            </div>
+                            <div class="col-md-12">order made on: 06/20/2022<a href="#"></a></div>
+                            <div class="col-md-12"> <a href="#">Check order details</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <style type="text/css">
+        :root {
+            --main: #daf7a6;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #title {
+            margin: 15px 0;
+            color: #73b461;
+            font-size: xx-large;
+        }
+
+        i {
+            font-size: 20px;
+        }
+
+        .topnav {
+            opacity: 0.8;
+            background-color: #73b461;
+            overflow: hidden;
+            font-weight: 600;
+        }
+
+        .topnav a {
+            float: right;
+            padding-top: 35px;
+            padding: 2% 1%;
+            text-decoration: none;
+            font-size: 17px;
+            color: white;
+        }
+
+        .topnav a:hover {
+
+            background-color: #eee;
+            color: black;
+        }
+
+        body {
+            background: white;
+        }
+
+        .panel-order .row {
+            border-bottom: 1px solid #ccc;
+        }
+
+        .panel-order .row:last-child {
+            border: 0px;
+        }
+
+        .panel-order .row .col-md-1 {
+            padding: 0;
+            text-align: center;
+            padding-top: 15px;
+        }
+
+        .panel-order .row .col-md-1 img {
+            width: 100px;
+            /* max-height: 50px; */
+        }
+
+        .panel-order .row .row {
+            border-bottom: 0;
+        }
+
+
+        .panel-order .row .col-md-11 {
+            border-left: 1px solid #ccc;
+        }
+
+        .panel-order .row .row .col-md-12 {
+            padding-top: 7px;
+            padding-bottom: 7px;
+            font-size: medium;
+        }
+
+        .panel-order .row .row .col-md-12:last-child {
+            font-size: 18px;
+            color: #555;
+            background: var(--main);
+        }
+
+        .panel-order .btn-group {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .panel-order .panel-body {
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+        .panel-order .panel-deading {
+            margin-bottom: 0;
+        }
+    </style>
+
+    <script type="text/javascript">
+
+
+    </script>
+</body>
+
+</html>
