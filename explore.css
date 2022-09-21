@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .topnav {
@@ -109,7 +109,7 @@ body {
 
 .second-dropdown-content {
     left: 100%;
-    top: 0;
+    top: 15%;
 }
 
 .dropdown-content a {
@@ -138,8 +138,112 @@ body {
     display: block;
 }
 
+.offer-heading {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 6%;
+}
+
+.products-table {
+    text-align: center;
+    padding-bottom: 10%;
+}
+
+.product {
+    display: inline-block;
+    border: 1px solid grey;
+    width: 16%;
+    text-align: center;
+    margin: 0.3%;
+}
+
+.product .img-div {
+    background-color: #ececec;
+}
+
+.product img {
+    width: 100%;
+}
+
+.tag-name {
+    color: white;
+    background-color: black;
+    padding: 5%;
+    /* visibility: hidden; */
+}
+
+.name p {
+    margin: 12px 0;
+}
+
+.icons {
+    position: relative;
+    visibility: hidden;
+}
+
+.icons>* {
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    padding: 3%;
+    position: absolute;
+}
+
+.icons .a {
+    top: -300px;
+    left: 210px;
+}
+
+.icons .b {
+    top: -260px;
+    left: 210px;
+}
+
+.icons .c {
+    top: -220px;
+    left: 210px;
+}
+
+/* .add {
+    transition: all 3s ease-in;
+    visibility: visible;
+} */
+
+.features {
+    padding: 2.3% 5%;
+    margin-bottom: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: whitesmoke;
+}
+
+.features h2 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.features h6 {
+    margin: 10px 0;
+    font-size: 15px;
+    color: grey;
+}
+
+.feature {
+    display: flex;
+}
+
+
+.feature-div i {
+    margin-top: 10px;
+    font-size: 28px;
+}
+
+.feature-div {
+    padding: 12px;
+}
+
 .footer-distributed {
-    font-family: Open Sans;
     text-align: left;
     font: bold 16px sans-serif;
     padding: 5%;

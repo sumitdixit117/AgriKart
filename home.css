@@ -83,7 +83,7 @@ body {
 
 .middle-section {
     background-color: white;
-    padding-top: 6%;
+    padding-top: 3%;
 }
 
 .middle-section h1 {
@@ -91,39 +91,6 @@ body {
     text-align: center;
 }
 
-.features {
-    padding: 2.3% 5%;
-    margin-bottom: 5%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    background-color: whitesmoke;
-}
-
-.features h2 {
-    margin: 0;
-    font-size: 25px;
-}
-
-.features h6 {
-    margin: 10px 0;
-    font-size: 15px;
-    color: grey;
-}
-
-.feature {
-    display: flex;
-}
-
-
-.feature-div i {
-    margin-top: 10px;
-    font-size: 28px;
-}
-
-.feature-div {
-    padding: 12px;
-}
 
 .equipments {
     display: flex;
@@ -212,14 +179,14 @@ h3 {
     width: 2px;
     height: 2px;
     box-shadow:
-        0 0 0 50px #4DB6AC,
+    0 0 0 50px #4DB6AC,
         60px 50px 0 70px #4DB6AC,
         90px 90px 0 50px #4DB6AC,
         250px 250px 0 50px #4DB6AC,
         290px 320px 0 50px #4DB6AC,
         320px 400px 0 50px #4DB6AC;
-    transform: rotate(130deg);
-    animation: mtn 20s linear infinite;
+        transform: rotate(130deg);
+        animation: mtn 20s linear infinite;
 }
 
 .hill {
@@ -230,14 +197,14 @@ h3 {
     border-radius: 50%;
     height: 20px;
     box-shadow:
-        0 0 0 50px #4DB6AC,
-        -20px 0 0 20px #4DB6AC,
-        -90px 0 0 50px #4DB6AC,
-        250px 0 0 50px #4DB6AC,
+    0 0 0 50px #4DB6AC,
+    -20px 0 0 20px #4DB6AC,
+    -90px 0 0 50px #4DB6AC,
+    250px 0 0 50px #4DB6AC,
         290px 0 0 50px #4DB6AC,
         620px 0 0 50px #4DB6AC;
-    animation: hill 4s 2s linear infinite;
-}
+        animation: hill 4s 2s linear infinite;
+    }
 
 .tree,
 .tree:nth-child(2),
@@ -281,8 +248,8 @@ h3 {
     position: absolute;
     width: 25px;
     box-shadow:
-        -30px 28px 0 1.5px #fff,
-        -35px 18px 0 1.5px #fff;
+    -30px 28px 0 1.5px #fff,
+    -35px 18px 0 1.5px #fff;
 }
 
 .wheels {
@@ -324,9 +291,9 @@ h3 {
     0% {
         transform: translate(1350px);
     }
-
+    
     50% {}
-
+    
     100% {
         transform: translate(-50px);
     }
@@ -336,7 +303,7 @@ h3 {
     0% {
         transform: translate(650px);
     }
-
+    
     50% {}
 
     100% {
@@ -350,7 +317,7 @@ h3 {
     }
 
     50% {}
-
+    
     100% {
         transform: translate(-50px);
     }
@@ -360,7 +327,7 @@ h3 {
     0% {
         right: -200px;
     }
-
+    
     100% {
         right: 2000px;
     }
@@ -368,23 +335,23 @@ h3 {
 
 @keyframes truck {
     0% {}
-
+    
     6% {
         transform: translateY(0px);
     }
-
+    
     7% {
         transform: translateY(-6px);
     }
-
+    
     9% {
         transform: translateY(0px);
     }
-
+    
     10% {
         transform: translateY(-1px);
     }
-
+    
     11% {
         transform: translateY(0px);
     }
@@ -394,11 +361,11 @@ h3 {
 
 @keyframes wind {
     0% {}
-
+    
     50% {
         transform: translateY(3px)
     }
-
+    
     100% {}
 }
 
@@ -412,6 +379,40 @@ h3 {
     100% {
         transform: translateX(-2000px);
     }
+}
+
+.features {
+    padding: 2.3% 5%;
+    margin: 6% 0 2%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: whitesmoke;
+}
+
+.features h2 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.features h6 {
+    margin: 10px 0;
+    font-size: 15px;
+    color: grey;
+}
+
+.feature {
+    display: flex;
+}
+
+
+.feature-div i {
+    margin-top: 10px;
+    font-size: 28px;
+}
+
+.feature-div {
+    padding: 12px;
 }
 
 .footer-distributed {
