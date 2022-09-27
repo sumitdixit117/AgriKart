@@ -2,36 +2,41 @@
 
 <head>
     <title>Log in</title>
-    <link rel="stylesheet" href="register.css">
+    <style>
+        <?php include "register.css" ?>
+    </style>
     <script src="https://kit.fontawesome.com/2cf05c34d2.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="topnav">
-        <a class="active" href="Explore.html"><img src="images/logo.png" alt="AgriKart" width="170px"></a>
-        <a href="Register.html">Register</a>
+        <a class="active" href="Home.php"><img src="images/logo.png" alt="AgriKart" width="170px"></a>
+        <a href="Register.php">Register</a>
         <a style="pointer-events: none;">|</a>
-        <a href="Home.html">Home</a>
+        <a href="Home.php">Home</a>
     </div>
     <div class="heading">
         <h1>AgriKart</h1>
         <h2>Register to Buy Farming Essentials at Best Price.</h2>
     </div>
     <div class="box">
-        <form method="get" action="Explore.html" onsubmit="return validate();">
+        <form method="post" action="login_script.php">
             <div class="form-content">
                 <h3>Enter the following details: </h3>
                 <label>Email Address: </label><br>
-                <input type="email" size="40px" name="email" id="em" onkeyup="validatemail()" autocomplete="off"
+                <input type="email" size="40px" name="email" id="em" autocomplete="on"
                     required><br>
                 <label>Password: </label><br>
-                <input type="password" size="40px" name="pass" id="psw" onkeyup="validatepass()" required><br>
+                <input type="password" size="40px" name="pass" id="psw" required><br>
             </div>
             <center>
+                <?php if (isset($_GET["message"])) { ?>
+                    <p style="margin: 0; color: red;">Invalid email or password!</p>
+                <?php } ?>
                 <button type="submit" class="login-button">Log in</button>
             </center>
         </form>
-        <p class="para-2">New to AgriKart? <a href="Register.html">Create an account</a>.</p>
+        <p class="para-2">New to AgriKart? <a href="Register.php">Create an account</a>.</p>
     </div>
     <footer class="footer-distributed">
         <div class="footer-left">
@@ -65,46 +70,11 @@
                 <a href="#"><i class="fa fa-facebook"></i></a>
                 <a href="#"><i class="fa fa-twitter"></i></a>
                 <a href="#"><i class="fa fa-linkedin"></i></a>
-                <a href="#"><i class="fa fa-github"></i></a>
+                <a href="https://github.com/sumitdixit117/AgriKart"><i class="fa fa-github"></i></a>
             </div>
         </div>
     </footer>
-    <script type="text/javascript">
-        var flag = 1;
-        function validatemail() {
-            var user = document.getElementById("em").value;
-            var user2 = document.getElementById("em");
-            var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-            if (re.test(user)) {
-                user2.style.border = "green solid 3px";
-                flag = 1;
-            }
-            else {
-                user2.style.border = "red solid 3px";
-                flag = 0;
-            }
-        }
-        function validatepass() {
-            var user = document.getElementById("psw").value;
-            var user2 = document.getElementById("psw");
-            var re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
-            if (re.test(user)) {
-                user2.style.border = "green solid 3px";
-                flag = 1;
-            }
-            else {
-                user2.style.border = "red solid 3px";
-                flag = 0;
-            }
-        }
-        function validate() {
-            if (!flag) {
-                alert("Please fill the valid details!");
-                return false;
-            }
-            return true;
-        }
-    </script>
+
 </body>
 
 </html>

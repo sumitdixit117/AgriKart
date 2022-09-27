@@ -180,22 +180,30 @@ body {
 .products-table {
     text-align: center;
     padding-bottom: 10%;
+    width: 90%;
+    margin: 0 auto;
 }
 
 .product {
+    width: 18%;
     display: inline-block;
     border: 1px solid grey;
-    width: 16%;
-    text-align: center;
+    height: 410px;
     margin: 0.3%;
+    padding: 0;
 }
 
-.product .img-div {
-    background-color: #ececec;
+.img-div {
+    padding: 10%;
 }
 
 .product img {
     width: 100%;
+    height: 250px;
+}
+
+.product .name p {
+    margin: 4% 0;
 }
 
 .tag-name {
@@ -209,7 +217,7 @@ body {
     margin: 12px 0;
 }
 
-.icons {
+/* .icons {
     position: relative;
     visibility: hidden;
 }
@@ -237,7 +245,7 @@ body {
     left: 210px;
 }
 
-/* .add {
+.add {
     transition: all 3s ease-in;
     visibility: visible;
 } */

@@ -2,20 +2,22 @@
 
 <head>
     <title>Explore</title>
-    <link rel="stylesheet" href="explore.css">
+    <style>
+        <?php include "explore.css" ?>
+    </style>
     <script src="https://kit.fontawesome.com/2cf05c34d2.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="topnav">
-        <a class="active" href="Explore.html"><img src="images/Logo.png" class="logo"></a>
+        <a class="active" href="Explore.php"><img src="images/Logo.png" class="logo"></a>
         <div class="user-dropdown">
             <a href="#"><i class="fas fa-user"></i></a>
             <div class="user-dropdown-content">
                 <a href="#">Your Account</a>
                 <a href="Order_history.html">Your Orders</a>
                 <a href="Contact_Form.html">Contact Us</a>
-                <a href="Home.html">Log Out</a>
+                <a href="Home.php">Log Out</a>
             </div>
         </div>
         <a style="pointer-events: none;">|</a>
@@ -24,7 +26,7 @@
         <input type="search" placeholder="Search...">
     </div>
     <div class="bottom-nav">
-        <a href="Explore.html" class="home-nav">Home</a>
+        <a href="Explore.php" class="home-nav">Home</a>
         <div class="dropdown">
             <button class="dropbtn">Seeds <i class="fa fa-caret-down"></i></button>
             <div class="dropdown-content">
@@ -85,6 +87,7 @@
                 <div class="img-div">
                     <img src="images/1.jpg" alt="Image">
                 </div>
+
                 <div class="tag-name">
                     <i class="fas fa-shopping-cart"></i>
                     <span>Add To Cart</span>
@@ -95,8 +98,9 @@
                 </div>
             </td>
             <td class="product">
-                <img src="images/2.jpg" alt="Image">
-
+                <div class="img-div">
+                    <img src="images/2.jpg" alt="Image">
+                </div>
                 <div class="tag-name">
                     <i class="fas fa-shopping-cart"></i>
                     <span>Add To Cart</span>
@@ -107,7 +111,9 @@
                 </div>
             </td>
             <td class="product">
-                <img src="images/3.jpg" alt="Image">
+                <div class="img-div">
+                    <img src="images/3.jpg" alt="Image">
+                </div>
 
                 <div class="tag-name">
                     <i class="fas fa-shopping-cart"></i>
@@ -119,7 +125,9 @@
                 </div>
             </td>
             <td class="product">
-                <img src="images/4.jpg" alt="Image">
+                <div class="img-div">
+                    <img src="images/4.jpg" alt="Image">
+                </div>
 
                 <div class="tag-name">
                     <i class="fas fa-shopping-cart"></i>
@@ -133,100 +141,173 @@
         </tr>
         <tr>
             <td class="product">
-                <img src="images/1.jpg">
+                <div class="img-div">
+                    <img src="images/seed1.jpg" alt="Image">
+                </div>
 
                 <div class="tag-name">
                     <i class="fas fa-shopping-cart"></i>
                     <span>Add To Cart</span>
                 </div>
                 <div class="name">
-                    <p>Rotator Blower</p>
-                    <p>$5000</p>
+                    <p>Radish Seeds</p>
+                    <p>Rs. 100</p>
                 </div>
             </td>
             <td class="product">
-                <img src="images/1.jpg" alt="Image">
+                <div class="img-div">
+                    <img src="images/seed2.jpg" alt="Image">
+                </div>
 
                 <div class="tag-name">
                     <i class="fas fa-shopping-cart"></i>
                     <span>Add To Cart</span>
                 </div>
                 <div class="name">
-                    <p>Rotator Blower</p>
-                    <p>$5000</p>
+                    <p>Bitter Gourd Seeds</p>
+                    <p>Rs. 150</p>
                 </div>
             </td>
             <td class="product">
-                <img src="images/1.jpg">
+                <div class="img-div">
+                    <img src="images/seed3.jpg" alt="Image">
+                </div>
 
                 <div class="tag-name">
                     <i class="fas fa-shopping-cart"></i>
                     <span>Add To Cart</span>
                 </div>
                 <div class="name">
-                    <p>Rotator Blower</p>
-                    <p>$5000</p>
+                    <p>Tomato Seeds</p>
+                    <p>Rs. 50</p>
                 </div>
             </td>
             <td class="product">
-                <img src="images/1.jpg">
+                <div class="img-div">
+                    <img src="images/seed4.jpg" alt="Image">
+                </div>
 
                 <div class="tag-name">
                     <i class="fas fa-shopping-cart"></i>
                     <span>Add To Cart</span>
                 </div>
                 <div class="name">
-                    <p>Rotator Blower</p>
-                    <p>$5000</p>
+                    <p>LadyFinger Seeds</p>
+                    <p>Rs. 120</p>
                 </div>
         </tr>
         <tr>
             <td class="product">
-                <img src="images/1.jpg">
+                <div class="img-div">
+                    <img src="images/pest1.jpg" alt="Image">
+                </div>
 
                 <div class="tag-name">
                     <i class="fas fa-shopping-cart"></i>
                     <span>Add To Cart</span>
                 </div>
                 <div class="name">
-                    <p>Rotator Blower</p>
-                    <p>$5000</p>
+                    <p>O-LAR 20</p>
+                    <p>Rs. 1000</p>
                 </div>
             </td>
             <td class="product">
-                <img src="images/1.jpg">
+                <div class="img-div">
+                    <img src="images/pest2.jpg" alt="Image">
+                </div>
 
                 <div class="tag-name">
                     <i class="fas fa-shopping-cart"></i>
                     <span>Add To Cart</span>
                 </div>
                 <div class="name">
-                    <p>Rotator Blower</p>
-                    <p>$5000</p>
+                    <p>Insect Killer</p>
+                    <p>Rs. 900</p>
                 </div>
             </td>
             <td class="product">
-                <img src="images/1.jpg" alt="Image">
+                <div class="img-div">
+                    <img src="images/manure.jpg" alt="Image">
+                </div>
 
                 <div class="tag-name">
                     <i class="fas fa-shopping-cart"></i>
                     <span>Add To Cart</span>
                 </div>
                 <div class="name">
-                    <p>Rotator Blower</p>
-                    <p>$5000</p>
+                    <p>Manure</p>
+                    <p>Rs. 500</p>
                 </div>
             </td>
             <td class="product">
-                <img src="images/1.jpg">
+                <div class="img-div">
+                    <img src="images/potashsol.jpg" alt="Image">
+                </div>
 
                 <div class="tag-name">
                     <i class="fas fa-shopping-cart"></i>
                     <span>Add To Cart</span>
                 </div>
                 <div class="name">
-                    <p>Rotator Blower</p>
-                    <p>$5000</p>
+                    <p>Potashsol</p>
+                    <p>Rs. 1200</p>
+                </div>
+        </tr>
+        <tr>
+            <td class="product">
+                <div class="img-div">
+                    <img src="images/fork.jpg" alt="Image">
+                </div>
+
+                <div class="tag-name">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Add To Cart</span>
+                </div>
+                <div class="name">
+                    <p>Fork</p>
+                    <p>Rs. 500</p>
+                </div>
+            </td>
+            <td class="product">
+                <div class="img-div">
+                    <img src="images/trowel.jpg" alt="Image">
+                </div>
+
+                <div class="tag-name">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Add To Cart</span>
+                </div>
+                <div class="name">
+                    <p>Trowel</p>
+                    <p>Rs. 700</p>
+                </div>
+            </td>
+            <td class="product">
+                <div class="img-div">
+                    <img src="images/agrimate-floral-bypass-pruner.jpg" alt="Image">
+                </div>
+
+                <div class="tag-name">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Add To Cart</span>
+                </div>
+                <div class="name">
+                    <p>Agrimate Floral Bypass Pruner</p>
+                    <p>Rs. 1000</p>
+                </div>
+            </td>
+            <td class="product">
+                <div class="img-div">
+                    <img src="images/agrimate-professional-pruner-carbon-forged-steel.jpg" alt="Image">
+                </div>
+
+                <div class="tag-name">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Add To Cart</span>
+                </div>
+                <div class="name">
+                    <p>Agrimate Pruner Forged Steel</p>
+                    <p>Rs. 5000</p>
                 </div>
             </td>
         </tr>

@@ -2,16 +2,18 @@
 
 <head>
     <title>Register</title>
-    <link rel="stylesheet" href="register.css">
+    <style>
+        <?php include "register.css" ?>
+    </style>
     <script src="https://kit.fontawesome.com/2cf05c34d2.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="topnav">
-        <a class="active" href="Explore.html"><img src="images/logo.png" alt="AgriKart" width="170px"></a>
-        <a href="Login.html">Login</a>
+        <a class="active" href="Home.php"><img src="images/logo.png" alt="AgriKart" width="170px"></a>
+        <a href="Login.php">Login</a>
         <a style="pointer-events: none;">|</a>
-        <a href="Home.html">Home</a>
+        <a href="Home.php">Home</a>
     </div>
     </div>
     <div class="heading">
@@ -19,15 +21,16 @@
         <h2>Register to Buy Farming Essentials at Best Price.</h2>
     </div>
     <div class="box">
-        <form method="get" action="Explore.html" onsubmit="return validate();">
+        <form method="post" action="register_script.php">
             <div class="form-content">
                 <h3>Enter the following details: </h3>
+                <p class="warning">* All fields are required!</p>
                 <fieldset>
                     <legend>Personal Details</legend>
                     <label for="fname">First Name: </label><br>
-                    <input name="fname" placeholder="e.g. Shivansh" size="40px" required><br>
+                    <input name="fname" placeholder="e.g. Shivansh" size="40px"><br>
                     <label for="lname">Last Name: </label><br>
-                    <input name="lname" placeholder="e.g. Mishra" size="40px" required><br>
+                    <input name="lname" placeholder="e.g. Mishra" size="40px"><br>
                     <label for="date">Date of Birth: </label><br>
                     <input type="date" name="date"><br>
                     <label for="gender">Gender: </label><br>
@@ -52,11 +55,11 @@
                         <option value="+2">+2 ALAS</option>
                         <option value="+3">+3 ALB</option>
                     </select>
-                    <input type="tel" style="margin: 7px;" name="phno" placeholder="9876543210" required><br>
+                    <input type="tel" style="margin: 7px;" name="phno" placeholder="9876543210"><br>
                     <label for="stname">Street Name:</label>
                     <input type="text" name="stname" maxlength="50"><br><br>
                     <label for="Arname">Area Name:</label>
-                    <input type="text" name="Arname" maxlength="50"><br><br>
+                    <input type="text" name="arname" maxlength="50"><br><br>
                     <label for="city">City:</label>
                     <input type="text" name="city" maxlength="15"><br><br>
                     <label for="State">State:</label>
@@ -124,25 +127,32 @@
                 <fieldset>
                     <legend>Login Details</legend>
                     <label>Email Address: </label><br>
-                    <input type="email" id="em" placeholder="e.g. xyz@abc.com" size="40px" autocomplete="off"
-                        name="email" onkeyup="validatemail()" required><br>
+                    <input type="email" id="em" placeholder="e.g. xyz@abc.com" size="40px" autocomplete="on"
+                        name="email"><br>
                     <label>Password: </label><br>
-                    <input type="password" size="40px" name="pass" id="psw" onkeyup="validatepass()" required><br>
+                    <input type="password" size="40px" name="pass" id="psw"><br>
                     <label> Confirm Password: </label><br>
-                    <input type="password" size="40px" name="c-pass" id="c-psw" required><br>
+                    <input type="password" size="40px" name="c-pass" id="c-psw"><br>
                     <span class="warning">* Must contain at least one uppercase, lowercase, digit, special character and
                         min 8 characters</span><br>
                 </fieldset>
 
             </div>
             <center>
+                <?php if (isset($_GET["smessage"])) { ?>
+                        <p style="margin: 0; color: green;">User added successfully!</p>
+                <?php } elseif (isset($_GET["emessage"])) { ?>
+                        <p style="margin: 0; color: red;">Passwords do not match!</p>
+                <?php } elseif (isset($_GET["imessage"])) { ?>
+                        <p style="margin: 0; color: red;">Invalid Password!</p>
+                <?php } ?><br>
                 <button type="submit">Submit</button><br>
                 <button type="reset">Reset</button>
             </center>
         </form>
         <p class="para-1">By clicking the submit button, you agree to our <a href="#">Terms and Condition</a> and <a
                 href="#">Policy Privacy.</a></p>
-        <p class="para-2">Already have an account? <a href="Login.html">Log in</a>.</p>
+        <p class="para-2">Already have an account? <a href="Login.php">Log in</a>.</p>
     </div>
     <footer class="footer-distributed">
         <div class="footer-left">
@@ -176,59 +186,10 @@
                 <a href="#"><i class="fa fa-facebook"></i></a>
                 <a href="#"><i class="fa fa-twitter"></i></a>
                 <a href="#"><i class="fa fa-linkedin"></i></a>
-                <a href="#"><i class="fa fa-github"></i></a>
+                <a href="https://github.com/sumitdixit117/AgriKart"><i class="fa fa-github"></i></a>
             </div>
         </div>
     </footer>
-    <script type="text/javascript">
-        var flag = 1;
-        function validatemail() {
-            var user = document.getElementById("em").value;
-            var user2 = document.getElementById("em");
-            var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-            if (re.test(user)) {
-                user2.style.border = "green solid 3px";
-                flag = 1;
-            }
-            else {
-                user2.style.border = "red solid 3px";
-                flag = 0;
-            }
-        }
-        function validatepass() {
-            var user = document.getElementById("psw").value;
-            var user2 = document.getElementById("psw");
-            var re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
-            if (re.test(user)) {
-                user2.style.border = "green solid 3px";
-                flag = 1;
-            }
-            else {
-                user2.style.border = "red solid 3px";
-                flag = 0;
-            }
-        }
-        function validate() {
-            var pw1 = document.getElementById("psw");
-            var pw2 = document.getElementById("c-psw");
-            if (!flag) {
-                alert("Please fill the valid details!");
-                return false;
-            } else if (pw1 != pw2) {
-                alert("Passwords did not match!");
-                return false;
-            }
-            return true;
-        }
-        function getGPA() {
-            var val = document.getElementById("gpa").value;
-            document.getElementById("range-gpa").value = val;
-        }
-        function getRange() {
-            var val = document.getElementById("range-gpa").value;
-            document.getElementById("gpa").value = val;
-        }
-    </script>
 </body>
 
 </html>

@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>AgriKart</title>
-    <link rel="stylesheet" href="home.css">
+    <style>
+        <?php include "home.css" ?>
+    </style>
     <script src="https://kit.fontawesome.com/2cf05c34d2.js" crossorigin="anonymous"></script>
 </head>
 
@@ -18,9 +20,9 @@
             </td>
             <td class="right-div">
                 <div class="topnav">
-                    <a href="Register.html" style="margin-right: 40px">Register</a>
+                    <a href="Register.php" style="margin-right: 40px">Register</a>
                     <a style="pointer-events: none;">|</a>
-                    <a href="Login.html">Login</a>
+                    <a href="Login.php">Login</a>
                 </div>
                 <div class="about">
                     <h2>ABOUT US</h2>
@@ -59,8 +61,9 @@
     <section id="download">
         <div class="cont">
             <h3>Sign up now.</h3>
-            <button class="download login " type="button"><i class="fas fa-sign-in-alt"></i> Login</button>
-            <button class="download register" type="button"><i class="fas fa-user-plus"></i> Register</button><br>
+            <button class="download login" type="button"><a href="Login.php"><i class="fas fa-sign-in-alt"></i> Login </a></button>
+            <button class="download register" type="button"><a href="Register.php"><i class="fas fa-user-plus"></i> Register
+                </a></button><br>
             <i>
                 <p id="download-para"></p>
             </i>
@@ -79,43 +82,43 @@
         </div>
     </section>
     <div class="features">
-            <div class="feature">
-                <div class="feature-div">
-                    <i class="fas fa-undo-alt"></i>
-                </div>
-                <div class="feature-div">
-                    <h2>Return</h2>
-                    <h6>Within 7 days</h6>
-                </div>
+        <div class="feature">
+            <div class="feature-div">
+                <i class="fas fa-undo-alt"></i>
             </div>
-            <div class="feature">
-                <div class="feature-div">
-                    <i class="fas fa-shipping-fast"></i>
-                </div>
-                <div class="feature-div">
-                    <h2>Free Shipping</h2>
-                    <h6>on order Above Rs 500</h6>
-                </div>
-            </div>
-            <div class="feature">
-                <div class="feature-div">
-                    <i class="fas fa-rupee-sign"></i>
-                </div>
-                <div class="feature-div">
-                    <h2>Get Rs 100 off First order</h2>
-                    <h6>When you register</h6>
-                </div>
-            </div>
-            <div class="feature">
-                <div class="feature-div">
-                    <i class="fas fa-envelope"></i>
-                </div>
-                <div class="feature-div">
-                    <h2>Customer Support</h2>
-                    <h6>24/7 Service</h6>
-                </div>
+            <div class="feature-div">
+                <h2>Return</h2>
+                <h6>Within 7 days</h6>
             </div>
         </div>
+        <div class="feature">
+            <div class="feature-div">
+                <i class="fas fa-shipping-fast"></i>
+            </div>
+            <div class="feature-div">
+                <h2>Free Shipping</h2>
+                <h6>on order Above Rs 500</h6>
+            </div>
+        </div>
+        <div class="feature">
+            <div class="feature-div">
+                <i class="fas fa-rupee-sign"></i>
+            </div>
+            <div class="feature-div">
+                <h2>Get Rs 100 off First order</h2>
+                <h6>When you register</h6>
+            </div>
+        </div>
+        <div class="feature">
+            <div class="feature-div">
+                <i class="fas fa-envelope"></i>
+            </div>
+            <div class="feature-div">
+                <h2>Customer Support</h2>
+                <h6>24/7 Service</h6>
+            </div>
+        </div>
+    </div>
     <footer class="footer-distributed">
         <div class="footer-left">
             <img src="images/Logo.png" alt="Logo">
@@ -145,10 +148,10 @@
                 technology in agricultural machinery and equipment at affordable prices.</p>
             </p>
             <div class="footer-icons">
-                <a href="Explore.html"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-facebook"></i></a>
                 <a href="#"><i class="fa fa-twitter"></i></a>
                 <a href="#"><i class="fa fa-linkedin"></i></a>
-                <a href="#"><i class="fa fa-github"></i></a>
+                <a href="https://github.com/sumitdixit117/AgriKart"><i class="fa fa-github"></i></a>
             </div>
         </div>
     </footer>
