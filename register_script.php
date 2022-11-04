@@ -33,7 +33,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "INSERT INTO users (fname, lname, gender, date, phone, address, city, state, pincode, country, Email, Password)
+$sql = "INSERT INTO users (fname, lname, gender, date, phone, address, city, state, pincode, country, email, password)
 VALUES ('$fname','$lname','$gender','$date','$phone', '$address', '$city', '$state', '$pcode', '$country','$email', '$passwrd')";
 
 if ($passwrd != $cpasswrd) {
