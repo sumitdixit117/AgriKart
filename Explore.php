@@ -72,7 +72,7 @@
                 <a href="#">Bactericides</a>
             </div>
         </div>
-        <a href="#">Tools and Machinery</a>
+        <a href="/AgriKart/Explore.php?cat=tools">Tools and Machinery</a>
     </div>
     <!-- <div class="icons">
         <i class="fas fa-code-branch a"></i>
@@ -118,7 +118,7 @@
                         </div>
                         <div class="name">
                             <p><?php echo $row["name"] ?></p>
-                            <p><?php echo $row["price"] ?></p>
+                            <p><?php echo "Rs. " . $row["price"] ?></p>
                         </div>
                     </div>
                     <?php

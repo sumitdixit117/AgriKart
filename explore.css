@@ -188,13 +188,13 @@ body {
     width: 18%;
     display: inline-block;
     border: 1px solid grey;
-    height: 410px;
-    margin: 0.3%;
+    height: 390px;
+    margin: 0.4%;
     padding: 0;
 }
 
 .img-div {
-    padding: 10%;
+    padding: 5%;
 }
 
 .product img {
