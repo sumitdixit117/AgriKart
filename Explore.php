@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -81,237 +82,55 @@
     <div class="offer-heading">
         <h1>Today's Offers</h1>
     </div>
-    <table class="products-table">
-        <tr>
-            <td class="product">
-                <div class="img-div">
-                    <img src="images/1.jpg" alt="Image">
-                </div>
+    <?php
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "agrikartdb";
+        
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        } 
+        $query = "SELECT * FROM `products`;";
+  
+         // FETCHING DATA FROM DATABASE
+        $result = $conn->query($query);
+         
+           if ($result->num_rows > 0) 
+           { ?>
+                <div class="products">
+                <?php
+               // OUTPUT DATA OF EACH ROW
+               while($row = $result->fetch_assoc())
+               {
+                    ?>
+                    <div class="product">
+                        <div class="img-div">
+                            <img src="<?php echo $row["image_link"] ?>" alt="Image">
+                        </div>
 
-                <div class="tag-name">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span>Add To Cart</span>
-                </div>
-                <div class="name">
-                    <p>Rotator Blower</p>
-                    <p>Rs. 35,000.00</p>
-                </div>
-            </td>
-            <td class="product">
-                <div class="img-div">
-                    <img src="images/2.jpg" alt="Image">
-                </div>
-                <div class="tag-name">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span>Add To Cart</span>
-                </div>
-                <div class="name">
-                    <p>Lawn Mower LC 18</p>
-                    <p>Rs. 52,580.00</p>
-                </div>
-            </td>
-            <td class="product">
-                <div class="img-div">
-                    <img src="images/3.jpg" alt="Image">
-                </div>
-
-                <div class="tag-name">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span>Add To Cart</span>
-                </div>
-                <div class="name">
-                    <p>Hedge Trimmer HC 280XP</p>
-                    <p>Rs. 62,300.00</p>
-                </div>
-            </td>
-            <td class="product">
-                <div class="img-div">
-                    <img src="images/4.jpg" alt="Image">
-                </div>
-
-                <div class="tag-name">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span>Add To Cart</span>
-                </div>
-                <div class="name">
-                    <p>135 Mark II Gas Chainsaw</p>
-                    <p>Rs. 23,750.00</p>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td class="product">
-                <div class="img-div">
-                    <img src="images/seed1.jpg" alt="Image">
-                </div>
-
-                <div class="tag-name">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span>Add To Cart</span>
-                </div>
-                <div class="name">
-                    <p>Radish Seeds</p>
-                    <p>Rs. 100</p>
-                </div>
-            </td>
-            <td class="product">
-                <div class="img-div">
-                    <img src="images/seed2.jpg" alt="Image">
-                </div>
-
-                <div class="tag-name">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span>Add To Cart</span>
-                </div>
-                <div class="name">
-                    <p>Bitter Gourd Seeds</p>
-                    <p>Rs. 150</p>
-                </div>
-            </td>
-            <td class="product">
-                <div class="img-div">
-                    <img src="images/seed3.jpg" alt="Image">
-                </div>
-
-                <div class="tag-name">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span>Add To Cart</span>
-                </div>
-                <div class="name">
-                    <p>Tomato Seeds</p>
-                    <p>Rs. 50</p>
-                </div>
-            </td>
-            <td class="product">
-                <div class="img-div">
-                    <img src="images/seed4.jpg" alt="Image">
-                </div>
-
-                <div class="tag-name">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span>Add To Cart</span>
-                </div>
-                <div class="name">
-                    <p>LadyFinger Seeds</p>
-                    <p>Rs. 120</p>
-                </div>
-        </tr>
-        <tr>
-            <td class="product">
-                <div class="img-div">
-                    <img src="images/pest1.jpg" alt="Image">
-                </div>
-
-                <div class="tag-name">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span>Add To Cart</span>
-                </div>
-                <div class="name">
-                    <p>O-LAR 20</p>
-                    <p>Rs. 1000</p>
-                </div>
-            </td>
-            <td class="product">
-                <div class="img-div">
-                    <img src="images/pest2.jpg" alt="Image">
-                </div>
-
-                <div class="tag-name">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span>Add To Cart</span>
-                </div>
-                <div class="name">
-                    <p>Insect Killer</p>
-                    <p>Rs. 900</p>
-                </div>
-            </td>
-            <td class="product">
-                <div class="img-div">
-                    <img src="images/manure.jpg" alt="Image">
-                </div>
-
-                <div class="tag-name">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span>Add To Cart</span>
-                </div>
-                <div class="name">
-                    <p>Manure</p>
-                    <p>Rs. 500</p>
-                </div>
-            </td>
-            <td class="product">
-                <div class="img-div">
-                    <img src="images/potashsol.jpg" alt="Image">
-                </div>
-
-                <div class="tag-name">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span>Add To Cart</span>
-                </div>
-                <div class="name">
-                    <p>Potashsol</p>
-                    <p>Rs. 1200</p>
-                </div>
-        </tr>
-        <tr>
-            <td class="product">
-                <div class="img-div">
-                    <img src="images/fork.jpg" alt="Image">
-                </div>
-
-                <div class="tag-name">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span>Add To Cart</span>
-                </div>
-                <div class="name">
-                    <p>Fork</p>
-                    <p>Rs. 500</p>
-                </div>
-            </td>
-            <td class="product">
-                <div class="img-div">
-                    <img src="images/trowel.jpg" alt="Image">
-                </div>
-
-                <div class="tag-name">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span>Add To Cart</span>
-                </div>
-                <div class="name">
-                    <p>Trowel</p>
-                    <p>Rs. 700</p>
-                </div>
-            </td>
-            <td class="product">
-                <div class="img-div">
-                    <img src="images/agrimate-floral-bypass-pruner.jpg" alt="Image">
-                </div>
-
-                <div class="tag-name">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span>Add To Cart</span>
-                </div>
-                <div class="name">
-                    <p>Agrimate Floral Bypass Pruner</p>
-                    <p>Rs. 1000</p>
-                </div>
-            </td>
-            <td class="product">
-                <div class="img-div">
-                    <img src="images/agrimate-professional-pruner-carbon-forged-steel.jpg" alt="Image">
-                </div>
-
-                <div class="tag-name">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span>Add To Cart</span>
-                </div>
-                <div class="name">
-                    <p>Agrimate Pruner Forged Steel</p>
-                    <p>Rs. 5000</p>
-                </div>
-            </td>
-        </tr>
-    </table>
+                        <div class="tag-name">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Add To Cart</span>
+                        </div>
+                        <div class="name">
+                            <p><?php echo $row["name"] ?></p>
+                            <p><?php echo $row["price"] ?></p>
+                        </div>
+                    </div>
+                    <?php
+               } ?>
+               </div>
+               <?php
+           } 
+           else {
+               echo "0 results";
+           }
+    ?>
+    
     <div class="features">
         <div class="feature">
             <div class="feature-div">
