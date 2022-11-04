@@ -39,8 +39,16 @@ $sql2 = "CREATE TABLE `agrikartdb`.`products`
  PRIMARY KEY (`id`)) ENGINE = MyISAM";
 
 $sql3 = "INSERT INTO products (name, price, image_link, season, quantity, category) 
-           VALUES ('Insect Killer', '900', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/pest2.jpg?raw=true', 'Null', '50', 'pest'),
+           VALUES ('Yellow Marigold Seeds','450', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/img53.jpg?raw=true', 'winter', '150','flower'),
+          ('Orange Marigold Seeds','380', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/img54.jpg?raw=true', 'winter', '150','flower'),
+          ('Orange Marigold Seeds','510', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/img55.jpg?raw=true', 'winter', '150','flower'),
+          ('Hollyhocks Double Dwarf Mix Seeds','540', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/img56.jpg?raw=true', 'rainy', '150','flower'),
+          ('Salvia Saint Fire Seeds','320', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/img57.jpg?raw=true', 'winter', '150','flower'),
+          ('Sweet Sultan Mix Seeds','740', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/img58.jpg?raw=true', 'rainy', '150','flower'),
+          ('Sweet Alyssum White Seeds','100', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/img59.jpg?raw=true', 'spring', '150','flower'),
+           ('Insect Killer', '900', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/pest2.jpg?raw=true', 'Null', '50', 'pest'),
            ('Brush Cutter 3700','9000', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/img1.jpg?raw=true', 'Null', '20', 'tools'),
+           ('Multi Tool Brush cutter','11000', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/img2.jpg?raw=true', 'Null', '10', 'tools'),
            ('Telescopic Wire Rake','900', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/img3.jpg?raw=true', 'Null', '10', 'tools'),
            ('Agrimate Professional secateur','1000', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/img4.jpg?raw=true', 'Null', '20', 'tools'),
            ('Fork','400', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/img5.jpg?raw=true', 'Null', '20', 'tools'),
@@ -90,8 +98,8 @@ $sql3 = "INSERT INTO products (name, price, image_link, season, quantity, catego
            ('Pappaya Seeds', '350', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/img49.jpg?raw=true', 'winter', '150', 'flower'),
            ('Muskmelon Seeds', '300', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/img50.jpg?raw=true', 'winter', '150', 'flower'),
            ('Helichrysum Song Mix Seeds','700', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/img51.jpg?raw=true', 'summer', '150', 'flower'),
-           ('Mesembryanthemum Mix seeds', '420', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/img52.jpg?raw=true', 'winter', '150', 'flower'),
-           ('Multi Tool Brush cutter','11000', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/img2.jpg?raw=true', 'Null', '10', 'tools') ";
+           ('Mesembryanthemum Mix seeds', '420', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/img52.jpg?raw=true', 'winter', '150', 'flower') ";
+          
  
 
 if ($conn->query($sql1) === TRUE && $conn->query($sql2) === TRUE && $conn->query($sql3) === TRUE) {
