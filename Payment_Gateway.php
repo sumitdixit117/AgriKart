@@ -2,28 +2,13 @@
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="payment_gateway.css">
-    <script src="https://kit.fontawesome.com/2cf05c34d2.js" crossorigin="anonymous"></script>
-</head>
+    <title>Payment Gateway</title>
+    <style>
+        <?php include "payment_gateway.css" ?>
+    </style>
 
-<body>
-    <div class="topnav">
-        <a class="active" href="Explore.php"><img src="images/Logo.png" class="logo"></a>
-        <div class="user-dropdown">
-            <a href="#"><i class="fas fa-user"></i></a>
-            <div class="user-dropdown-content">
-                <a href="#">Your Account</a>
-                <a href="Order_history.html">Your Orders</a>
-                <a href="Contact_Form.html">Contact Us</a>
-                <a href="Home.php">Log Out</a>
-            </div>
-        </div>
-        <a style="pointer-events: none;">|</a>
-        <a href="Cart.html"><i class="fas fa-shopping-cart"></i></a>
-        <a href="#"><i class="fas fa-search"></i></a>
-        <input type="search" placeholder="Search...">
-    </div>
+<?php require_once('header.php'); ?>
+
     <div class="payment-div">
         <h1 id="heading">Checkout</h1>
         <div class="container">
@@ -86,43 +71,5 @@
             </form>
         </div>
     </div>
-    <footer class="footer-distributed">
-        <div class="footer-left">
-            <img src="images/Logo.png" alt="Logo">
-            <p class="footer-para">
-                Online Shop for complete Agriculture and Gardening needs.
-            </p>
-            <p class="footer-copyright">Copyright © 2022 AgriKart. All Rights Reserved.</p>
-        </div>
-        <div class="footer-center">
-            <div>
-                <i class="fa fa-map-marker"></i>
-                <p><span>J Block, Men's Hostel</span> VIT, Vellore</p>
-            </div>
-            <div>
-                <i class="fa fa-phone"></i>
-                <p>+91 9876543210</p>
-            </div>
-            <div>
-                <i class="fa fa-envelope"></i>
-                <p><a href="mailto:support@AgriKart.com">support@AgriKart.com</a></p>
-            </div>
-        </div>
-        <div class="footer-right">
-            <p class="footer-company-about">
-                <span>Our Vision</span>
-            <p>Our goal is to make sure that farmers in India should be able to do ease of farming by providing advanced
-                technology in agricultural machinery and equipment at affordable prices.</p>
-            </p>
-            <div class="footer-icons">
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-linkedin"></i></a>
-                <a href="https://github.com/sumitdixit117/AgriKart"><i class="fa fa-github"></i></a>
-            </div>
-        </div>
-    </footer>
-
-</body>
-
-</html>
+    
+<?php require_once('footer.php'); ?>

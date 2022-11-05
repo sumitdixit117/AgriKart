@@ -31,7 +31,7 @@
                         was established in 2013 and is based in Namma Bengaluru. AgriKart believes in farming being a
                         pillar for the world and farmers are the backbone of the nation.
                     </p>
-                    <a href="Contact_Form.html"><button class="contact-button">CONTACT US</button></a>
+                    <a href="Contact_Form.php"><button class="contact-button">CONTACT US</button></a>
                 </div>
             </td>
         </tr>

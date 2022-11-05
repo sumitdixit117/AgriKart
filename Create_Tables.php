@@ -38,7 +38,15 @@ $sql2 = "CREATE TABLE `agrikartdb`.`products`
  `category` VARCHAR(10) NOT NULL , 
  PRIMARY KEY (`id`)) ENGINE = MyISAM";
 
-$sql3 = "INSERT INTO products (name, price, image_link, season, quantity, category) 
+$sql3 = "CREATE TABLE `agrikartdb`.`cart` 
+ ( `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `image_link` varchar(200) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `price` double NOT NULL,
+  PRIMARY KEY (`id`)) ENGINE=MyISAM";
+
+$sql = "INSERT INTO products (name, price, image_link, season, quantity, category) 
            VALUES ('Yellow Marigold Seeds','450', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/img53.jpg?raw=true', 'winter', '150','flower'),
           ('Orange Marigold Seeds','380', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/img54.jpg?raw=true', 'winter', '150','flower'),
           ('Orange Marigold Seeds','510', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/img55.jpg?raw=true', 'winter', '150','flower'),
@@ -139,11 +147,27 @@ $sql3 = "INSERT INTO products (name, price, image_link, season, quantity, catego
           ('Bioenchancer','410', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/img97.jpg?raw=true', 'Null', '150','pest'),
           ('Suruga Pesticide','200', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/img98.png?raw=true', 'Null', '150','pest'),
           ('Konatsu Pesticide','200', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/img99.png?raw=true', 'Null', '150','pest'),
-          ('Komugi (Pyriproxyfen 10% EC)','390', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/img100.jpg?raw=true', 'Null', '150','pest') ";
+          ('Komugi (Pyriproxyfen 10% EC)','390', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/img100.jpg?raw=true', 'Null', '150','pest'),
+          ('Rotator Blower','31500', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/1.jpg?raw=true', 'Null', '15','tools'),
+          ('Lawn Mower LC 18','11500', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/2.jpg?raw=true', 'Null', '15','tools'),
+          ('Hedge Trimmer HC 280XP','42300', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/3.jpg?raw=true', 'Null', '15','tools'),
+          ('135 Mark II Gas Chainsaw','23400', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/4.jpg?raw=true', 'Null', '15','tools'),
+          ('Radish Seeds','150', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/seed1.jpg?raw=true', 'Null', '150','seeds'),
+          ('Bitter Gourd Seeds','200', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/seed2.jpg?raw=true', 'Null', '150','seeds'),
+          ('Tomato Seeds','100' ,'https://github.com/sumitdixit117/AgriKart/blob/main/images/seed3.jpg?raw=true', 'Null', '150','seeds'),
+          ('LadyFinger Seeds','150', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/seed4.jpg?raw=true', 'Null', '150','seeds'),
+          ('Acetosol','500', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/2.jpg?raw=true', 'Null', '150','pest'),
+          ('Phosphosol','1500', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/phosphosol.jpg?raw=true', 'Null', '150','pest'),
+          ('Potashsol','900', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/potashsol.jpg?raw=true', 'Null', '150','pest'),
+          ('Manure','200', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/manure.jpg?raw=true', 'Null', '150','pest'),
+          ('Fork','1200', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/fork.jpg?raw=true', 'Null', '150','tools'),
+          ('Trowel','900', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/trowel.jpg?raw=true', 'Null', '150','tools'),
+          ('Agrimate Bypass Pruner','1100', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/agrimate-floral-bypass-pruner.jpg?raw=true', 'Null', '150','tools'),
+          ('Agrimate Forged Steel','1200', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/agrimate-professional-pruner-carbon-forged-steel.jpg?raw=true', 'Null', '150','tools') ";
           
  
 
-if ($conn->query($sql1) === TRUE && $conn->query($sql2) === TRUE && $conn->query($sql3) === TRUE) {
+if ($conn->query($sql1) === TRUE && $conn->query($sql2) === TRUE && $conn->query($sql3) === TRUE && $conn->query($sql) === TRUE) {
   echo "Tables created successfully and data entered";
 } else {
   echo "Error creating tables or entering data: " . $conn->error;
