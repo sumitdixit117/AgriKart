@@ -2,33 +2,28 @@
 <html>
 
 <head>
-    <title>seeds</title>
+    <title>Seeds</title>
     <style>
         <?php include "explore.css" ?>
     </style>
 
 <?php require_once('header.php'); ?>
 
-    <!-- <div class="icons">
-        <i class="fas fa-code-branch a"></i>
-        <i class="fas fa-heart b"></i>
-        <i class="fas fa-search-plus c"></i>
-    </div> -->
+    <div class="offer-heading">
+        <h1>Today's Offers</h1>
+    </div>
     <?php
         $servername = "localhost";
         $username = "root";
         $password = "";
         $dbname = "agrikartdb";
         
-        // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);
-        // Check connection
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         } 
         $limit = 20;    
 
-        // update the active page number
 
         if (isset($_GET["page"])) {    
             $page_number  = $_GET["page"];    
@@ -36,11 +31,9 @@
             $page_number=1;
         }       
 
-        // get the initial page number
 
         $initial_page = ($page_number-1) * $limit;       
 
-        // get data of selected rows per page 
 
         $getQuery = "SELECT * FROM `products` WHERE category='seeds' LIMIT $initial_page, $limit";     
 
@@ -48,7 +41,6 @@
 
                 <div class="products">
                 <?php
-               // OUTPUT DATA OF EACH ROW
                while ($row = mysqli_fetch_array($result))
                {
                     ?>
@@ -86,7 +78,6 @@
             $connection = mysqli_connect($servername, $username, $password, $dbname);
             $query = "SELECT * FROM `products` WHERE category='seeds'";
 
-            // Execute the query and store the result set
             $result = mysqli_query($connection, $query);
 
             if ($result)
@@ -101,18 +92,18 @@
 
             if($page_number>=2){   
 
-                echo "<a href='seeds.php?page=".($page_number-1)."'>  Prev </a>";   
+                echo "<a href='Seeds.php?page=".($page_number-1)."'>  Prev </a>";   
 
             }                          
 
             for ($i=1; $i<=$total_pages; $i++) {   
 
                 if ($i == $page_number) {   
-                    $pageURL .= "<a class = 'active' href='seeds.php?page=" .$i."'>".$i." </a>";   
+                    $pageURL .= "<a class = 'active' href='Seeds.php?page=" .$i."'>".$i." </a>";   
                 }               
 
                 else  {   
-                    $pageURL .= "<a href='seeds.php?page=".$i."'>".$i." </a>";     
+                    $pageURL .= "<a href='Seeds.php?page=".$i."'>".$i." </a>";     
                 }   
 
             };     
@@ -121,7 +112,7 @@
 
             if($page_number<$total_pages){   
 
-                echo "<a href='seeds.php?page=".($page_number+1)."'>  Next </a>";   
+                echo "<a href='Seeds.php?page=".($page_number+1)."'>  Next </a>";   
 
             } ?>  
             </div>   
@@ -144,7 +135,7 @@
 
         page = ((page><?php echo $total_pages; ?>)?<?php echo $total_pages; ?>:((page<1)?1:page));   
 
-        window.location.href = 'seeds.php?page='+page;   
+        window.location.href = 'Seeds.php?page='+page;   
     }   
 </script>
  

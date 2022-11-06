@@ -8,6 +8,7 @@
     text-align: center;
     width: 90%;
     margin: 0 auto;
+    
 }
 
 .products form{
@@ -40,7 +41,6 @@
     color: white;
     background-color: black;
     padding: 5%;
-    /* visibility: hidden; */
 }
 
 .tag-name button {
@@ -57,43 +57,10 @@
     margin: 12px 0;
 }
 
-/* .icons {
-    position: relative;
-    visibility: hidden;
-}
-
-.icons>* {
-    background-color: black;
-    color: white;
-    border-radius: 50%;
-    padding: 3%;
-    position: absolute;
-}
-
-.icons .a {
-    top: -300px;
-    left: 210px;
-}
-
-.icons .b {
-    top: -260px;
-    left: 210px;
-}
-
-.icons .c {
-    top: -220px;
-    left: 210px;
-}
-
-.add {
-    transition: all 3s ease-in;
-    visibility: visible;
-} */
-
 .inline {
     position: absolute;
     right: 20px;
-    margin-top: -82px;
+    margin-top: -111px;
 }
 
 .items {
@@ -101,7 +68,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 40px auto;
+    margin: 70px auto;
 }
 
 .items a {

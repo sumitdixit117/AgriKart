@@ -27,8 +27,24 @@
         <div class="dropdown">
             <button class="dropbtn">Seeds <i class="fa fa-caret-down"></i></button>
             <div class="dropdown-content">
-                <a href="Flower.php">Flower Seeds</a>
-                <a href="Seeds.php">Vegetable Seeds</a>
+            <div class="second-level-dropdown">
+                    <button class="dropbtn">Flower Seeds <i class="fa fa-caret-right"></i></button>
+                    <div class="dropdown-content second-dropdown-content">
+                        <a href="Flower.php">Flower's Hybrid Seeds</a>
+                        <a href="Flower.php">Petunia Garden Mixed Flower Seeds</a>
+                        <a href="Flower.php">GoldSmith/SFlowers</a>
+                    </div>
+                </div>
+                <div class="second-level-dropdown">
+                    <button class="dropbtn">Vegetable Seeds <i class="fa fa-caret-right"></i></button>
+                    <div class="dropdown-content second-dropdown-content">
+                        <a href="Seeds.php">Vegetable's Hybrid Seeds</a>
+                        <a href="Seeds.php">Hybrid Papaya Seeds</a>
+                        <a href="Seeds.php">Leafy Veggies</a>
+                        <a href="Seeds.php">Exotic Vegetable Seeds</a>
+                        <a href="Seeds.php">Microgreen Seeds</a>
+                    </div>
+                </div>
                 <a href="Fruit.php">Fruit Seeds</a>
             </div>
         </div>
@@ -42,6 +58,6 @@
                 <a href="Pest.php">Bactericides</a>
             </div>
         </div>
-         <a href="Flower.php">Flower Seeds</a>
+        <a href="Fruits.php">Fruit Seeds</a>
         <a href="Tools.php">Tools and Machinery</a>
     </div>

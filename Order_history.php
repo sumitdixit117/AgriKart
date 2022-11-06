@@ -7,7 +7,20 @@
         <?php include "order_history.css" ?>
     </style>
 
-<?php require_once('header.php'); ?>
+<?php require_once('header.php'); 
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "agrikartdb";
+    
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    } 
+
+    $getQuery = "SELECT * FROM `order history`";     
+
+    $result = mysqli_query ($conn, $getQuery); ?>
 
     <div class="orders-div">
         <legend>Your Orders</legend>
@@ -25,36 +38,21 @@
                 </tr>
             </thead>
             <tbody>
+                <?php while ($row = mysqli_fetch_array($result)) { ?>
                 <tr>
                     <td class="text-center">
-                        <img width="120" class="img-thumbnail" title="Rotator Blower"
-                                alt="Rotator Blower" src="images/1.jpg">
+                        <img width="120" class="img-thumbnail" src="<?php echo $row['image_link'] ?>">
                     </td>
-                    <td class="text-left">Rotator Blower</td>
-                    <td class="text-center">#214521</td>
-                    <td class="text-center">1</td>
+                    <td class="text-left"><?php echo $row["name"] ?></td>
+                    <td class="text-center"><?php echo $row["order_id"] ?></td>
+                    <td class="text-center"><?php echo $row["quantity"] ?></td>
                     <td class="text-center">Shipped</td>
-                    <td class="text-center">21/06/2022</td>
-                    <td class="text-right">Rs. 35,000.00</td>
+                    <td class="text-center"><?php echo $row["date"] ?></td>
+                    <td class="text-right">Rs. <?php echo $row["price"] ?></td>
                     <td class="text-center"><a class="btn" title="" data-toggle="tooltip" href=""><i class="fa fa-reply"></i></a>
                     </td>
                 </tr>
-                <tr>
-                    <td class="text-center">
-                        <img width="120" class="img-thumbnail"
-                                title="Lawn Mower LC 18" alt="Lawn Mower LC 18"
-                                src="images/2.jpg">
-                    </td>
-                    <td class="text-left">Lawn Mower LC 18</td>
-                    <td class="text-center">#1565245</td>
-                    <td class="text-center">2</td>
-                    <td class="text-center">Shipped</td>
-                    <td class="text-center">20/06/2022</td>
-                    <td class="text-right">Rs. 52,580.00</td>
-                    <td class="text-center">
-                        <a class="btn" title="" data-toggle="tooltip" href=""> <i class="fa fa-reply"></i></a>
-                    </td>
-                </tr>
+                <?php } ?>
             </tbody>
         </table>
     </div>

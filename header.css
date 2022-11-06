@@ -77,8 +77,8 @@ body {
 }
 
 .user-dropdown-content a:hover {
-    background-color: #918e8e2c;
-    color: rgb(106, 104, 104);
+    background-color: #333;
+    color: #ececec;
 }
 
 .user-dropdown:hover .user-dropdown-content {

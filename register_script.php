@@ -26,9 +26,7 @@ $username = "root";
 $password = "";
 $dbname = "agrikartdb";
 
-// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
@@ -42,7 +40,7 @@ if ($passwrd != $cpasswrd) {
 	header("location:Register.php?imessage='invalid'");
 } else {
 	if ($conn->query($sql) === TRUE) {
-		header("location:Register.php?smessage='insert'");
+		header("location:Login.php");
 	} else {
 		echo "Error: " . $conn->error;
 	}

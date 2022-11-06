@@ -139,9 +139,7 @@
 
             </div>
             <center>
-                <?php if (isset($_GET["smessage"])) { ?>
-                        <p style="margin: 0; color: green;">User added successfully!</p>
-                <?php } elseif (isset($_GET["emessage"])) { ?>
+                <?php if (isset($_GET["emessage"])) { ?>
                         <p style="margin: 0; color: red;">Passwords do not match!</p>
                 <?php } elseif (isset($_GET["imessage"])) { ?>
                         <p style="margin: 0; color: red;">Invalid Password!</p>

@@ -21,17 +21,35 @@ $username = "root";
 $password = "";
 $dbname = "agrikartdb";
 
-// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "INSERT INTO `card_details` (`fname`, `email`, `address`, `city`, `state`, `pincode`, `name`, `card_number`) 
+$sql = "INSERT INTO `card details` (`fname`, `email`, `address`, `city`, `state`, `pincode`, `name`, `card_number`) 
         VALUES ('$fname', '$email', '$address', '$city', '$state', '$pcode', '$name', '$number')";
 
-if ($conn->query($sql) === TRUE) {
+$sql1 = "SELECT * FROM cart";
+$result = mysqli_query ($conn, $sql1);
+while ($row = mysqli_fetch_array($result))
+{
+    $oname = $row["name"];
+    $oimage = $row["image_link"];
+    $oid = "#" . rand(100000,999999);
+    $oquan = $row["quantity"];
+    $odate = date("Y-m-d");
+    $oprice = $row["price"] * $oquan;
+
+    $sql2 = "INSERT INTO `order history`(`name`, `image_link`, `order_id`, `quantity`, `date`, `price`) VALUES ('$oname','$oimage','$oid','$oquan','$odate','$oprice')";    
+    if (!($conn->query($sql2) === TRUE)) {
+        echo "Error: " . $conn->error;
+    }
+}
+
+$sql3 = "TRUNCATE TABLE `agrikartdb`.`cart`";
+
+if ($conn->query($sql) === TRUE && $conn->query($sql3) === TRUE) {
+
     header("location:Explore.php");
 } else {
     echo "Error: " . $conn->error;
