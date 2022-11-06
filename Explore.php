@@ -62,12 +62,16 @@
                             </div>
 
                             <div class="tag-name">
-                                <i class="fas fa-shopping-cart"></i>
-                                <button type="submit" name="add">Add To Cart</button>
-                                <input type="hidden" name="p_id" value="<?php echo $row["id"] ?>">
-                                <input type="hidden" name="p_name" value="<?php echo $row["name"] ?>">
-                                <input type="hidden" name="p_image" value="<?php echo $row["image_link"] ?>">
-                                <input type="hidden" name="p_price" value="<?php echo $row["price"] ?>">
+                                <?php if ($row["quantity"] > 0) { ?>
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <button type="submit" name="add">Add To Cart</button>
+                                    <input type="hidden" name="p_id" value="<?php echo $row["id"] ?>">
+                                    <input type="hidden" name="p_name" value="<?php echo $row["name"] ?>">
+                                    <input type="hidden" name="p_image" value="<?php echo $row["image_link"] ?>">
+                                    <input type="hidden" name="p_price" value="<?php echo $row["price"] ?>">
+                                <?php } else { ?>
+                                    <button type="submit" name="add">Out Of Stock</button>
+                                <?php } ?>
                             </div>
                             <div class="name">
                                 <p><?php echo $row["name"] ?></p>
@@ -82,7 +86,17 @@
                
             <?php
 
-            $total_rows = 117;     
+            $connection = mysqli_connect($servername, $username, $password, $dbname);
+            $query = "SELECT * FROM `products`";
+
+            // Execute the query and store the result set
+            $result = mysqli_query($connection, $query);
+
+            if ($result)
+            {
+                $total_rows = mysqli_num_rows($result);
+                mysqli_free_result($result);
+            }    
 
             $total_pages = ceil($total_rows / $limit);     
 

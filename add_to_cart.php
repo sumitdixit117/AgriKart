@@ -24,14 +24,36 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "INSERT INTO cart (id, name, image_link, quantity, price)
-VALUES ('$productid', '$productname','$productimage','1','$productprice')";
+$query = "SELECT * FROM cart";
 
-if ($conn->query($sql) === TRUE) {
-    header("location:Explore.php");
-} else {
-    echo "Error: " . $conn->error;
+$result = mysqli_query ($conn, $query);
+$found = 0;
+
+while ($row = mysqli_fetch_array($result)){
+    if ($row["id"]==$productid) {
+        $quan = $row["quantity"] + 1;
+        $upsql = "UPDATE `cart` SET `quantity` = $quan WHERE `cart`.`id` = $productid";
+        $found = 1;
+        if ($conn->query($upsql) === TRUE) {
+            header("location:Explore.php");
+        } else {
+            echo "Error: " . $conn->error;
+        }
+    }
 }
+
+if ($found == 0) {
+    
+    $sql = "INSERT INTO cart (id, name, image_link, quantity, price)
+    VALUES ('$productid', '$productname','$productimage','1','$productprice')";
+    
+    if ($conn->query($sql) === TRUE) {
+        header("location:Explore.php");
+    } else {
+        echo "Error: " . $conn->error;
+    }
+}
+
 
 $conn->close();
 ?>
