@@ -27,9 +27,7 @@
         <div class="dropdown">
             <button class="dropbtn">Seeds <i class="fa fa-caret-down"></i></button>
             <div class="dropdown-content">
-                <div class="second-level-dropdown">
-                    <button class="dropbtn">Flower Seeds <i class="fa fa-caret-right"></i></button>
-                </div>
+                <a href="#">Flower Seeds</a>
                 <a href="#">Vegetable Seeds</a>
                 <a href="#">Fruit Seeds</a>
             </div>
@@ -37,7 +35,7 @@
         <div class="dropdown">
             <button class="dropbtn">Plant Protection <i class="fa fa-caret-down"></i></button>
             <div class="dropdown-content">
-                <a href="#">Fungicides</a>
+                <a href="#">Pesticides</a>
                 <a href="#">Insecticides</a>
                 <a href="#">Water Soluble Fertilizers</a>
                 <a href="#">Organic Products</a>
