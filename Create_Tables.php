@@ -39,7 +39,7 @@ $sql2 = "CREATE TABLE `agrikartdb`.`products`
  PRIMARY KEY (`id`)) ENGINE = MyISAM";
 
 $sql3 = "CREATE TABLE `agrikartdb`.`cart` 
- ( `id` int NOT NULL AUTO_INCREMENT,
+ ( `id` int NOT NULL,
   `name` varchar(50) NOT NULL,
   `image_link` varchar(200) NOT NULL,
   `quantity` int(11) NOT NULL,

@@ -11,6 +11,10 @@
     margin: 0 auto;
 }
 
+.products form{
+    display: inline;
+}
+
 .product {
     width: 18%;
     display: inline-block;
@@ -38,6 +42,16 @@
     background-color: black;
     padding: 5%;
     /* visibility: hidden; */
+}
+
+.tag-name button {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
 }
 
 .name p {
