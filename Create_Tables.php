@@ -46,6 +46,9 @@ $sql3 = "CREATE TABLE `agrikartdb`.`cart`
   `price` double NOT NULL,
   PRIMARY KEY (`id`)) ENGINE=MyISAM";
 
+$sql4 = "CREATE TABLE `agrikartdb`.`order history` ( `name` VARCHAR(50) NOT NULL , `image_link` VARCHAR(200) NOT NULL , `order_id` VARCHAR(7) NOT NULL , `quantity` INT NOT NULL , `date` DATE NOT NULL , `price` DOUBLE NOT NULL ) ENGINE = MyISAM";
+$sql5 = "CREATE TABLE `agrikartdb`.`card details` ( `id` INT NOT NULL AUTO_INCREMENT , `fname` VARCHAR(30) NOT NULL , `email` VARCHAR(40) NOT NULL , `address` VARCHAR(50) NOT NULL , `city` VARCHAR(20) NOT NULL , `state` VARCHAR(20) NOT NULL , `pincode` VARCHAR(6) NOT NULL , `name` VARCHAR(30) NOT NULL , `card number` VARCHAR(20) NOT NULL , PRIMARY KEY (`id`)) ENGINE = MyISAM";
+
 $sql = "INSERT INTO products (name, price, image_link, season, quantity, category) 
            VALUES ('Yellow Marigold Seeds','450', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/img53.jpg?raw=true', 'winter', '150','flower'),
           ('Orange Marigold Seeds','380', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/img54.jpg?raw=true', 'winter', '150','flower'),
@@ -167,7 +170,7 @@ $sql = "INSERT INTO products (name, price, image_link, season, quantity, categor
           
  
 
-if ($conn->query($sql1) === TRUE && $conn->query($sql2) === TRUE && $conn->query($sql3) === TRUE && $conn->query($sql) === TRUE) {
+if ($conn->query($sql1) === TRUE && $conn->query($sql2) === TRUE && $conn->query($sql3) === TRUE && $conn->query($sql4) === TRUE && $conn->query($sql) === TRUE) {
   echo "Tables created successfully and data entered";
 } else {
   echo "Error creating tables or entering data: " . $conn->error;
