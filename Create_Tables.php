@@ -44,7 +44,8 @@ $sql3 = "CREATE TABLE `agrikartdb`.`cart`
   PRIMARY KEY (`id`)) ENGINE=MyISAM";
 
 $sql4 = "CREATE TABLE `agrikartdb`.`order history` ( `name` VARCHAR(50) NOT NULL , `image_link` VARCHAR(200) NOT NULL , `order_id` VARCHAR(7) NOT NULL , `quantity` INT NOT NULL , `date` DATE NOT NULL , `price` DOUBLE NOT NULL ) ENGINE = MyISAM";
-$sql5 = "CREATE TABLE `agrikartdb`.`card details` ( `id` INT NOT NULL AUTO_INCREMENT , `fname` VARCHAR(30) NOT NULL , `email` VARCHAR(40) NOT NULL , `address` VARCHAR(50) NOT NULL , `city` VARCHAR(20) NOT NULL , `state` VARCHAR(20) NOT NULL , `pincode` VARCHAR(6) NOT NULL , `name` VARCHAR(30) NOT NULL , `card_number` VARCHAR(20) NOT NULL , PRIMARY KEY (`id`)) ENGINE = MyISAM";
+$sql5 = "CREATE TABLE `agrikartdb`.`card details` ( `id` INT NOT NULL AUTO_INCREMENT , `fname` VARCHAR(30) NOT NULL , `email` VARCHAR(50) NOT NULL , `address` VARCHAR(50) NOT NULL , `city` VARCHAR(20) NOT NULL , `state` VARCHAR(20) NOT NULL , `pincode` VARCHAR(6) NOT NULL , `name` VARCHAR(30) NOT NULL , `card_number` VARCHAR(20) NOT NULL , PRIMARY KEY (`id`)) ENGINE = MyISAM";
+$sql6 = "CREATE TABLE `agrikartdb`.`contact form` (`id` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(30) NOT NULL , `email` VARCHAR(50) NOT NULL , `subject` VARCHAR(50) NOT NULL , `query` VARCHAR(200) NOT NULL , PRIMARY KEY (`id`)) ENGINE = MyISAM";
 
 $sql = "INSERT INTO products (name, price, image_link, season, quantity, category) 
            VALUES ('Yellow Marigold Seeds','450', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/img53.jpg?raw=true', 'winter', '150','flower'),
@@ -167,7 +168,7 @@ $sql = "INSERT INTO products (name, price, image_link, season, quantity, categor
           
  
 
-if ($conn->query($sql1) === TRUE && $conn->query($sql2) === TRUE && $conn->query($sql3) === TRUE && $conn->query($sql4) === TRUE && $conn->query($sql5) === TRUE && $conn->query($sql) === TRUE) {
+if ($conn->query($sql1) === TRUE && $conn->query($sql2) === TRUE && $conn->query($sql3) === TRUE && $conn->query($sql4) === TRUE && $conn->query($sql5) === TRUE && $conn->query($sql6) === TRUE && $conn->query($sql) === TRUE) {
   echo "Tables created successfully and data entered";
 } else {
   echo "Error creating tables or entering data: " . $conn->error;
