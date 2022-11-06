@@ -27,21 +27,21 @@
         <div class="dropdown">
             <button class="dropbtn">Seeds <i class="fa fa-caret-down"></i></button>
             <div class="dropdown-content">
-                <a href="flower.php">Flower Seeds</a>
-                <a href="seeds.php">Vegetable Seeds</a>
-                <a href="fruit.php">Fruit Seeds</a>
+                <a href="Flower.php">Flower Seeds</a>
+                <a href="Seeds.php">Vegetable Seeds</a>
+                <a href="Fruit.php">Fruit Seeds</a>
             </div>
         </div>
         <div class="dropdown">
             <button class="dropbtn">Plant Protection <i class="fa fa-caret-down"></i></button>
             <div class="dropdown-content">
-                <a href="pest.php">Pesticides</a>
-                <a href="pest.php">Insecticides</a>
-                <a href="pest.php">Water Soluble Fertilizers</a>
-                <a href="pest.php">Organic Products</a>
-                <a href="pest.php">Bactericides</a>
+                <a href="Pest.php">Pesticides</a>
+                <a href="Pest.php">Insecticides</a>
+                <a href="Pest.php">Water Soluble Fertilizers</a>
+                <a href="Pest.php">Organic Products</a>
+                <a href="Pest.php">Bactericides</a>
             </div>
         </div>
-         <a href="flower.php">Flower Seeds</a>
-        <a href="tools.php">Tools and Machinery</a>
+         <a href="Flower.php">Flower Seeds</a>
+        <a href="Tools.php">Tools and Machinery</a>
     </div>

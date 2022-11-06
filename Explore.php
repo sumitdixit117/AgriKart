@@ -70,7 +70,7 @@
                                     <input type="hidden" name="p_image" value="<?php echo $row["image_link"] ?>">
                                     <input type="hidden" name="p_price" value="<?php echo $row["price"] ?>">
                                 <?php } else { ?>
-                                    <button type="submit" name="add">Out Of Stock</button>
+                                    <span style="cursor: default;">Out Of Stock</span>
                                 <?php } ?>
                             </div>
                             <div class="name">

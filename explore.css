@@ -6,7 +6,6 @@
 
 .products {
     text-align: center;
-    padding-bottom: 5%;
     width: 90%;
     margin: 0 auto;
 }
@@ -92,15 +91,17 @@
 } */
 
 .inline {
-    margin: 20px 0 35px;
-    /* float: right; */
-    margin-left: 48%;
+    position: absolute;
+    right: 20px;
+    margin-top: -82px;
 }
 
 .items {
 
-    display: inline-block;
-    margin-left: 36%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px auto;
 }
 
 .items a {
