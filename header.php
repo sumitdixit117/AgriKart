@@ -29,11 +29,6 @@
             <div class="dropdown-content">
                 <div class="second-level-dropdown">
                     <button class="dropbtn">Flower Seeds <i class="fa fa-caret-right"></i></button>
-                    <div class="dropdown-content second-dropdown-content">
-                        <a href="#">Vegetable Seeds</a>
-                        <a href="#">Flower Seeds</a>
-                        <a href="#">Fruit Seeds</a>
-                    </div>
                 </div>
                 <a href="#">Vegetable Seeds</a>
                 <a href="#">Fruit Seeds</a>
