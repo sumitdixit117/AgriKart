@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Explore</title>
+    <title>pest</title>
     <style>
         <?php include "explore.css" ?>
     </style>
@@ -14,9 +14,6 @@
         <i class="fas fa-heart b"></i>
         <i class="fas fa-search-plus c"></i>
     </div> -->
-    <div class="offer-heading">
-        <h1>Today's Offers</h1>
-    </div>
     <?php
         $servername = "localhost";
         $username = "root";
@@ -46,7 +43,8 @@
         // get data of selected rows per page 
 
         $getQuery = "SELECT * FROM `products` WHERE category='pest' LIMIT $initial_page, $limit";     
-        $result = mysqli_query ($conn, $getQuery); ?>'
+
+        $result = mysqli_query ($conn, $getQuery); ?>
 
                 <div class="products">
                 <?php
@@ -54,30 +52,38 @@
                while ($row = mysqli_fetch_array($result))
                {
                     ?>
-                    <div class="product">
-                        <div class="img-div">
-                            <img src="<?php echo $row["image_link"] ?>" alt="Image">
-                        </div>
+                    <form method="post" action="add_to_cart.php">
+                        <div class="product">
+                            <div class="img-div">
+                                <img src="<?php echo $row["image_link"] ?>" alt="Image">
+                            </div>
 
-                        <div class="tag-name">
-                            <i class="fas fa-shopping-cart"></i>
-                            <button>Add To Cart</button>
+                            <div class="tag-name">
+                                <?php if ($row["quantity"] > 0) { ?>
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <button type="submit" name="add">Add To Cart</button>
+                                    <input type="hidden" name="p_id" value="<?php echo $row["id"] ?>">
+                                    <input type="hidden" name="p_name" value="<?php echo $row["name"] ?>">
+                                    <input type="hidden" name="p_image" value="<?php echo $row["image_link"] ?>">
+                                    <input type="hidden" name="p_price" value="<?php echo $row["price"] ?>">
+                                <?php } else { ?>
+                                    <span style="cursor: default;">Out Of Stock</span>
+                                <?php } ?>
+                            </div>
+                            <div class="name">
+                                <p><?php echo $row["name"] ?></p>
+                                <p><?php echo "Rs. " . $row["price"] ?></p>
+                            </div>
                         </div>
-                        <div class="name">
-                            <p><?php echo $row["name"] ?></p>
-                            <p><?php echo "Rs. " . $row["price"] ?></p>
-                        </div>
-                    </div>
+                    </form>
                     <?php
                } ?>
                </div>
             <div class="items">
                
             <?php
-             $connection = mysqli_connect($servername, $username, $password, $dbname);
 
-            // query to fetch Username and Password from
-            // the table geek
+            $connection = mysqli_connect($servername, $username, $password, $dbname);
             $query = "SELECT * FROM `products` WHERE category='pest'";
 
             // Execute the query and store the result set
@@ -85,10 +91,9 @@
 
             if ($result)
             {
-            $row = mysqli_num_rows($result);
-            mysqli_free_result($result);
-            }
-            $total_rows = $row;     
+                $total_rows = mysqli_num_rows($result);
+                mysqli_free_result($result);
+            }    
 
             $total_pages = ceil($total_rows / $limit);     
 
