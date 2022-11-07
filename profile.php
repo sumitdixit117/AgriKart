@@ -26,7 +26,7 @@
         {
             $fname = $row["fname"];
             $lname = $row["lname"];
-            $gender= $row["gender"];
+            $gender= ucfirst($row["gender"]);
             $phone = $row["phone"];
             $address = $row["address"];
             $email = $row["email"];
@@ -35,38 +35,49 @@
         
         ?>   
     <form action="logout.php">
-        <div class="profile" >
-                <center>
+        <center>
+            <div class="profile" >
                     <img src="https://bootdey.com/img/Content/avatar/avatar7.png" height="150px" width="150px" style="border-radius: 50%; border:3px solid grey;">
                 <table>
-                   <tr class="head"><td> Personal Information</td></tr>
-                   <tr>
-                <td ><span>Name<span></td>
-                    <td><div class="value"> <?php echo $fname." ".$lname ?></div></td></tr>
-                    <tr>
-                <td><span>Username<span></td>
-                    <td><div class="value"> <?php echo $username ?></div></td></tr>
-                    <tr>
-                <td><span>Website<span></td>
-                    <td><div class="value">www.Agrikart.com</div></td></tr>
-                 <tr class="head"><td> Private Information</td></tr>
-
-                   <tr>
-                <td><span>Email<span></td>
-                    <td><div class="value"> <?php echo $email?></div></td>
-                </tr>
-                    <tr>
-                <td><span>Phone<span></td>
-                    <td><div class="value"> <?php echo $phone ?></div></td>
+                    <tr class="head">
+                        <td> Personal Information</td>
                     </tr>
                     <tr>
-                <td><span>Gender<span></td>
-                    <td><div class="value"><?php echo $gender ?></div></td>
+                        <td><span>Name<span></td>
+                        <td><div class="value"> <?php echo $fname." ".$lname ?></div></td>
+                    </tr>
+                    <tr>
+                        <td><span>Username<span></td>
+                        <td><div class="value"> <?php echo $username ?></div></td>
+                    </tr>
+                    <tr>
+                        <td><span>Website<span></td>
+                        <td><div class="value">www.AgriKart.com</div></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;
+                        </td>    
+                    </tr>
+                    <tr class="head">
+                        <td> Private Information</td>
+                    </tr>
+                    <tr>
+                        <td><span>Email<span></td>
+                        <td><div class="value"> <?php echo $email?></div></td>
+                    </tr>
+                    <tr>
+                        <td><span>Phone<span></td>
+                        <td><div class="value"> <?php echo $phone ?></div></td>
+                    </tr>
+                    <tr>
+                        <td><span>Gender<span></td>
+                        <td><div class="value"><?php echo $gender ?></div></td>
                     </tr>
                 </table> 
                 <button type="submit" class="lgtbtn" value="LogOut">LogOut</button>
-                </center>
-        </div>
+            </div>
+        </center>
     </form>
 
 <?php require_once('footer.php'); ?>

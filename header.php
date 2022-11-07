@@ -5,21 +5,6 @@
 <script src="https://kit.fontawesome.com/2cf05c34d2.js" crossorigin="anonymous"></script>
 </head>
 
-<?php
-    $dbhost = 'localhost';
-    $dbname = 'agrikartdb';
-    $dbuser = 'root';
-    $dbpass = '';
-
-    try {
-        $pdo = new PDO("mysql:host={$dbhost};dbname={$dbname}", $dbuser, $dbpass);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch (PDOException $exception) {
-        echo "Connection error :" . $exception->getMessage();
-    }
-
-?>
-
 <body>
     <div class="topnav">
         <a class="active" href="Explore.php"><img src="images/Logo.png" class="logo"></a>

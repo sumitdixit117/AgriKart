@@ -22,10 +22,17 @@ body {
 }
 
 .orders-div legend {
+    color: black;
     margin-left: 15%;
-    font-size: 1.7rem;
+    font-size: 2rem;
     font-weight: 700;
     padding: 2% 0 1%;
+}
+
+.orders-div h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin: 80px auto;
 }
 
 .orders-table thead tr {

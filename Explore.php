@@ -38,13 +38,24 @@
         } 
         $limit = 20;    
 
+        $query = "SELECT * FROM `products`";
+
+        $result = mysqli_query($conn, $query);
+
+        if ($result)
+        {
+            $total_rows = mysqli_num_rows($result);
+            mysqli_free_result($result);
+        }    
+
+        $total_pages = ceil($total_rows / $limit);  
+
 
         if (isset($_GET["page"])) {    
             $page_number  = $_GET["page"];    
         }   else {    
             $page_number=1;
         }       
-
 
         $initial_page = ($page_number-1) * $limit;       
 
@@ -87,20 +98,7 @@
                </div>
             <div class="items">
                
-            <?php
-
-            $connection = mysqli_connect($servername, $username, $password, $dbname);
-            $query = "SELECT * FROM `products`";
-
-            $result = mysqli_query($connection, $query);
-
-            if ($result)
-            {
-                $total_rows = mysqli_num_rows($result);
-                mysqli_free_result($result);
-            }    
-
-            $total_pages = ceil($total_rows / $limit);     
+            <?php   
 
             $pageURL = "";             
 

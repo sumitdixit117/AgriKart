@@ -20,9 +20,11 @@
 
     $getQuery = "SELECT * FROM `order history`";     
 
-    $result = mysqli_query ($conn, $getQuery); ?>
-
-    <div class="orders-div">
+    $result = mysqli_query($conn, $getQuery);
+    $rows = mysqli_num_rows($result); ?> 
+    
+    <div class="orders-div"> <?php
+    if ($rows) { ?>
         <legend>Your Orders</legend>
         <table class="orders-table">
             <thead>
@@ -55,6 +57,9 @@
                 <?php } ?>
             </tbody>
         </table>
-    </div>
-    
+    <?php } else { ?>
+        <h2>No Orders found!</h2>
+    <?php } ?> 
+    </div> 
+
 <?php require_once('footer.php'); ?>
