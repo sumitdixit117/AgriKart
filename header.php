@@ -5,22 +5,39 @@
 <script src="https://kit.fontawesome.com/2cf05c34d2.js" crossorigin="anonymous"></script>
 </head>
 
+<?php
+    $dbhost = 'localhost';
+    $dbname = 'agrikartdb';
+    $dbuser = 'root';
+    $dbpass = '';
+
+    try {
+        $pdo = new PDO("mysql:host={$dbhost};dbname={$dbname}", $dbuser, $dbpass);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    } catch (PDOException $exception) {
+        echo "Connection error :" . $exception->getMessage();
+    }
+
+?>
+
 <body>
     <div class="topnav">
         <a class="active" href="Explore.php"><img src="images/Logo.png" class="logo"></a>
         <div class="user-dropdown">
             <a href="#"><i class="fas fa-user"></i></a>
             <div class="user-dropdown-content">
-                <a href="#">Your Account</a>
+                <a href="profile.php">Your Account</a>
                 <a href="Order_history.php">Your Orders</a>
                 <a href="Contact_Form.php">Contact Us</a>
-                <a href="Home.php">Log Out</a>
+                <a href="logout.php">Log Out</a>
             </div>
         </div>
         <a style="pointer-events: none;">|</a>
         <a href="Cart.php"><i class="fas fa-shopping-cart"></i></a>
-        <a href="#"><i class="fas fa-search"></i></a>
-        <input type="search" placeholder="Search...">
+        <form role="search" action="search_result.php" method="get">
+            <button type="submit" class="search-button"><a href="#"><i class="fas fa-search"></i></a></button>
+            <input type="search" placeholder="Search..." name="search_text">
+        </form>
     </div>
     <div class="bottom-nav">
         <a href="Explore.php" class="home-nav">Home</a>
@@ -58,6 +75,6 @@
                 <a href="Pest.php">Bactericides</a>
             </div>
         </div>
-        <a href="Fruits.php">Fruit Seeds</a>
+        <a href="Fruit.php">Fruit Seeds</a>
         <a href="Tools.php">Tools and Machinery</a>
     </div>

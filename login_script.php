@@ -23,16 +23,16 @@ if (!empty($_POST['email']) && !empty($_POST['pass'])) {
     
     $sql = "SELECT * FROM users WHERE Email='$email' AND Password='$passwrd'";
     $result = mysqli_query ($conn, $sql);
-    if($result->num_rows != 0){
+    if(mysqli_num_rows($result) != 0){
         while ($row = mysqli_fetch_array($result))
         {
             $fname = $row["fname"];
             $lname = $row["lname"];
             $gender= $row["gender"];
             $phone = $row["phone"];
-            $address =$row["address"].",".$row["city"].",".$row["state"].",".$row["pincode"];
+            $address = $row["address"].",".$row["city"].",".$row["state"].",".$row["pincode"];
             $email = $row["email"];
-            $sql2="INSERT INTO `user_curr` (`fname`, `lname`, `gender`, `phone`, `address`, `email`) 
+            $sql2 = "INSERT INTO `user_curr` (`fname`, `lname`, `gender`, `phone`, `address`, `email`) 
             VALUES ('$fname', '$lname', '$gender', '$phone', '$address', '$email')";   
             if (!(mysqli_query($conn,$sql2) === TRUE)) {
                 echo "Error: " . $conn->error;

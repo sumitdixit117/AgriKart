@@ -24,10 +24,15 @@ body {
     float: right;
     border: 1.5px solid black;
     font-size: 1rem;
-    margin-top: 1%;
+    margin-top: 1.5%;
+    margin-right: 30px;
     width: 250px;
     padding: 10px;
     border-radius: 6px;
+}
+
+.topnav form{
+    margin: 0;
 }
 
 .topnav .active {
@@ -44,9 +49,27 @@ body {
     border-color: black;
 }
 
+.topnav input[type="search"]::-webkit-search-decoration,
+.topnav input[type="search"]::-webkit-search-cancel-button,
+.topnav input[type="search"]::-webkit-search-results-button,
+.topnav input[type="search"]::-webkit-search-results-decoration { 
+    display: none; 
+}
+
+.search-button {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
 .fa-search {
     position: absolute;
-    right: 360px;
+    right: 370px;
+    top: 88px;
 }
 
 .fa-user {

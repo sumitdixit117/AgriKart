@@ -28,7 +28,9 @@
       <div class="header">
         <h3 class="heading">Shopping Cart</h3>
         <div class="action">
-          <button class="remove" style="color: red">Remove all</button>
+        <form action="removeall.php" >
+          <button type="submit" class="remove" style="color: red">Remove all</button>
+        </form>
         </div>
       </div>
 
@@ -67,9 +69,12 @@
               <h2 class="price"><?php echo "Rs. " . $price ?></h2>
             </div>
             <div class="buttons">
-              <div style="top: 8px" class="delete">
-                <i class="fas fa-trash-alt icon-large"></i>
-              </div>
+              <form method="post" action="">
+                <div style="top: 8px" class="delete">
+                  <button type="submit" name="deleteButton"><i class="fas fa-trash-alt icon-large"></i></button>
+                  <input type="hidden" name="idValue" value="<?php echo $pid ?>">
+                </div>
+              </form>
               <div style="top: 60px" class="save">
                 <i class="fas fa-star icon-large"></i>
               </div>
@@ -78,6 +83,17 @@
           <?php } ?>
         </section>
       </div>
+      <?php
+        if (isset($_POST["deleteButton"])) {
+          $pid = $_POST['idValue'];
+          $deleteQuery = "DELETE FROM `cart` WHERE `id` = $pid";
+          if ($conn->query($deleteQuery) === TRUE) {
+            echo("<script>location.href = 'Cart.php';</script>");
+          } else {
+            echo "Error: " . $conn->error;
+          }
+        }
+      ?>
 
       <div id="site-footer">
       <form method="post" action="">
@@ -89,7 +105,7 @@
           </div>
 
           <div style="float: right;">
-            <h1 class="total">Total: Rs<span id="tot"> <?php echo ($subtotal + $subtotal * 0.05 + 100) ?></span></h1>
+            <h1 class="total">Total: Rs<span id="tot"> <?php echo ($subtotal + $subtotal * 0.05) . " (+ Shipping)" ?></span></h1>
             <a class="btn" href="Payment_Gateway.php">Checkout</a>
           </div>
         </div>
