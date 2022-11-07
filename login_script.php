@@ -30,7 +30,7 @@ if (!empty($_POST['email']) && !empty($_POST['pass'])) {
             $lname = $row["lname"];
             $gender= $row["gender"];
             $phone = $row["phone"];
-            $address = $row["address"];
+            $address =$row["address"].",".$row["city"].",".$row["state"].",".$row["pincode"];
             $email = $row["email"];
             $sql2="INSERT INTO `user_curr` (`fname`, `lname`, `gender`, `phone`, `address`, `email`) 
             VALUES ('$fname', '$lname', '$gender', '$phone', '$address', '$email')";   
