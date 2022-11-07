@@ -46,7 +46,7 @@ $sql3 = "CREATE TABLE `agrikartdb`.`cart`
 $sql4 = "CREATE TABLE `agrikartdb`.`order history` ( `name` VARCHAR(50) NOT NULL , `image_link` VARCHAR(200) NOT NULL , `order_id` VARCHAR(7) NOT NULL , `quantity` INT NOT NULL , `date` DATE NOT NULL , `price` DOUBLE NOT NULL ) ENGINE = MyISAM";
 $sql5 = "CREATE TABLE `agrikartdb`.`card details` ( `id` INT NOT NULL AUTO_INCREMENT , `fname` VARCHAR(30) NOT NULL , `email` VARCHAR(50) NOT NULL , `address` VARCHAR(50) NOT NULL , `city` VARCHAR(20) NOT NULL , `state` VARCHAR(20) NOT NULL , `pincode` VARCHAR(6) NOT NULL , `name` VARCHAR(30) NOT NULL , `card_number` VARCHAR(20) NOT NULL , PRIMARY KEY (`id`)) ENGINE = MyISAM";
 $sql6 = "CREATE TABLE `agrikartdb`.`contact form` (`id` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(30) NOT NULL , `email` VARCHAR(50) NOT NULL , `subject` VARCHAR(50) NOT NULL , `query` VARCHAR(200) NOT NULL , PRIMARY KEY (`id`)) ENGINE = MyISAM";
-
+$sql7="CREATE TABLE `agrikartdb`.`user_curr` (`id` INT NOT NULL AUTO_INCREMENT ,  `fname` VARCHAR(30) NOT NULL , `lname` VARCHAR(30) NOT NULL , `gender` VARCHAR(6) NOT NULL , `phone` VARCHAR(15) NOT NULL , `address` VARCHAR(50) NOT NULL , `email` VARCHAR(40) NOT NULL ) ENGINE = MyISAM;";
 $sql = "INSERT INTO products (name, price, image_link, season, quantity, category) 
            VALUES ('Yellow Marigold Seeds','450', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/img53.jpg?raw=true', 'winter', '150','flower'),
           ('Orange Marigold Seeds','380', 'https://github.com/sumitdixit117/AgriKart/blob/main/images/img54.jpg?raw=true', 'winter', '150','flower'),
