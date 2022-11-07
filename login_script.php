@@ -22,13 +22,25 @@ if (!empty($_POST['email']) && !empty($_POST['pass'])) {
     $passwrd = val($_POST["pass"]);  
     
     $sql = "SELECT * FROM users WHERE Email='$email' AND Password='$passwrd'";
-
-    $result = $conn->query($sql);
-
-    
-    if ($result->num_rows != 0) {
+    $result = mysqli_query ($conn, $sql);
+    if($result->num_rows != 0){
+        while ($row = mysqli_fetch_array($result))
+        {
+            $fname = $row["fname"];
+            $lname = $row["lname"];
+            $gender= $row["gender"];
+            $phone = $row["phone"];
+            $address = $row["address"];
+            $email = $row["email"];
+            $sql2="INSERT INTO `user_curr` (`fname`, `lname`, `gender`, `phone`, `address`, `email`) 
+            VALUES ('$fname', '$lname', '$gender', '$phone', '$address', '$email')";   
+            if (!(mysqli_query($conn,$sql2) === TRUE)) {
+                echo "Error: " . $conn->error;
+            }
+        }
         header("location: Explore.php");
-    } else {
+    }
+    else{
         header("location:Login.php?message='invalid'");
     }
 } else {
