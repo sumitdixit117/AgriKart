@@ -37,7 +37,9 @@
     <form action="logout.php">
         <center>
             <div class="profile" >
-                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" height="150px" width="150px" style="border-radius: 50%; border:3px solid grey;">
+                    <?php if($gender=="Male"){?>
+                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" height="150px" width="150px" style="border-radius: 50%; border:3px solid grey;"><?php } else{?>
+                        <img src="https://bootdey.com/img/Content/avatar/avatar3.png" height="150px" width="150px" style="border-radius: 50%; border:3px solid grey;"><?php } ?>
                 <table>
                     <tr class="head">
                         <td> Personal Information</td>
