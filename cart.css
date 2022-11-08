@@ -205,8 +205,6 @@
 
 #site-footer h1 {
     background: #fcfcfc;
-    border: 1px solid #ccc;
-    border-style: none none solid none;
     font-size: 24px;
     font-weight: 300;
     margin: 0;
@@ -228,8 +226,6 @@
 
 .btn {
     background: #53b5aa;
-    border: 1px solid #999;
-    border-style: none none solid none;
     cursor: pointer;
     display: block;
     color: #fff;

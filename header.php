@@ -21,7 +21,7 @@
         <a href="Cart.php"><i class="fas fa-shopping-cart"></i></a>
         <form role="search" action="search_result.php" method="get">
             <button type="submit" class="search-button"><a href="#"><i class="fas fa-search"></i></a></button>
-            <input type="search" placeholder="Search..." name="search_text">
+            <input type="search" placeholder="Search..." name="search_text" required>
         </form>
     </div>
     <div class="bottom-nav">

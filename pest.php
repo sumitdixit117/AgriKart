@@ -10,7 +10,7 @@
 <?php require_once('header.php'); ?>
 
     <div class="offer-heading">
-        <h1>Today's Offers</h1>
+        <h1>Our Products</h1>
     </div>
     <?php
         $servername = "localhost";

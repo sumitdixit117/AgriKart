@@ -15,9 +15,7 @@ $dbhost = 'localhost';
 $dbname = 'agrikartdb';
 $dbuser = 'root';
 $dbpass = '';
-define("BASE_URL", "");
 
-define("ADMIN_URL", BASE_URL . "admin" . "/");
 try {
     $pdo = new PDO("mysql:host={$dbhost};dbname={$dbname}", $dbuser, $dbpass);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -26,7 +24,6 @@ try {
 } ?>
 
 <div class="page-banner">
-    <div class="overlay"></div>
     <div class="offer-heading">
         <h1>
             <?php
@@ -40,17 +37,12 @@ try {
 <div class="products">
     <?php
     $search_text = '%' . $search_text . '%';
-    ?>
-
-    <?php
 
     $statement = $pdo->prepare("SELECT * FROM products WHERE name LIKE ? or category LIKE ?");
     $statement->execute(array($search_text, $search_text));
     $total_rows = $statement->rowCount();
-    if ($search_text == '') {
-        $targetpage = BASE_URL . "Explore.php";
-    }
-    $targetpage = BASE_URL . 'search_result.php?search_text=' . $_REQUEST['search_text'];   
+
+    $targetpage = "search_result.php?search_text=" . $_REQUEST['search_text'];   
     $limit = 20;                                
     if (isset($_GET["page"])) {    
         $page_number  = $_GET["page"];    
