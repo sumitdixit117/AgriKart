@@ -7,12 +7,8 @@
         <?php include "profile.css"?>
     </style>
 
-<?php require_once('header.php'); ?>
+<?php require_once('header.php');
 
-    <div class="offer-heading">
-        <h1>PROFILE</h1>
-    </div>
-    <?php
         $servername = "localhost";
         $username = "root";
         $password = "";
@@ -37,9 +33,12 @@
     <form action="logout.php">
         <center>
             <div class="profile" >
-                    <?php if($gender=="Male"){?>
-                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" height="150px" width="150px" style="border-radius: 50%; border:3px solid grey;"><?php } else{?>
-                        <img src="https://bootdey.com/img/Content/avatar/avatar3.png" height="150px" width="150px" style="border-radius: 50%; border:3px solid grey;"><?php } ?>
+                <div class="offer-heading">
+                    <h1>PROFILE</h1>
+                </div>
+                <?php if($gender=="Male"){?>
+                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" height="150px" width="150px" style="border-radius: 50%; border:3px solid grey;"><?php } else{?>
+                <img src="https://bootdey.com/img/Content/avatar/avatar3.png" height="150px" width="150px" style="border-radius: 50%; border:3px solid grey;"><?php } ?>
                 <table>
                     <tr class="head">
                         <td> Personal Information</td>
@@ -77,7 +76,7 @@
                         <td><div class="value"><?php echo $gender ?></div></td>
                     </tr>
                 </table> 
-                <button type="submit" class="lgtbtn" value="LogOut">LogOut</button>
+                <button type="submit" value="LogOut">LogOut</button>
             </div>
         </center>
     </form>

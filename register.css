@@ -41,20 +41,24 @@ body {
     line-height: 55px;
 }
 
-h1,
-h2 {
+.box h1,
+.box h2,
+.heading h1,
+.heading h2 {
     text-align: center;
     font-weight: 800;
     color: white;
     margin: 0;
 }
 
-h1 {
+.box h1,
+.heading h1 {
     font-size: 40px;
     padding-bottom: 10px;
 }
 
-h2 {
+.box h2,
+.heading h2 {
     font-size: 30px;
 }
 
@@ -67,7 +71,8 @@ h2 {
     margin-bottom: 5%;
 }
 
-h3 {
+.box h3,
+.heading h3 {
     padding-bottom: 25px;
 }
 
@@ -125,10 +130,15 @@ button {
     height: 35px;
     margin-bottom: 20px;
     border: none;
-    background-color: #49c1a2;
-    color: white;
     font-size: 18px;
     border-radius: 20px;
+    border: 2px solid #49c1a2;
+    color: #49c1a2;
+}
+
+button:hover {
+    background-color: #49c1a2;
+    color: white;
 }
 
 #range-gpa {
@@ -160,11 +170,43 @@ button {
     color: #49c1a2;
 }
 
+.features {
+    padding: 2.3% 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: whitesmoke;
+}
+
+.features h2 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.features h6 {
+    margin: 10px 0;
+    font-size: 15px;
+    color: grey;
+}
+
+.feature {
+    display: flex;
+}
+
+
+.feature-div i {
+    margin-top: 10px;
+    font-size: 28px;
+}
+
+.feature-div {
+    padding: 12px;
+}
+
 .footer-distributed {
-    font-family: Open Sans;
     text-align: left;
     font: bold 16px sans-serif;
-    padding: 5%;
+    padding: 7% 5% 5%;
     background-color: white;
 }
 
