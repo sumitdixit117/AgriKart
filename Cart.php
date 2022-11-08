@@ -135,7 +135,6 @@
       ?>
 
       <div id="site-footer">
-      <form method="post" action="">
         <div class="container clearfix">
           <div style="float: left;">
             <h2 class="subtotal">Subtotal: Rs<span id="subtt"> <?php echo $subtotal ?></span></h2>
@@ -145,10 +144,13 @@
 
           <div style="float: right;">
             <h1 class="total">Total: Rs<span id="tot"> <?php echo ($subtotal + $subtotal * 0.05) . " (Shipping Extra)" ?></span></h1>
-            <a class="btn" href="Payment_Gateway.php">Checkout</a>
+            <?php if ($subtotal) { ?>
+              <a class="btn" href="Payment_Gateway.php">Checkout</a>
+              <?php } else { ?>
+                <a class="btn" href="">Checkout</a>
+            <?php } ?>
           </div>
         </div>
-      </form>
       </div>
     </div>
   </div>

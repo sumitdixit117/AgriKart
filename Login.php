@@ -21,18 +21,22 @@
     </div>
     <div class="box">
         <form method="post" action="login_script.php">
-            <div class="form-content">
+            <div class="form-content form-div">
                 <h3>Enter the following details: </h3>
                 <label>Email Address: </label><br>
-                <input type="email" size="40px" name="email" id="em" autocomplete="on"
-                    required><br>
+                <input type="email" size="40px" name="email" autocomplete="on" required><br>
                 <label>Password: </label><br>
-                <input type="password" size="40px" name="pass" id="psw" required><br>
+                <input type="password" size="40px" name="pass" required><br>
+                <label>Enter Captcha: </label><br>
+                <input type="text" size="20px" name="captcha" required>
+                <img src="captcha.php" alt="Captcha">
             </div>
             <center>
-                <?php if (isset($_GET["message"])) { ?>
-                    <p style="margin: 0; color: red;">Invalid email or password!</p>
-                <?php } ?>
+                <?php if (isset($_GET["imessage"])) { ?>
+                        <p style="margin: 20px 0 0; color: red;">Invalid email or password!</p>
+                    <?php } else if (isset($_GET["cmessage"])) { ?>
+                        <p style="margin: 20px 0 0; color: red;">Invalid Captcha!</p>
+                    <?php } ?>
                 <button type="submit" class="login-button">Log in</button>
             </center>
         </form>

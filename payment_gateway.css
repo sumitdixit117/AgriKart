@@ -16,13 +16,10 @@ body {
 #heading {
     margin-left: 22.5%;
     font-size: 2.4rem;
-    color: #017e72;
 }
 
 .row {
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin: 0 -16px;
 }
@@ -46,6 +43,11 @@ body {
 .col-50,
 .col-75 {
     padding: 0 16px;
+}
+
+.col-50 img {
+    position: relative;
+    top: 33px;
 }
 
 .container {

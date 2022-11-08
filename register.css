@@ -105,6 +105,17 @@ form select {
     margin-right: 20px;
 }
 
+.form-div {
+    width: 45%;
+    margin: auto;
+}
+
+.form-div img {
+    position: relative;
+    left: 9%;
+    top: 10px;
+}
+
 .warning {
     font-size: 12px;
     font-style: italic;
