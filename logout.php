@@ -8,6 +8,6 @@
         $sql = "TRUNCATE TABLE `agrikartdb`.`user curr`";
         if ($conn->query($sql) === TRUE) {
 
-            header("location:Home.php");
+            header("location:index.php");
         }
 ?>

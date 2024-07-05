@@ -10,10 +10,10 @@
 
 <body>
     <div class="topnav">
-        <a class="active" href="Home.php"><img src="images/logo.png" alt="AgriKart" width="170px"></a>
+        <a class="active" href="index.php"><img src="images/logo.png" alt="AgriKart" width="170px"></a>
         <a href="Login.php">Login</a>
         <a style="pointer-events: none;">|</a>
-        <a href="Home.php">Home</a>
+        <a href="index.php">Home</a>
     </div>
     </div>
     <div class="heading">
