@@ -4,10 +4,10 @@
 <head>
     <title>Contact Form</title>
     <style>
-        <?php include "contact_form.css" ?>
+        <?php include "css/contact_form.css" ?>
     </style>
 
-<?php require_once('header.php'); ?>
+<?php require_once('Header.php'); ?>
 
   <div class="contact-div">
     <table class="contact-table">
@@ -59,4 +59,4 @@
     }
   ?>
   
-<?php require_once('footer.php'); ?>
+<?php require_once('Footer.php'); ?>

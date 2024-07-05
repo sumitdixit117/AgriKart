@@ -5,7 +5,7 @@
         $dbname = "agrikartdb";
         
         $conn = new mysqli($servername, $username, $password, $dbname);
-        $sql = "TRUNCATE TABLE `agrikartdb`.`user_curr`";
+        $sql = "TRUNCATE TABLE `agrikartdb`.`user curr`";
         if ($conn->query($sql) === TRUE) {
 
             header("location:Home.php");

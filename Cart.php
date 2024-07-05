@@ -4,10 +4,10 @@
 <head>
     <title>Cart</title>
     <style>
-        <?php include "cart.css" ?>
+        <?php include "css/cart.css" ?>
     </style>
 
-<?php require_once('header.php');
+<?php require_once('Header.php');
 
         $servername = "localhost";
         $username = "root";
@@ -28,7 +28,7 @@
       <div class="header">
         <h3 class="heading">Shopping Cart</h3>
         <div class="action">
-        <form action="removeall.php" >
+        <form action="remove_all.php" >
           <button type="submit" class="remove" style="color: red">Remove all</button>
         </form>
         </div>
@@ -145,7 +145,7 @@
           <div style="float: right;">
             <h1 class="total">Total: Rs<span id="tot"> <?php echo ($subtotal + $subtotal * 0.05) . " (Shipping Extra)" ?></span></h1>
             <?php if ($subtotal) { ?>
-              <a class="btn" href="Payment_Gateway.php">Checkout</a>
+              <a class="btn" href="Payment_gateway.php">Checkout</a>
               <?php } else { ?>
                 <a class="btn" href="">Checkout</a>
             <?php } ?>
@@ -155,4 +155,4 @@
     </div>
   </div>
 
-<?php require_once('footer.php'); ?>
+<?php require_once('Footer.php'); ?>

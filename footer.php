@@ -38,11 +38,11 @@
 </div>
 <footer class="footer-distributed">
     <div class="footer-left">
-        <img src="Logo.png" alt="Logo">
+        <img src="images/logo.png" alt="Logo">
         <p class="footer-para">
             Online Shop for complete Agriculture and Gardening needs.
         </p>
-        <p class="footer-copyright">Copyright © 2022 AgriKart. All Rights Reserved.</p>
+        <p class="footer-copyright">Copyright © 2024 AgriKart. All Rights Reserved.</p>
     </div>
     <div class="footer-center">
         <div>

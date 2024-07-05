@@ -4,10 +4,10 @@
 <head>
     <title>Order History</title>
     <style>
-        <?php include "order_history.css" ?>
+        <?php include "css/order_history.css" ?>
     </style>
 
-<?php require_once('header.php'); 
+<?php require_once('Header.php'); 
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -62,4 +62,4 @@
     <?php } ?> 
     </div> 
 
-<?php require_once('footer.php'); ?>
+<?php require_once('Footer.php'); ?>

@@ -4,10 +4,10 @@
 <head>
     <title>Explore</title>
     <style>
-        <?php include "explore.css" ?>
+        <?php include "css/explore.css" ?>
     </style>
 
-<?php require_once('header.php'); ?>
+<?php require_once('Header.php'); ?>
 
     <?php
     function findseason($x)
@@ -189,7 +189,7 @@
                 </div>
                         
 
-<?php require_once('footer.php'); ?>
+<?php require_once('Footer.php'); ?>
     
 <script type="text/javascript">
 

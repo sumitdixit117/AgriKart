@@ -4,10 +4,10 @@
 <head>
     <title>Seeds</title>
     <style>
-        <?php include "explore.css" ?>
+        <?php include "css/explore.css" ?>
     </style>
 
-<?php require_once('header.php'); ?>
+<?php require_once('Header.php'); ?>
 
     <div class="offer-heading">
         <h1>Our Products</h1>
@@ -125,7 +125,7 @@
             </div>    
             
 
-    <?php require_once('footer.php'); ?>
+    <?php require_once('Footer.php'); ?>
     
 <script>
 

@@ -4,10 +4,10 @@
 <head>
     <title>Search Result</title>
     <style>
-        <?php include "explore.css" ?>
+        <?php include "css/explore.css" ?>
     </style>
 
-<?php require_once('header.php'); ?>
+<?php require_once('Header.php'); ?>
 
 <?php
 
@@ -42,7 +42,7 @@ try {
     $statement->execute(array($search_text, $search_text));
     $total_rows = $statement->rowCount();
 
-    $targetpage = "search_result.php?search_text=" . $_REQUEST['search_text'];   
+    $targetpage = "Search_result.php?search_text=" . $_REQUEST['search_text'];   
     $limit = 20;                                
     if (isset($_GET["page"])) {    
         $page_number  = $_GET["page"];    
@@ -125,4 +125,4 @@ try {
     ?>
 </div>
 
-<?php require_once('footer.php'); ?>
+<?php require_once('Footer.php'); ?>

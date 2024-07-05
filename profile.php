@@ -4,10 +4,10 @@
 <head>
     <title>Profile</title>
     <style>
-        <?php include "profile.css"?>
+        <?php include "css/profile.css"?>
     </style>
 
-<?php require_once('header.php');
+<?php require_once('Header.php');
 
         $servername = "localhost";
         $username = "root";
@@ -15,7 +15,7 @@
         $dbname = "agrikartdb";
         
         $conn = mysqli_connect($servername, $username, $password, $dbname);
-        $sql = "SELECT * FROM `user_curr`";
+        $sql = "SELECT * FROM `user curr`";
         $result = mysqli_query ($conn, $sql);
         if($result){
         while ($row = mysqli_fetch_array($result))
@@ -53,7 +53,7 @@
                     </tr>
                     <tr>
                         <td><span>Website<span></td>
-                        <td><div class="value">www.AgriKart.com</div></td>
+                        <td><div class="value">www.agrikart.com</div></td>
                     </tr>
                     <tr>
                         <td>
@@ -81,4 +81,4 @@
         </center>
     </form>
 
-<?php require_once('footer.php'); ?>
+<?php require_once('Footer.php'); ?>

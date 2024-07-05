@@ -4,10 +4,10 @@
 <head>
     <title>Payment Gateway</title>
     <style>
-        <?php include "payment_gateway.css" ?>
+        <?php include "css/payment_gateway.css" ?>
     </style>
 
-<?php require_once('header.php'); ?>
+<?php require_once('Header.php'); ?>
 
     <div class="payment-div">
         <h1 id="heading">Checkout</h1>
@@ -84,4 +84,4 @@
         </div>
     </div>
     
-<?php require_once('footer.php'); ?>
+<?php require_once('Footer.php'); ?>

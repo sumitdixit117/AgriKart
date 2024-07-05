@@ -1,5 +1,5 @@
 <style>
-    <?php include "header.css" ?>
+    <?php include "css/header.css" ?>
 </style>
 
 <script src="https://kit.fontawesome.com/2cf05c34d2.js" crossorigin="anonymous"></script>
@@ -7,19 +7,19 @@
 
 <body>
     <div class="topnav">
-        <a class="active" href="Explore.php"><img src="Logo.png" class="logo"></a>
+        <a class="active" href="Explore.php"><img src="images/logo.png" class="logo"></a>
         <div class="user-dropdown">
             <a href="#"><i class="fas fa-user"></i></a>
             <div class="user-dropdown-content">
-                <a href="profile.php">Your Account</a>
+                <a href="Profile.php">Your Account</a>
                 <a href="Order_history.php">Your Orders</a>
-                <a href="Contact_Form.php">Contact Us</a>
+                <a href="Contact_form.php">Contact Us</a>
                 <a href="logout.php">Log Out</a>
             </div>
         </div>
         <a style="pointer-events: none;">|</a>
         <a href="Cart.php"><i class="fas fa-shopping-cart"></i></a>
-        <form role="search" action="search_result.php" method="get">
+        <form role="search" action="Search_result.php" method="get">
             <button type="submit" class="search-button"><a href="#"><i class="fas fa-search"></i></a></button>
             <input type="search" placeholder="Search..." name="search_text" required>
         </form>

@@ -59,7 +59,7 @@ $captcha = $_POST["captcha"];
             echo "Error: " . $conn->error;
         }
     } else {
-        header("location:Payment_Gateway.php?cmessage='invalid'");
+        header("location:Payment_gateway.php?cmessage='invalid'");
     }
 
 $conn->close();

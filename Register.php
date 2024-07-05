@@ -3,14 +3,14 @@
 <head>
     <title>Register</title>
     <style>
-        <?php include "register.css" ?>
+        <?php include "css/register.css" ?>
     </style>
     <script src="https://kit.fontawesome.com/2cf05c34d2.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="topnav">
-        <a class="active" href="Home.php"><img src="Logo.png" alt="AgriKart" width="170px"></a>
+        <a class="active" href="Home.php"><img src="images/logo.png" alt="AgriKart" width="170px"></a>
         <a href="Login.php">Login</a>
         <a style="pointer-events: none;">|</a>
         <a href="Home.php">Home</a>
@@ -153,4 +153,4 @@
         <p class="para-2">Already have an account? <a href="Login.php">Log in</a>.</p>
     </div>
     
-<?php require_once('footer.php'); ?>
+<?php require_once('Footer.php'); ?>

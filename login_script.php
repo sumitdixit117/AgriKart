@@ -36,7 +36,7 @@ if (!empty($_POST['email']) && !empty($_POST['pass'])) {
                 $phone = $row["phone"];
                 $address = $row["address"].",".$row["city"].",".$row["state"].",".$row["pincode"];
                 $email = $row["email"];
-                $sql2 = "INSERT INTO `user_curr` (`fname`, `lname`, `gender`, `phone`, `address`, `email`) 
+                $sql2 = "INSERT INTO `user curr` (`fname`, `lname`, `gender`, `phone`, `address`, `email`) 
                 VALUES ('$fname', '$lname', '$gender', '$phone', '$address', '$email')";   
                 if (!(mysqli_query($conn,$sql2) === TRUE)) {
                     echo "Error: " . $conn->error;

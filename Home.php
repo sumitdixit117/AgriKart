@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>AgriKart</title>
     <style>
-        <?php include "home.css" ?>
+        <?php include "css/home.css" ?>
     </style>
     <script src="https://kit.fontawesome.com/2cf05c34d2.js" crossorigin="anonymous"></script>
 </head>
@@ -15,7 +15,7 @@
         <tr>
             <td class="left-div">
                 <div class="logo-div">
-                    <img src="Logo.png" class="logo">
+                    <img src="images/logo.png" class="logo">
                 </div>
             </td>
             <td class="right-div">
@@ -81,7 +81,7 @@
             <div class="wheels"></div>
         </div>
     </section>
-    <?php require_once('footer.php'); ?>
+    <?php require_once('Footer.php'); ?>
 </body>
 
 </html>
