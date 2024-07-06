@@ -8,15 +8,11 @@
     </style>
 
 <?php require_once('Header.php'); 
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "agrikartdb";
-    
+    require_once('_conn.php');
     $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
-    } 
+    }
 
     $getQuery = "SELECT * FROM `order history`";     
 

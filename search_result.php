@@ -11,13 +11,10 @@
 
 <?php
 
-$dbhost = 'localhost';
-$dbname = 'agrikartdb';
-$dbuser = 'root';
-$dbpass = '';
+require_once('_conn.php');
 
 try {
-    $pdo = new PDO("mysql:host={$dbhost};dbname={$dbname}", $dbuser, $dbpass);
+    $pdo = new PDO("mysql:host={$servername};dbname={$dbname}", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $exception) {
     echo "Connection error :" . $exception->getMessage();

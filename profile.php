@@ -9,12 +9,11 @@
 
 <?php require_once('Header.php');
 
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "agrikartdb";
-        
-        $conn = mysqli_connect($servername, $username, $password, $dbname);
+        require_once('_conn.php');
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
         $sql = "SELECT * FROM `user curr`";
         $result = mysqli_query ($conn, $sql);
         if($result){

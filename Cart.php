@@ -9,19 +9,15 @@
 
 <?php require_once('Header.php');
 
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "agrikartdb";
-        
-        $conn = new mysqli($servername, $username, $password, $dbname);
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        } 
+  require_once('_conn.php');
+  $conn = new mysqli($servername, $username, $password, $dbname);
+  if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+  } 
 
-        $subtotal = 0;
-        $getQuery = "SELECT * FROM `cart`";     
-        $result = mysqli_query ($conn, $getQuery); ?>
+  $subtotal = 0;
+  $getQuery = "SELECT * FROM `cart`";     
+  $result = mysqli_query ($conn, $getQuery); ?>
 
   <div class="cart-container">
     <div class="cart-div">

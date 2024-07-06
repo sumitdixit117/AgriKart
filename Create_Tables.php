@@ -1,15 +1,11 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "agrikartdb";
-
+require_once('_conn.php');
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+    die("Connection failed: " . $conn->connect_error);
+} 
 
-$sql1 = "CREATE TABLE `agrikartdb`.`users` 
+$sql1 = "CREATE TABLE `users` 
 ( `id` INT NOT NULL AUTO_INCREMENT ,
  `fname` VARCHAR(20) NOT NULL , 
  `lname` VARCHAR(20) NOT NULL , 
@@ -25,7 +21,7 @@ $sql1 = "CREATE TABLE `agrikartdb`.`users`
  `password` VARCHAR(30) NOT NULL , 
  PRIMARY KEY (`id`)) ENGINE = MyISAM";
 
-$sql2 = "CREATE TABLE `agrikartdb`.`products`
+$sql2 = "CREATE TABLE `products`
  ( `id` INT NOT NULL AUTO_INCREMENT , 
  `name` VARCHAR(50) NOT NULL , 
  `price` DOUBLE NOT NULL , 
@@ -35,7 +31,7 @@ $sql2 = "CREATE TABLE `agrikartdb`.`products`
  `category` VARCHAR(10) NOT NULL , 
  PRIMARY KEY (`id`)) ENGINE = MyISAM";
 
-$sql3 = "CREATE TABLE `agrikartdb`.`cart` 
+$sql3 = "CREATE TABLE `cart` 
  ( `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `image_link` varchar(200) NOT NULL,
@@ -43,10 +39,10 @@ $sql3 = "CREATE TABLE `agrikartdb`.`cart`
   `price` double NOT NULL,
   PRIMARY KEY (`id`)) ENGINE=MyISAM";
 
-$sql4 = "CREATE TABLE `agrikartdb`.`order history` ( `name` VARCHAR(50) NOT NULL , `image_link` VARCHAR(200) NOT NULL , `order_id` VARCHAR(7) NOT NULL , `quantity` INT NOT NULL , `date` DATE NOT NULL , `price` DOUBLE NOT NULL ) ENGINE = MyISAM";
-$sql5 = "CREATE TABLE `agrikartdb`.`card details` ( `id` INT NOT NULL AUTO_INCREMENT , `fname` VARCHAR(30) NOT NULL , `email` VARCHAR(50) NOT NULL , `address` VARCHAR(50) NOT NULL , `city` VARCHAR(20) NOT NULL , `state` VARCHAR(20) NOT NULL , `pincode` VARCHAR(6) NOT NULL , `card_number` VARCHAR(20) NOT NULL , PRIMARY KEY (`id`)) ENGINE = MyISAM";
-$sql6 = "CREATE TABLE `agrikartdb`.`contact form` (`id` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(30) NOT NULL , `email` VARCHAR(50) NOT NULL , `subject` VARCHAR(50) NOT NULL , `query` VARCHAR(200) NOT NULL , PRIMARY KEY (`id`)) ENGINE = MyISAM";
-$sql7 = "CREATE TABLE `agrikartdb`.`user curr` (`id` INT NOT NULL AUTO_INCREMENT ,  `fname` VARCHAR(30) NOT NULL , `lname` VARCHAR(30) NOT NULL , `gender` VARCHAR(6) NOT NULL , `phone` VARCHAR(15) NOT NULL , `address` VARCHAR(100) NOT NULL , `email` VARCHAR(40) NOT NULL , PRIMARY KEY (`id`)) ENGINE = MyISAM;";
+$sql4 = "CREATE TABLE `order history` ( `name` VARCHAR(50) NOT NULL , `image_link` VARCHAR(200) NOT NULL , `order_id` VARCHAR(7) NOT NULL , `quantity` INT NOT NULL , `date` DATE NOT NULL , `price` DOUBLE NOT NULL ) ENGINE = MyISAM";
+$sql5 = "CREATE TABLE `card details` ( `id` INT NOT NULL AUTO_INCREMENT , `fname` VARCHAR(30) NOT NULL , `email` VARCHAR(50) NOT NULL , `address` VARCHAR(50) NOT NULL , `city` VARCHAR(20) NOT NULL , `state` VARCHAR(20) NOT NULL , `pincode` VARCHAR(6) NOT NULL , `card_number` VARCHAR(20) NOT NULL , PRIMARY KEY (`id`)) ENGINE = MyISAM";
+$sql6 = "CREATE TABLE `contact form` (`id` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(30) NOT NULL , `email` VARCHAR(50) NOT NULL , `subject` VARCHAR(50) NOT NULL , `query` VARCHAR(200) NOT NULL , PRIMARY KEY (`id`)) ENGINE = MyISAM";
+$sql7 = "CREATE TABLE `user curr` (`id` INT NOT NULL AUTO_INCREMENT ,  `fname` VARCHAR(30) NOT NULL , `lname` VARCHAR(30) NOT NULL , `gender` VARCHAR(6) NOT NULL , `phone` VARCHAR(15) NOT NULL , `address` VARCHAR(100) NOT NULL , `email` VARCHAR(40) NOT NULL , PRIMARY KEY (`id`)) ENGINE = MyISAM;";
 
 $sql = "INSERT INTO products (name, price, image_link, season, quantity, category) 
            VALUES ('Yellow Marigold Seeds','450', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1xo1KBSFy14Z_u08pp85sFzFmzBVJlYi1IA&usqp=CAU', 'winter', '150','flower'),

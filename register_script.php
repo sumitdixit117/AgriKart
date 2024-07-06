@@ -21,15 +21,11 @@ function val($data) {
 	return $data;
 }
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "agrikartdb";
-
+require_once('_conn.php');
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
+	die("Connection failed: " . $conn->connect_error);
+}
 
 $sql = "INSERT INTO users (fname, lname, gender, date, phone, address, city, state, pincode, country, email, password)
 VALUES ('$fname','$lname','$gender','$date','$phone', '$address', '$city', '$state', '$pcode', '$country','$email', '$passwrd')";
