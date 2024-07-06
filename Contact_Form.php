@@ -15,7 +15,7 @@
         <td class="td1">
 
           <h3 class="heading">Let's talk about everything!</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas debitis, fugit natus?</p>
+          <p>Enter your details including your name, email and your query in the respective blanks, Will try our best to solve your queries!</p>
           <p><img src="https://tenantprotections.org/img/tenant.svg" alt="Contact-Image" class="contact-img"></p>
 
         </td>
