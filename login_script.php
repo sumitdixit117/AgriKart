@@ -38,8 +38,8 @@ if (!empty($_POST['email']) && !empty($_POST['pass'])) {
                     echo "Error: " . $conn->error;
                 }
             }
-            $sql3 = "TRUNCATE TABLE `agrikartdb`.`cart`";
-            $sql4 = "TRUNCATE TABLE `agrikartdb`.`order history`";
+            $sql3 = "TRUNCATE TABLE `cart`";
+            $sql4 = "TRUNCATE TABLE `order history`";
             if (($conn->query($sql3) === TRUE) && ($conn->query($sql4) === TRUE)) {
                 header("location:Explore.php");
             } else {

@@ -46,7 +46,7 @@ $captcha = $_POST["captcha"];
             }
         }
 
-        $sql3 = "TRUNCATE TABLE `agrikartdb`.`cart`";
+        $sql3 = "TRUNCATE TABLE `cart`";
 
         if ($conn->query($sql) === TRUE && $conn->query($sql3) === TRUE) {
 

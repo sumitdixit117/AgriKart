@@ -4,7 +4,7 @@
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
-        $sql = "TRUNCATE TABLE `agrikartdb`.`cart`";
+        $sql = "TRUNCATE TABLE `cart`";
         if ($conn->query($sql) === TRUE) {
 
             header("location:Cart.php");

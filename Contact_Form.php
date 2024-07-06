@@ -33,10 +33,7 @@
   </div>
 
   <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "agrikartdb";
+    require_once('_conn.php');
 
     $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn->connect_error) {

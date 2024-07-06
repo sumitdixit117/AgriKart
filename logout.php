@@ -4,7 +4,7 @@
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
-        $sql = "TRUNCATE TABLE `agrikartdb`.`user curr`";
+        $sql = "TRUNCATE TABLE `user curr`";
         if ($conn->query($sql) === TRUE) {
 
             header("location:index.php");
