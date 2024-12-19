@@ -2,8 +2,8 @@
 require_once('_conn.php');
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
+  die("Connection failed: " . $conn->connect_error);
+}
 
 $sql1 = "CREATE TABLE `users` 
 ( `id` INT NOT NULL AUTO_INCREMENT ,
@@ -155,8 +155,8 @@ $sql = "INSERT INTO products (name, price, image_link, season, quantity, categor
           ('Trowel','900', 'https://www.bigbasket.com/media/uploads/p/xxl/40246089-2_1-dp-hand-digging-trowel-for-cultivating-blending-soils.jpg', 'Null', '0','tools'),
           ('Agrimate Bypass Pruner','1100', 'https://agrimart.in/uploads/product_image/1/product_3003_1.jpg', 'Null', '150','tools'),
           ('Agrimate Forged Steel','1200', 'https://5.imimg.com/data5/SELLER/Default/2023/3/293127966/TW/YI/KM/7248512/am15158-agrimate-professional-forged-hedge-shear-taiwan.jpg', 'Null', '150','tools') ";
-          
- 
+
+
 
 if ($conn->query($sql1) === TRUE && $conn->query($sql2) === TRUE && $conn->query($sql3) === TRUE && $conn->query($sql4) === TRUE && $conn->query($sql5) === TRUE && $conn->query($sql6) === TRUE && $conn->query($sql7) === TRUE && $conn->query($sql) === TRUE) {
   echo "Tables created successfully and data entered";

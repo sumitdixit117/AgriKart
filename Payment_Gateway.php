@@ -7,7 +7,7 @@
         <?php include "css/payment_gateway.css" ?>
     </style>
 
-<?php require_once('Header.php'); ?>
+    <?php require_once('Header.php'); ?>
 
     <div class="payment-div">
         <h1 id="heading">Checkout</h1>
@@ -83,5 +83,5 @@
             </form>
         </div>
     </div>
-    
-<?php require_once('Footer.php'); ?>
+
+    <?php require_once('Footer.php'); ?>

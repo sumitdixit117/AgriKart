@@ -29,7 +29,7 @@
         <div class="dropdown">
             <button class="dropbtn">Seeds <i class="fa fa-caret-down"></i></button>
             <div class="dropdown-content">
-            <div class="second-level-dropdown">
+                <div class="second-level-dropdown">
                     <button class="dropbtn">Flower Seeds <i class="fa fa-caret-right"></i></button>
                     <div class="dropdown-content second-dropdown-content">
                         <a href="Flower.php">Flower's Hybrid Seeds</a>

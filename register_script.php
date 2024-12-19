@@ -1,20 +1,21 @@
 <?php
 
-$fname = val($_POST["fname"]);  
-$lname = val($_POST["lname"]);  
-$date = val($_POST["date"]);  
-$gender = val($_POST["gender"]);  
-$phone = val($_POST["code"]) . " " . val($_POST["phno"]);  
+$fname = val($_POST["fname"]);
+$lname = val($_POST["lname"]);
+$date = val($_POST["date"]);
+$gender = val($_POST["gender"]);
+$phone = val($_POST["code"]) . " " . val($_POST["phno"]);
 $address = val($_POST["stname"]) . " " . val($_POST["arname"]);
-$city = val($_POST["city"]);  
-$state = val($_POST["state"]);  
-$pcode = val($_POST["pin"]);  
-$country = val($_POST["country"]);  
-$email = val($_POST["email"]);  
-$passwrd = val($_POST["pass"]);  
-$cpasswrd = val($_POST["c-pass"]);  
+$city = val($_POST["city"]);
+$state = val($_POST["state"]);
+$pcode = val($_POST["pin"]);
+$country = val($_POST["country"]);
+$email = val($_POST["email"]);
+$passwrd = val($_POST["pass"]);
+$cpasswrd = val($_POST["c-pass"]);
 
-function val($data) {
+function val($data)
+{
 	$data = trim($data);
 	$data = stripslashes($data);
 	$data = htmlspecialchars($data);

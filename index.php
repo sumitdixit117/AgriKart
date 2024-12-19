@@ -31,7 +31,7 @@
                         was established in 2013 and is based in Namma Bengaluru. AgriKart believes in farming being a
                         pillar for the world and farmers are the backbone of the nation.
                     </p>
-                    <a href="Register.php"><button class="contact-button">REGISTER NOW  </button></a>
+                    <a href="Register.php"><button class="contact-button">REGISTER NOW </button></a>
                 </div>
             </td>
         </tr>
@@ -40,19 +40,23 @@
         <h1>Our Products</h1>
         <div class="equipments">
             <div class="temp">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7kcOj0UWLEeYWO0YrbgTdMtTeM4hCHLF7Nw&usqp=CAU" alt="pest">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7kcOj0UWLEeYWO0YrbgTdMtTeM4hCHLF7Nw&usqp=CAU"
+                    alt="pest">
                 <p>Pesticides</p>
             </div>
             <div class="temp">
-                <img src="https://media.istockphoto.com/id/527229644/photo/planting-seeds.jpg?s=612x612&w=0&k=20&c=42c_9MIwl59_8oh4fKCW1m-BDlhZLi31tTP3_sRYoWk=" alt="seed">
+                <img src="https://media.istockphoto.com/id/527229644/photo/planting-seeds.jpg?s=612x612&w=0&k=20&c=42c_9MIwl59_8oh4fKCW1m-BDlhZLi31tTP3_sRYoWk="
+                    alt="seed">
                 <p>Seeds</p>
             </div>
             <div class="temp">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmYBCX9cQSk9LUt0P5k7BthTyDd9n-KKfP2w&usqp=CAU" alt="equi1">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmYBCX9cQSk9LUt0P5k7BthTyDd9n-KKfP2w&usqp=CAU"
+                    alt="equi1">
                 <p>Farming Tools</p>
             </div>
             <div class="temp">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjYcWpqxWU9KQk-XhNNoEO4YTSNSh_WlpoNg&usqp=CAU" alt="equi2">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjYcWpqxWU9KQk-XhNNoEO4YTSNSh_WlpoNg&usqp=CAU"
+                    alt="equi2">
                 <p>Equipments</p>
             </div>
         </div>
@@ -61,8 +65,10 @@
     <section id="download">
         <div class="cont">
             <h3>Sign up now.</h3>
-            <button class="download login" type="button"><a href="Login.php"><i class="fas fa-sign-in-alt"></i> Login </a></button>
-            <button class="download register" type="button"><a href="Register.php"><i class="fas fa-user-plus"></i> Register
+            <button class="download login" type="button"><a href="Login.php"><i class="fas fa-sign-in-alt"></i> Login
+                </a></button>
+            <button class="download register" type="button"><a href="Register.php"><i class="fas fa-user-plus"></i>
+                    Register
                 </a></button><br>
             <i>
                 <p id="download-para"></p>

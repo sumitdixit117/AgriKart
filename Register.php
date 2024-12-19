@@ -140,9 +140,9 @@
             </div>
             <center>
                 <?php if (isset($_GET["emessage"])) { ?>
-                        <p style="margin: 0; color: red;">Passwords do not match!</p>
+                    <p style="margin: 0; color: red;">Passwords do not match!</p>
                 <?php } elseif (isset($_GET["imessage"])) { ?>
-                        <p style="margin: 0; color: red;">Invalid Password!</p>
+                    <p style="margin: 0; color: red;">Invalid Password!</p>
                 <?php } ?><br>
                 <button type="submit">Submit</button><br>
                 <button type="reset">Reset</button>
@@ -152,5 +152,5 @@
                 href="#">Policy Privacy.</a></p>
         <p class="para-2">Already have an account? <a href="Login.php">Log in</a>.</p>
     </div>
-    
-<?php require_once('Footer.php'); ?>
+
+    <?php require_once('Footer.php'); ?>

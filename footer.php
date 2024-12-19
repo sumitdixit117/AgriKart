@@ -1,40 +1,40 @@
 <div class="features">
-        <div class="feature">
-            <div class="feature-div">
-                <i class="fas fa-undo-alt"></i>
-            </div>
-            <div class="feature-div">
-                <h2>Return</h2>
-                <h6>Within 7 days</h6>
-            </div>
+    <div class="feature">
+        <div class="feature-div">
+            <i class="fas fa-undo-alt"></i>
         </div>
-        <div class="feature">
-            <div class="feature-div">
-                <i class="fas fa-shipping-fast"></i>
-            </div>
-            <div class="feature-div">
-                <h2>Free Shipping</h2>
-                <h6>on order Above Rs 500</h6>
-            </div>
+        <div class="feature-div">
+            <h2>Return</h2>
+            <h6>Within 7 days</h6>
         </div>
-        <div class="feature">
-            <div class="feature-div">
-                <i class="fas fa-rupee-sign"></i>
-            </div>
-            <div class="feature-div">
-                <h2>Get Rs 100 off First order</h2>
-                <h6>When you register</h6>
-            </div>
+    </div>
+    <div class="feature">
+        <div class="feature-div">
+            <i class="fas fa-shipping-fast"></i>
         </div>
-        <div class="feature">
-            <div class="feature-div">
-                <i class="fas fa-envelope"></i>
-            </div>
-            <div class="feature-div">
-                <h2>Customer Support</h2>
-                <h6>24/7 Service</h6>
-            </div>
+        <div class="feature-div">
+            <h2>Free Shipping</h2>
+            <h6>on order Above Rs 500</h6>
         </div>
+    </div>
+    <div class="feature">
+        <div class="feature-div">
+            <i class="fas fa-rupee-sign"></i>
+        </div>
+        <div class="feature-div">
+            <h2>Get Rs 100 off First order</h2>
+            <h6>When you register</h6>
+        </div>
+    </div>
+    <div class="feature">
+        <div class="feature-div">
+            <i class="fas fa-envelope"></i>
+        </div>
+        <div class="feature-div">
+            <h2>Customer Support</h2>
+            <h6>24/7 Service</h6>
+        </div>
+    </div>
 </div>
 <footer class="footer-distributed">
     <div class="footer-left">

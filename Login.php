@@ -33,14 +33,14 @@
             </div>
             <center>
                 <?php if (isset($_GET["imessage"])) { ?>
-                        <p style="margin: 20px 0 0; color: red;">Invalid email or password!</p>
-                    <?php } else if (isset($_GET["cmessage"])) { ?>
+                    <p style="margin: 20px 0 0; color: red;">Invalid email or password!</p>
+                <?php } else if (isset($_GET["cmessage"])) { ?>
                         <p style="margin: 20px 0 0; color: red;">Invalid Captcha!</p>
-                    <?php } ?>
+                <?php } ?>
                 <button type="submit" class="login-button">Log in</button>
             </center>
         </form>
         <p class="para-2">New to AgriKart? <a href="Register.php">Create an account</a>.</p>
     </div>
 
-<?php require_once('Footer.php'); ?>
+    <?php require_once('Footer.php'); ?>
