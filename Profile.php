@@ -2,32 +2,33 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
     <style>
-        <?php include "css/profile.css" ?>
+        <?php include "css/profile.css"; ?>
     </style>
+    <style>
+        <?php include "css/header.css"; ?>
+    </style>
+    <script src="https://kit.fontawesome.com/2cf05c34d2.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <?php require_once 'Header.php'; ?>
 
     <?php
-    session_start();
-    if (!isset($_SESSION['email'])) {
-        header("Location: Login.php");
-        exit();
-    }
-
     require_once '_conn.php';
     $conn = getDatabaseConnection();
 
-    $user_email = $_SESSION['email'];
-    $stmt = $conn->prepare("SELECT * FROM `user curr` WHERE email = ?");
-    $stmt->bind_param("s", $user_email);
+    $stmt = $conn->prepare("SELECT * FROM `user curr`");
     $stmt->execute();
     $result = $stmt->get_result();
 
-    if ($result->num_rows > 0) {
+    if ($result->num_rows == 0) {
+        header("Location: Login.php");
+        exit();
+    }
         $row = $result->fetch_assoc();
             $fname = $row["fname"];
             $lname = $row["lname"];
@@ -35,11 +36,11 @@
             $phone = $row["phone"];
             $address = $row["address"];
             $email = $row["email"];
-            $username = strtolower($fname . "_" . $lname);
-        }
-    }
 
+    $stmt->close();
+    $conn->close();
     ?>
+    
     <form action="logout.php">
         <center>
             <div class="profile">
@@ -59,12 +60,6 @@
                         <td><span>Name<span></td>
                         <td>
                             <div class="value"> <?php echo $fname . " " . $lname ?></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><span>Username<span></td>
-                        <td>
-                            <div class="value"> <?php echo $username ?></div>
                         </td>
                     </tr>
                     <tr>
@@ -105,4 +100,7 @@
         </center>
     </form>
 
-    <?php require_once('Footer.php'); ?>
+    <?php require_once 'Footer.php'; ?>
+</body>
+
+</html>
