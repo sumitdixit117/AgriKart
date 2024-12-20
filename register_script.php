@@ -1,5 +1,13 @@
 <?php
 
+function val($data)
+{
+	$data = trim($data);
+	$data = stripslashes($data);
+	$data = htmlspecialchars($data);
+	return $data;
+}
+
 $fname = val($_POST["fname"]);
 $lname = val($_POST["lname"]);
 $date = val($_POST["date"]);
@@ -14,34 +22,24 @@ $email = val($_POST["email"]);
 $passwrd = val($_POST["pass"]);
 $cpasswrd = val($_POST["c-pass"]);
 
-function val($data)
-{
-	$data = trim($data);
-	$data = stripslashes($data);
-	$data = htmlspecialchars($data);
-	return $data;
+if ($passwrd !== $cpasswrd) {
+	die("Passwords do not match.");
 }
 
-require_once('_conn.php');
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-	die("Connection failed: " . $conn->connect_error);
-}
+require_once '_conn.php';
+$conn = getDatabaseConnection();
 
-$sql = "INSERT INTO users (fname, lname, gender, date, phone, address, city, state, pincode, country, email, password)
-VALUES ('$fname','$lname','$gender','$date','$phone', '$address', '$city', '$state', '$pcode', '$country','$email', '$passwrd')";
+$hashed_password = password_hash($passwrd, PASSWORD_DEFAULT);
 
-if ($passwrd != $cpasswrd) {
-	header("location:Register.php?emessage='passnotmatch'");
-} elseif (!preg_match('/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/', $passwrd)) {
-	header("location:Register.php?imessage='invalid'");
+$stmt = $conn->prepare("INSERT INTO users (fname, lname, date, gender, phone, address, city, state, pincode, country, email, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+$stmt->bind_param("ssssssssssss", $fname, $lname, $date, $gender, $phone, $address, $city, $state, $pcode, $country, $email, $hashed_password);
+
+if ($stmt->execute()) {
+	header("Location: Login.php?message=registration_success");
 } else {
-	if ($conn->query($sql) === TRUE) {
-		header("location:Login.php");
-	} else {
-		echo "Error: " . $conn->error;
-	}
+	echo "Error: " . $stmt->error;
 }
 
+$stmt->close();
 $conn->close();
 ?>

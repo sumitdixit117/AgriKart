@@ -1,9 +1,12 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log in</title>
     <style>
-        <?php include "css/register.css" ?>
+        <?php include "css/register.css"; ?>
     </style>
     <script src="https://kit.fontawesome.com/2cf05c34d2.js" crossorigin="anonymous"></script>
 </head>
@@ -23,12 +26,12 @@
         <form method="post" action="login_script.php">
             <div class="form-content form-div">
                 <h3>Enter the following details: </h3>
-                <label>Email Address: </label><br>
-                <input type="email" size="40px" name="email" autocomplete="on" required><br>
-                <label>Password: </label><br>
-                <input type="password" size="40px" name="pass" required><br>
-                <label>Enter Captcha: </label><br>
-                <input type="text" size="20px" name="captcha" required>
+                <label for="email">Email Address: </label><br>
+                <input type="email" id="email" size="40px" name="email" autocomplete="on" required><br>
+                <label for="pass">Password: </label><br>
+                <input type="password" id="pass" size="40px" name="pass" required><br>
+                <label for="captcha">Enter Captcha: </label><br>
+                <input type="text" id="captcha" size="20px" name="captcha" required>
                 <img src="captcha.php" alt="Captcha">
             </div>
             <center>
@@ -43,4 +46,7 @@
         <p class="para-2">New to AgriKart? <a href="Register.php">Create an account</a>.</p>
     </div>
 
-    <?php require_once('Footer.php'); ?>
+    <?php require_once 'Footer.php'; ?>
+</body>
+
+</html>

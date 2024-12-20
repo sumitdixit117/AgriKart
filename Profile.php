@@ -1,15 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
     <style>
-        <?php include "css/profile.css"; ?>
-    </style>
-    <style>
-        <?php include "css/header.css"; ?>
+        <?php include "css/profile.css" ?>
     </style>
 </head>
 
@@ -34,21 +29,17 @@
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        $fname = $row["fname"];
-        $lname = $row["lname"];
-        $gender = ucfirst($row["gender"]);
-        $phone = $row["phone"];
-        $address = $row["address"];
-        $email = $row["email"];
-        $username = strtolower($fname . "_" . $lname);
-    } else {
-        echo "No user data found.";
+            $fname = $row["fname"];
+            $lname = $row["lname"];
+            $gender = ucfirst($row["gender"]);
+            $phone = $row["phone"];
+            $address = $row["address"];
+            $email = $row["email"];
+            $username = strtolower($fname . "_" . $lname);
+        }
     }
 
-    $stmt->close();
-    $conn->close();
     ?>
-
     <form action="logout.php">
         <center>
             <div class="profile">
@@ -114,7 +105,4 @@
         </center>
     </form>
 
-    <?php require_once 'Footer.php'; ?>
-</body>
-
-</html>
+    <?php require_once('Footer.php'); ?>

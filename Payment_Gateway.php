@@ -1,13 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment Gateway</title>
     <style>
-        <?php include "css/payment_gateway.css" ?>
+        <?php include "css/payment_gateway.css"; ?>
     </style>
+    <style>
+        <?php include "css/header.css"; ?>
+    </style>
+</head>
 
-    <?php require_once('Header.php'); ?>
+<body>
+    <?php require_once 'Header.php'; ?>
 
     <div class="payment-div">
         <h1 id="heading">Checkout</h1>
@@ -19,7 +26,7 @@
                         <label for="fname"><i class="fa fa-user"></i> Full Name</label>
                         <input type="text" id="fname" name="fullname" placeholder="Your Name" required>
                         <label for="email"><i class="fa fa-envelope"></i> Email</label>
-                        <input type="text" id="email" name="email" placeholder="Your Email" required>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
                         <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
                         <input type="text" id="adr" name="address" placeholder="Your Address" required>
                         <label for="city"><i class="fa fa-institution"></i> City</label>
@@ -63,7 +70,7 @@
                         <div class="row">
                             <div class="col-50">
                                 <label for="captcha">Captcha</label>
-                                <input type="text" id="expyear" name="captcha" placeholder="Enter Captcha" required>
+                                <input type="text" id="captcha" name="captcha" placeholder="Enter Captcha" required>
                             </div>
                             <div class="col-50">
                                 <img src="captcha.php" alt="Captcha">
@@ -84,4 +91,7 @@
         </div>
     </div>
 
-    <?php require_once('Footer.php'); ?>
+    <?php require_once 'Footer.php'; ?>
+</body>
+
+</html>

@@ -87,7 +87,7 @@
             <div class="wheels"></div>
         </div>
     </section>
-    <?php require_once('Footer.php'); ?>
+    <?php require_once 'Footer.php'; ?>
 </body>
 
 </html>

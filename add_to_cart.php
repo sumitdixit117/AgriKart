@@ -13,42 +13,43 @@ function val($data)
     return $data;
 }
 
-require_once('_conn.php');
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+require_once '_conn.php';
+$conn = getDatabaseConnection();
 
 $query = "SELECT * FROM cart";
+$result = $conn->query($query);
+$found = false;
 
-$result = mysqli_query($conn, $query);
-$found = 0;
-
-while ($row = mysqli_fetch_array($result)) {
+while ($row = $result->fetch_assoc()) {
     if ($row["id"] == $productid) {
         $quan = $row["quantity"] + 1;
-        $upsql = "UPDATE `cart` SET `quantity` = $quan WHERE `cart`.`id` = $productid";
-        $found = 1;
-        if ($conn->query($upsql) === TRUE) {
-            header("location:Explore.php");
+
+        $stmt = $conn->prepare("UPDATE cart SET quantity = ? WHERE id = ?");
+        $stmt->bind_param("ii", $quan, $productid);
+        $found = true;
+
+        if ($stmt->execute()) {
+            header("location:Home.php");
         } else {
-            echo "Error: " . $conn->error;
+            echo "Error: " . $stmt->error;
         }
+
+        $stmt->close();
     }
 }
 
-if ($found == 0) {
+if (!$found) {
+    $stmt = $conn->prepare("INSERT INTO cart (id, name, image_link, quantity, price) VALUES (?, ?, ?, 1, ?)");
+    $stmt->bind_param("issd", $productid, $productname, $productimage, $productprice);
 
-    $sql = "INSERT INTO cart (id, name, image_link, quantity, price)
-    VALUES ('$productid', '$productname','$productimage','1','$productprice')";
-
-    if ($conn->query($sql) === TRUE) {
-        header("location:Explore.php");
+    if ($stmt->execute()) {
+        header("location:Home.php");
     } else {
-        echo "Error: " . $conn->error;
+        echo "Error: " . $stmt->error;
     }
-}
 
+    $stmt->close();
+}
 
 $conn->close();
 ?>

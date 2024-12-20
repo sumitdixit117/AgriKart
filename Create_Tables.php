@@ -1,9 +1,6 @@
 <?php
-require_once('_conn.php');
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+require_once '_conn.php';
+$conn = getDatabaseConnection();
 
 $sql1 = "CREATE TABLE `users` 
 ( `id` INT NOT NULL AUTO_INCREMENT ,
@@ -18,8 +15,8 @@ $sql1 = "CREATE TABLE `users`
  `pincode` VARCHAR(6) NOT NULL , 
  `country` VARCHAR(20) NOT NULL , 
  `email` VARCHAR(30) NOT NULL , 
- `password` VARCHAR(30) NOT NULL , 
- PRIMARY KEY (`id`)) ENGINE = MyISAM";
+ `password` VARCHAR(255) NOT NULL , 
+ PRIMARY KEY (`id`)) ENGINE = InnoDB";
 
 $sql2 = "CREATE TABLE `products`
  ( `id` INT NOT NULL AUTO_INCREMENT , 
@@ -29,7 +26,7 @@ $sql2 = "CREATE TABLE `products`
  `season` VARCHAR(20) NOT NULL , 
  `quantity` INT NOT NULL , 
  `category` VARCHAR(10) NOT NULL , 
- PRIMARY KEY (`id`)) ENGINE = MyISAM";
+ PRIMARY KEY (`id`)) ENGINE = InnoDB";
 
 $sql3 = "CREATE TABLE `cart` 
  ( `id` int NOT NULL AUTO_INCREMENT,
@@ -37,14 +34,46 @@ $sql3 = "CREATE TABLE `cart`
   `image_link` varchar(200) NOT NULL,
   `quantity` int(11) NOT NULL,
   `price` double NOT NULL,
-  PRIMARY KEY (`id`)) ENGINE=MyISAM";
+  PRIMARY KEY (`id`)) ENGINE=InnoDB";
 
-$sql4 = "CREATE TABLE `order history` ( `name` VARCHAR(50) NOT NULL , `image_link` VARCHAR(200) NOT NULL , `order_id` VARCHAR(7) NOT NULL , `quantity` INT NOT NULL , `date` DATE NOT NULL , `price` DOUBLE NOT NULL ) ENGINE = MyISAM";
-$sql5 = "CREATE TABLE `card details` ( `id` INT NOT NULL AUTO_INCREMENT , `fname` VARCHAR(30) NOT NULL , `email` VARCHAR(50) NOT NULL , `address` VARCHAR(50) NOT NULL , `city` VARCHAR(20) NOT NULL , `state` VARCHAR(20) NOT NULL , `pincode` VARCHAR(6) NOT NULL , `card_number` VARCHAR(20) NOT NULL , PRIMARY KEY (`id`)) ENGINE = MyISAM";
-$sql6 = "CREATE TABLE `contact form` (`id` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(30) NOT NULL , `email` VARCHAR(50) NOT NULL , `subject` VARCHAR(50) NOT NULL , `query` VARCHAR(200) NOT NULL , PRIMARY KEY (`id`)) ENGINE = MyISAM";
-$sql7 = "CREATE TABLE `user curr` (`id` INT NOT NULL AUTO_INCREMENT ,  `fname` VARCHAR(30) NOT NULL , `lname` VARCHAR(30) NOT NULL , `gender` VARCHAR(6) NOT NULL , `phone` VARCHAR(15) NOT NULL , `address` VARCHAR(100) NOT NULL , `email` VARCHAR(40) NOT NULL , PRIMARY KEY (`id`)) ENGINE = MyISAM;";
+$sql4 = "CREATE TABLE `order history` 
+( `name` VARCHAR(50) NOT NULL , 
+  `image_link` VARCHAR(200) NOT NULL , 
+  `order_id` VARCHAR(7) NOT NULL , 
+  `quantity` INT NOT NULL , 
+  `date` DATE NOT NULL , 
+  `price` DOUBLE NOT NULL ) ENGINE = InnoDB";
 
-$sql = "INSERT INTO products (name, price, image_link, season, quantity, category) 
+$sql5 = "CREATE TABLE `card details` 
+( `id` INT NOT NULL AUTO_INCREMENT , 
+  `fname` VARCHAR(30) NOT NULL , 
+  `email` VARCHAR(50) NOT NULL , 
+  `address` VARCHAR(50) NOT NULL , 
+  `city` VARCHAR(20) NOT NULL , 
+  `state` VARCHAR(20) NOT NULL , 
+  `pincode` VARCHAR(6) NOT NULL , 
+  `card_number` VARCHAR(20) NOT NULL , 
+  PRIMARY KEY (`id`)) ENGINE = InnoDB";
+
+$sql6 = "CREATE TABLE `contact form` 
+( `id` INT NOT NULL AUTO_INCREMENT , 
+  `name` VARCHAR(30) NOT NULL , 
+  `email` VARCHAR(50) NOT NULL , 
+  `subject` VARCHAR(50) NOT NULL , 
+  `query` VARCHAR(200) NOT NULL , 
+  PRIMARY KEY (`id`)) ENGINE = InnoDB";
+
+$sql7 = "CREATE TABLE `user curr` 
+( `id` INT NOT NULL AUTO_INCREMENT ,  
+  `fname` VARCHAR(30) NOT NULL , 
+  `lname` VARCHAR(30) NOT NULL , 
+  `gender` VARCHAR(6) NOT NULL , 
+  `phone` VARCHAR(15) NOT NULL , 
+  `address` VARCHAR(100) NOT NULL , 
+  `email` VARCHAR(40) NOT NULL , 
+  PRIMARY KEY (`id`)) ENGINE = InnoDB;";
+
+$sqlInsert = "INSERT INTO products (name, price, image_link, season, quantity, category) 
            VALUES ('Yellow Marigold Seeds','450', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1xo1KBSFy14Z_u08pp85sFzFmzBVJlYi1IA&usqp=CAU', 'winter', '150','flower'),
           ('Orange Marigold Seeds','380', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYixyrbLtwsiUh5dNwN0QUon8KqC6mOhbPYg&usqp=CAU', 'winter', '150','flower'),
           ('White Marigold Seeds','510', '	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSiBJOHcKxVZ7nW5C6hv9_NbI_ly6kpCc0LA&usqp=CAU', 'winter', '150','flower'),
@@ -156,12 +185,30 @@ $sql = "INSERT INTO products (name, price, image_link, season, quantity, categor
           ('Agrimate Bypass Pruner','1100', 'https://agrimart.in/uploads/product_image/1/product_3003_1.jpg', 'Null', '150','tools'),
           ('Agrimate Forged Steel','1200', 'https://5.imimg.com/data5/SELLER/Default/2023/3/293127966/TW/YI/KM/7248512/am15158-agrimate-professional-forged-hedge-shear-taiwan.jpg', 'Null', '150','tools') ";
 
+$queries = [
+  "Users Table" => $sql1,
+  "Products Table" => $sql2,
+  "Cart Table" => $sql3,
+  "Order History Table" => $sql4,
+  "Card Details Table" => $sql5,
+  "Contact Form Table" => $sql6,
+  "User Curr Table" => $sql7,
+  "Insert Products" => $sqlInsert
+];
 
+$errors = [];
+foreach ($queries as $description => $query) {
+  if (!$conn->query($query)) {
+    $errors[] = "Error creating $description: " . $conn->error;
+  }
+}
 
-if ($conn->query($sql1) === TRUE && $conn->query($sql2) === TRUE && $conn->query($sql3) === TRUE && $conn->query($sql4) === TRUE && $conn->query($sql5) === TRUE && $conn->query($sql6) === TRUE && $conn->query($sql7) === TRUE && $conn->query($sql) === TRUE) {
+if (empty($errors)) {
   echo "Tables created successfully and data entered";
 } else {
-  echo "Error creating tables or entering data: " . $conn->error;
+  foreach ($errors as $error) {
+    echo $error . "<br>";
+  }
 }
 
 $conn->close();
