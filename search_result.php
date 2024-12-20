@@ -8,6 +8,10 @@
     <style>
         <?php include "css/explore.css" ?>
     </style>
+    <style>
+        <?php include "css/header.css"; ?>
+    </style>
+    <script src="https://kit.fontawesome.com/2cf05c34d2.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -37,7 +41,7 @@
 
     <div class="products">
         <?php
-        $stmt = $pdo->prepare("SELECT * FROM products WHERE name LIKE :search_text OR description LIKE :search_text");
+        $stmt = $pdo->prepare("SELECT * FROM products WHERE name LIKE :search_text  or category LIKE :search_text");
         $stmt->execute(['search_text' => '%' . $search_text . '%']);
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

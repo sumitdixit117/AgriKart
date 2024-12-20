@@ -42,7 +42,8 @@ $sql4 = "CREATE TABLE `order history`
   `order_id` VARCHAR(7) NOT NULL , 
   `quantity` INT NOT NULL , 
   `date` DATE NOT NULL , 
-  `price` DOUBLE NOT NULL ) ENGINE = InnoDB";
+  `price` DOUBLE NOT NULL,
+  `email` VARCHAR(50) NOT NULL ) ENGINE = InnoDB";
 
 $sql5 = "CREATE TABLE `card details` 
 ( `id` INT NOT NULL AUTO_INCREMENT , 

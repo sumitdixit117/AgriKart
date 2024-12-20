@@ -57,7 +57,7 @@
                     <label for="state">State: </label><br>
                     <input type="text" id="state" name="state" required><br>
                     <label for="pin">Pincode: </label><br>
-                    <input type="text" id="pin" name="pin" required><br>
+                    <input type="text" id="pin" name="pin" pattern="[0-9]{6}" maxlength="6" required><br>
                     <label for="country">Country: </label><br>
                     <input type="text" id="country" name="country" required><br>
                 </fieldset>
@@ -69,10 +69,23 @@
                     <input type="password" id="pass" name="pass" required><br>
                     <label for="c-pass">Confirm Password: </label><br>
                     <input type="password" id="c-pass" name="c-pass" required><br>
+                    <span class="warning">* Must contain at least one uppercase, lowercase, digit, special character and
+                        min 8 characters</span><br>
                 </fieldset>
-                <button type="submit">Register</button>
             </div>
+            <center>
+                <?php if (isset($_GET["emessage"])) { ?>
+                    <p style="margin: 0; color: red;">Passwords do not match!</p>
+                <?php } elseif (isset($_GET["imessage"])) { ?>
+                    <p style="margin: 0; color: red;">Invalid Password!</p>
+                <?php } ?><br>
+                <button type="submit">Submit</button><br>
+                <button type="reset">Reset</button>
+            </center>
         </form>
+        <p class="para-1">By clicking the submit button, you agree to our <a href="#">Terms and Condition</a> and <a
+                href="#">Policy Privacy.</a></p>
+        <p class="para-2">Already have an account? <a href="Login.php">Log in</a>.</p>
     </div>
 
     <?php require_once 'Footer.php'; ?>

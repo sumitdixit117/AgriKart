@@ -9,6 +9,7 @@
   <style>
     <?php include "css/header.css" ?>
   </style>
+  <script src="https://kit.fontawesome.com/2cf05c34d2.js" crossorigin="anonymous"></script>
 </head>
 
 <body>

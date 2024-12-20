@@ -1,5 +1,5 @@
 <div class="topnav">
-    <a class="active" href="Explore.php"><img src="images/logo.png" class="logo"></a>
+    <a class="active" href="Home.php"><img src="images/logo.png" class="logo"></a>
     <div class="user-dropdown">
         <a href="#"><i class="fas fa-user"></i></a>
         <div class="user-dropdown-content">
@@ -25,33 +25,34 @@
             <div class="second-level-dropdown">
                 <button class="dropbtn">Flower Seeds <i class="fa fa-caret-right"></i></button>
                 <div class="dropdown-content second-dropdown-content">
-                    <a href="Flower.php">Flower's Hybrid Seeds</a>
-                    <a href="Flower.php">Petunia Garden Mixed Flower Seeds</a>
-                    <a href="Flower.php">GoldSmith/SFlowers</a>
+                    <a href="explore.php?category=flower">Flower's Hybrid Seeds</a>
+                    <a href="explore.php?category=flower">Petunia Garden Mixed Flower
+                        Seeds</a>
+                    <a href="explore.php?category=flower">GoldSmith/SFlowers</a>
                 </div>
             </div>
             <div class="second-level-dropdown">
                 <button class="dropbtn">Vegetable Seeds <i class="fa fa-caret-right"></i></button>
                 <div class="dropdown-content second-dropdown-content">
-                    <a href="Seeds.php">Vegetable's Hybrid Seeds</a>
-                    <a href="Seeds.php">Hybrid Papaya Seeds</a>
-                    <a href="Seeds.php">Leafy Veggies</a>
-                    <a href="Seeds.php">Exotic Vegetable Seeds</a>
-                    <a href="Seeds.php">Microgreen Seeds</a>
+                    <a href="explore.php?category=seeds">Vegetable's Hybrid Seeds</a>
+                    <a href="explore.php?category=seeds">Hybrid Papaya Seeds</a>
+                    <a href="explore.php?category=seeds">Leafy Veggies</a>
+                    <a href="explore.php?category=seeds">Exotic Vegetable Seeds</a>
+                    <a href="explore.php?category=seeds">Microgreen Seeds</a>
                 </div>
             </div>
-            <a href="Fruit.php">Fruit Seeds</a>
+            <a href="explore.php?category=fruit">Fruit Seeds</a>
         </div>
     </div>
     <div class="dropdown">
         <button class="dropbtn">Plant Protection <i class="fa fa-caret-down"></i></button>
         <div class="dropdown-content">
-            <a href="Pest.php">Pesticides</a>
-            <a href="Pest.php">Insecticides</a>
-            <a href="Pest.php">Water Soluble Fertilizers</a>
-            <a href="Pest.php">Organic Products</a>
-            <a href="Pest.php">Bactericides</a>
+            <a href="explore.php?category=pest">Pesticides</a>
+            <a href="explore.php?category=pest">Insecticides</a>
+            <a href="explore.php?category=pest">Water Soluble Fertilizers</a>
+            <a href="explore.php?category=pest">Organic Products</a>
+            <a href="explore.php?category=pest">Bactericides</a>
         </div>
     </div>
-    <a href="Tools.php">Tools and Machinery</a>
+    <a href="explore.php?category=tools">Tools and Machinery</a>
 </div>

@@ -9,10 +9,13 @@ function val($data)
 }
 
 require_once '_conn.php';
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+$conn = getDatabaseConnection();
+
+$user_stmt = $conn->prepare("SELECT username FROM `user curr`");
+$user_stmt->execute();
+$user_result = $user_stmt->get_result();
+$user_row = $user_result->fetch_assoc();
+$email = $user_row['email'];
 
 session_start();
 
@@ -41,7 +44,7 @@ if (!empty($_POST['fullname']) && !empty($_POST['email']) && !empty($_POST['addr
             $odate = date("Y-m-d");
             $oprice = $row["price"] * $oquan;
 
-            $sql2 = "INSERT INTO `order history`(`name`, `image_link`, `order_id`, `quantity`, `date`, `price`) VALUES ('$oname','$oimage','$oid','$oquan','$odate','$oprice')";
+            $sql2 = "INSERT INTO `order history`(`name`, `image_link`, `order_id`, `quantity`, `date`, `price`, `email`) VALUES ('$oname','$oimage','$oid','$oquan','$odate','$oprice', '$email')";
             if (!($conn->query($sql2) === TRUE)) {
                 echo "Error: " . $conn->error;
             }

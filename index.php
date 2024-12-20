@@ -50,7 +50,7 @@
                 <p>Seeds</p>
             </div>
             <div class="temp">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmYBCX9cQSk9LUt0P5k7BthTyDd9n-KKfP2w&usqp=CAU"
+                <img src="https://images.unsplash.com/photo-1696010619929-493071e82b0d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     alt="equi1">
                 <p>Farming Tools</p>
             </div>

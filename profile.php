@@ -11,39 +11,31 @@
     <style>
         <?php include "css/header.css"; ?>
     </style>
+    <script src="https://kit.fontawesome.com/2cf05c34d2.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <?php require_once 'Header.php'; ?>
 
     <?php
-    session_start();
-    if (!isset($_SESSION['email'])) {
-        header("Location: Login.php");
-        exit();
-    }
-
     require_once '_conn.php';
     $conn = getDatabaseConnection();
 
-    $user_email = $_SESSION['email'];
-    $stmt = $conn->prepare("SELECT * FROM `user curr` WHERE email = ?");
-    $stmt->bind_param("s", $user_email);
+    $stmt = $conn->prepare("SELECT * FROM `user curr`");
     $stmt->execute();
     $result = $stmt->get_result();
 
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $fname = $row["fname"];
-        $lname = $row["lname"];
-        $gender = ucfirst($row["gender"]);
-        $phone = $row["phone"];
-        $address = $row["address"];
-        $email = $row["email"];
-        $username = strtolower($fname . "_" . $lname);
-    } else {
-        echo "No user data found.";
+    if ($result->num_rows == 0) {
+        header("Location: Login.php");
+        exit();
     }
+    $row = $result->fetch_assoc();
+    $fname = $row["fname"];
+    $lname = $row["lname"];
+    $gender = ucfirst($row["gender"]);
+    $phone = $row["phone"];
+    $address = $row["address"];
+    $email = $row["email"];
 
     $stmt->close();
     $conn->close();
@@ -68,12 +60,6 @@
                         <td><span>Name<span></td>
                         <td>
                             <div class="value"> <?php echo $fname . " " . $lname ?></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><span>Username<span></td>
-                        <td>
-                            <div class="value"> <?php echo $username ?></div>
                         </td>
                     </tr>
                     <tr>

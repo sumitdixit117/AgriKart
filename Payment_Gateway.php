@@ -11,6 +11,7 @@
     <style>
         <?php include "css/header.css"; ?>
     </style>
+    <script src="https://kit.fontawesome.com/2cf05c34d2.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -26,7 +27,7 @@
                         <label for="fname"><i class="fa fa-user"></i> Full Name</label>
                         <input type="text" id="fname" name="fullname" placeholder="Your Name" required>
                         <label for="email"><i class="fa fa-envelope"></i> Email</label>
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        <input type="text" id="email" name="email" placeholder="Your Email" required>
                         <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
                         <input type="text" id="adr" name="address" placeholder="Your Address" required>
                         <label for="city"><i class="fa fa-institution"></i> City</label>
