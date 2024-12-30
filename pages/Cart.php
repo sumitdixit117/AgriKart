@@ -4,10 +4,8 @@
 <head>
   <title>Cart</title>
   <style>
-    <?php include "css/cart.css"; ?>
-  </style>
-  <style>
-    <?php include "css/header.css" ?>
+    <?php include "../css/header.css" ?>
+    <?php include "../css/cart.css"; ?>
   </style>
   <script src="https://kit.fontawesome.com/2cf05c34d2.js" crossorigin="anonymous"></script>
 </head>
@@ -15,7 +13,7 @@
 <body>
   <?php require_once 'Header.php';
 
-  require_once '_conn.php';
+  require_once '../_conn.php';
   $conn = getDatabaseConnection();
 
   $subtotal = 0;
@@ -28,7 +26,7 @@
       <div class="header">
         <h3 class="heading">Shopping Cart</h3>
         <div class="action">
-          <form action="remove_all.php" method="post">
+          <form action="../scripts/remove_all.php" method="post">
             <button type="submit" class="remove" style="color: red">Remove all</button>
           </form>
         </div>

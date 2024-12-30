@@ -23,11 +23,22 @@ $passwrd = val($_POST["pass"]);
 $cpasswrd = val($_POST["c-pass"]);
 
 if ($passwrd !== $cpasswrd) {
-	die("Passwords do not match.");
+	echo "<script>alert('Passwords do not match.'); location.href = '../pages/Register.php';</script>";
+	exit();
 }
 
-require_once '_conn.php';
+require_once '../_conn.php';
 $conn = getDatabaseConnection();
+
+$stmt = $conn->prepare("SELECT email FROM users WHERE email = ?");
+$stmt->bind_param("s", $email);
+$stmt->execute();
+$stmt->store_result();
+if ($stmt->num_rows > 0) {
+	echo "<script>alert('An account with this email already exists.'); location.href = '../pages/Register.php';</script>";
+	exit();
+}
+$stmt->close();
 
 $hashed_password = password_hash($passwrd, PASSWORD_DEFAULT);
 
@@ -35,7 +46,7 @@ $stmt = $conn->prepare("INSERT INTO users (fname, lname, date, gender, phone, ad
 $stmt->bind_param("ssssssssssss", $fname, $lname, $date, $gender, $phone, $address, $city, $state, $pcode, $country, $email, $hashed_password);
 
 if ($stmt->execute()) {
-	header("Location: Login.php?message=registration_success");
+	header("Location:../pages/Login.php");
 } else {
 	echo "Error: " . $stmt->error;
 }

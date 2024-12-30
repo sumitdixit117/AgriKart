@@ -1,5 +1,4 @@
 <?php
-
 function val($data)
 {
     $data = trim($data);
@@ -8,10 +7,10 @@ function val($data)
     return $data;
 }
 
-require_once '_conn.php';
+require_once '../_conn.php';
 $conn = getDatabaseConnection();
 
-$user_stmt = $conn->prepare("SELECT username FROM `user curr`");
+$user_stmt = $conn->prepare("SELECT * FROM `user curr`");
 $user_stmt->execute();
 $user_result = $user_stmt->get_result();
 $user_row = $user_result->fetch_assoc();
@@ -20,7 +19,7 @@ $email = $user_row['email'];
 session_start();
 
 if (!empty($_POST['fullname']) && !empty($_POST['email']) && !empty($_POST['address']) && !empty($_POST['city']) && !empty($_POST['state']) && !empty($_POST['zip']) && !empty($_POST['cardnumber']) && !empty($_POST['captcha'])) {
-    $fname = val($_POST["fullname"]);
+    $flname = val($_POST["fullname"]);
     $email = val($_POST["email"]);
     $address = val($_POST["address"]);
     $city = val($_POST["city"]);
@@ -29,8 +28,8 @@ if (!empty($_POST['fullname']) && !empty($_POST['email']) && !empty($_POST['addr
     $number = val($_POST["cardnumber"]);
     $captcha = $_POST["captcha"];
 
-    $sql = "INSERT INTO `card details` (`fname`, `email`, `address`, `city`, `state`, `pincode`, `card_number`) 
-        VALUES ('$fname', '$email', '$address', '$city', '$state', '$pcode', '$number')";
+    $sql = "INSERT INTO `card details` (`flname`, `email`, `address`, `city`, `state`, `pincode`, `card_number`) 
+        VALUES ('$flname', '$email', '$address', '$city', '$state', '$pcode', '$number')";
 
     $sql1 = "SELECT * FROM cart";
 
@@ -54,12 +53,12 @@ if (!empty($_POST['fullname']) && !empty($_POST['email']) && !empty($_POST['addr
 
         if ($conn->query($sql) === TRUE && $conn->query($sql3) === TRUE) {
 
-            header("location:Explore.php");
+            header("location:../pages/Explore.php");
         } else {
             echo "Error: " . $conn->error;
         }
     } else {
-        header("location:Payment_gateway.php?cmessage=invalid");
+        header("location:../pages/Payment_gateway.php?cmessage=invalid");
     }
 } else {
     echo "All fields are required!";

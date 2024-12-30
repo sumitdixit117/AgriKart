@@ -80,6 +80,12 @@ body {
     border-radius: 4px;
 }
 
+.no-orders{
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 3rem 0;
+}
+
 .features {
     padding: 2.3% 5%;
     margin-bottom: 2%;

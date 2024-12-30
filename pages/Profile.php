@@ -1,3 +1,28 @@
+<?php
+require_once '../_conn.php';
+$conn = getDatabaseConnection();
+
+$stmt = $conn->prepare("SELECT * FROM `user curr`");
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows == 0) {
+    echo "<script>alert('Login first!'); location.href = '../pages/Login.php';</script>";
+    exit();
+}
+
+$row = $result->fetch_assoc();
+$fname = $row["fname"];
+$lname = $row["lname"];
+$gender = ucfirst($row["gender"]);
+$phone = $row["phone"];
+$address = $row["address"];
+$email = $row["email"];
+
+$stmt->close();
+$conn->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,10 +31,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
     <style>
-        <?php include "css/profile.css"; ?>
-    </style>
-    <style>
-        <?php include "css/header.css"; ?>
+        <?php include "../css/header.css"; ?>
+        <?php include "../css/profile.css"; ?>
     </style>
     <script src="https://kit.fontawesome.com/2cf05c34d2.js" crossorigin="anonymous"></script>
 </head>
@@ -17,31 +40,7 @@
 <body>
     <?php require_once 'Header.php'; ?>
 
-    <?php
-    require_once '_conn.php';
-    $conn = getDatabaseConnection();
-
-    $stmt = $conn->prepare("SELECT * FROM `user curr`");
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows == 0) {
-        header("Location: Login.php");
-        exit();
-    }
-    $row = $result->fetch_assoc();
-    $fname = $row["fname"];
-    $lname = $row["lname"];
-    $gender = ucfirst($row["gender"]);
-    $phone = $row["phone"];
-    $address = $row["address"];
-    $email = $row["email"];
-
-    $stmt->close();
-    $conn->close();
-    ?>
-
-    <form action="logout.php">
+    <form action="../scripts/logout.php">
         <center>
             <div class="profile">
                 <div class="offer-heading">

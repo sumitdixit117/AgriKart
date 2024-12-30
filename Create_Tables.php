@@ -1,6 +1,18 @@
 <?php
-require_once '_conn.php';
-$conn = getDatabaseConnection();
+
+$conn = new mysqli("localhost", "root", "");
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+$sqlCreateDB = "CREATE DATABASE IF NOT EXISTS agrikartdb";
+if ($conn->query($sqlCreateDB) === TRUE) {
+  echo "Database created successfully";
+} else {
+  die("Error creating database: " . $conn->error);
+}
+
+$conn->select_db("agrikartdb");
 
 $sql1 = "CREATE TABLE `users` 
 ( `id` INT NOT NULL AUTO_INCREMENT ,
@@ -47,7 +59,7 @@ $sql4 = "CREATE TABLE `order history`
 
 $sql5 = "CREATE TABLE `card details` 
 ( `id` INT NOT NULL AUTO_INCREMENT , 
-  `fname` VARCHAR(30) NOT NULL , 
+  `flname` VARCHAR(30) NOT NULL , 
   `email` VARCHAR(50) NOT NULL , 
   `address` VARCHAR(50) NOT NULL , 
   `city` VARCHAR(20) NOT NULL , 
@@ -100,14 +112,14 @@ $sqlInsert = "INSERT INTO products (name, price, image_link, season, quantity, c
           ('Chilli Seeds','110', 'https://5.imimg.com/data5/SELLER/Default/2022/4/LB/UC/FV/86539219/natural-chilli-seeds.jpg', 'summer', '0', 'seeds'),
           ('Yellow Pumpkin Seeds','190', 'https://5.imimg.com/data5/SELLER/Default/2023/5/305435394/FU/IW/LD/24315506/yellow-pumpkin-seed-with-shell.jpg', 'winter', '150', 'seeds'),
           ('Spinach Seeds','110', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsB_DRj1JsVvUyMGAi7I-qT0m_woxiIen5tw&usqp=CAU', 'winter', '150', 'seeds'),
-          ('Chinese Cabbage Seeds','245', '	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKx1LYoThB7hvBz-eeIWE_Y4bAV7kUmesZyg&usqp=CAU', 'winter', '150', 'seeds'),
+          ('Chinese Cabbage Seeds','245', 'https://organicbazar.net/cdn/shop/products/Chinese-Cabbage-Granaat-Seeds.jpg?v=1694168434', 'winter', '150', 'seeds'),
           ('Bottle Gourd Seeds','192', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUr1teyPwIBQa3qsAacldevrDp2x4JJPyEIA&usqp=CAU', 'rainy', '150', 'seeds'),
-          ('Red Raddish seeds','210', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm4X_-Lz06pnHxOY_Y7TiEina1NYewvPlN1g&usqp=CAU', 'summer', '150', 'seeds'),
+          ('Red Raddish seeds','210', 'https://creativefarmer.in/cdn/shop/products/Radish-red-long_grande.jpg?v=1616235857', 'summer', '150', 'seeds'),
           ('Brocolli seeds','408', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHU8urDX7Gg7HXj2cBXakD7x17Y3wBUhKCow&usqp=CAU', 'summer', '150', 'seeds'),
           ('Cucumber Seeds','89', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShD9bMJm9k2GXot_4FK-AgBvlLwuIGeK-KeQ&usqp=CAU', 'summer', '150', 'seeds'),
-          ('Spring Onion Seeds','90', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr50bP-aMjL1qnQYUlE--WjY8EgtfjgN9WDA&usqp=CAU', 'winter', '0', 'seeds'),
+          ('Spring Onion Seeds','90', 'https://plantic.in/pimg/pl-spring-onion-bunching-onion/pl-spring-onion-bunching-onion1.png', 'winter', '0', 'seeds'),
           ('Capsicum Seeds','190', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4TboDmuCbyDD_Rv-K8v7_E_9oCkQV9Zpt1A&usqp=CAU', 'summer', '150', 'seeds'),
-          ('Cabbage Seeds','180', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7NRKI30FFkhK2jZfudCrsx_qI5YNf9YroeA&usqp=CAU', 'spring', '150', 'seeds'),
+          ('Cabbage Seeds','180', 'https://plantlane.com/cdn/shop/products/8190_q57pqL._SL1500_2d67c65b-dc6d-49be-bac3-c3e15af280e3.jpg?v=1681883662', 'spring', '150', 'seeds'),
           ('Turnip Seeds','143', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrPwmicGeKoQarQYr4JItpSNuJk_dz2iyBpQ&usqp=CAU', 'rainy', '150', 'seeds'),
           ('Lavender Seeds','202', 'https://cdn11.bigcommerce.com/s-q83qdckkjh/images/stencil/1280x1280/products/196/4043/English-LavendarBC3__37193.1708562180.jpg?c=2?imbypass=on', 'summer', '150', 'flower'),
           ('Strawberry Seeds','230', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnsEYxcUDP8XqzIx3noYmf9xkDaK_Cb1QIXQ&usqp=CAU', 'spring', '150', 'seeds'),
@@ -119,11 +131,11 @@ $sqlInsert = "INSERT INTO products (name, price, image_link, season, quantity, c
           ('Poppy Seeds', '1500', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwP812xqYOx1nLeKL1qzBT_g3AVEH3WlE0eg&usqp=CAU', 'rainy', '150', 'seeds'),
           ('Guava Seeds' ,'90', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9CDSiRSI82MDRcHRKyV1uyeHCKalyc2LrwA&usqp=CAU', 'winter', '150', 'seeds'),
           ('Black Cardamom Seeds', '300', '	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKoag2K7LQppA3AhAaCeh3rUOpA3n7UBI3HA&usqp=CAU', 'winter', '150', 'seeds'),
-          ('Mint Seeds', '290', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc1pB-wxMGPHV0cBcDDlHz3o-AmS1l9v-4Qg&usqp=CAU', 'rainy', '150', 'seeds'),
+          ('Mint Seeds', '290', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZW1EVaWjPqURL02JEgp_QKdqrAf61Xu9SOg&s', 'rainy', '150', 'seeds'),
           ('Beetroot Seeds' ,'230', '	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJ7BTVeuqUxUH52qUHf5U6AuVeFwBKxrop2w&usqp=CAU', 'summer', '150', 'seeds'),
           ('Amaranthus Green Seeds' ,'290', 'https://m.media-amazon.com/images/I/814bTPG6IiL.jpg','summer', '150', 'seeds'),
           ('Tinda Seeds' ,'400', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8X9pEVPtoR73zEvcoNklnmpgQeg3P6WROPA&usqp=CAU', 'winter', '150', 'seeds'),
-          ('Sponge Gourd seeds' ,'230', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3rGEVJOIhC5pf3HfaNdCSPdF35Wj9hfEXMQ&usqp=CAU', 'rainy', '150', 'seeds'),
+          ('Sponge Gourd seeds' ,'230', 'https://seedandplant.com/cdn/shop/products/Sponge_Gourd_Seeds-_Hybrid.jpg?v=1638621191', 'rainy', '150', 'seeds'),
           ('Sweet Corn Seeds', '250', 'https://sowtrueseed.com/cdn/shop/products/Corn_Sweet_Golden_Bantam_12_CD@2x.jpg?v=1613228450', 'rainy', '150', 'seeds'),
           ('Ridge Gourd Lufa Seeds', '240', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUlEAyjwEqRzFsqwVmthkmhI-tH150iSkj7A&usqp=CAU', 'rainy', '150', 'seeds'),
           ('Coriander Seeds' ,'430', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj_ybZ0RoJ0kQCbT_i6iM0yAoBrerCLxlMwA&usqp=CAU', 'summer', '150', 'seeds'),
@@ -140,23 +152,23 @@ $sqlInsert = "INSERT INTO products (name, price, image_link, season, quantity, c
           ('Celosia Cristata Seeds','500', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaLlXxz5ggWUZ1cIeh8d1eHpYRFoccMthB3Q&usqp=CAU', 'spring', '150','flower'),
           ('Lupin Pixie Seeds','320', '	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHUpitu9nHsRzlSbWYBF4DAZXdmQ6rwfw69w&usqp=CAU', 'summer', '0','flower'),
           ('French Marigold orange seeds','420', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZFbnxnk7Yi043OIsk6rFDdGBC0sYaRZ9Lmg&usqp=CAU', 'winter', '150','flower'),
-          ('Zinnia Orange seeds','320', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiRQjSc1XlNxthZ4dB_tBYJT5mYXsBvAAhYg&usqp=CAU', 'summer', '150','flower'),
-          ('Amaranthus Pygmy Torch Seeds','320', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlJSFoesfjvl7vvMmIE4XXIadWGkKwlawJaA&usqp=CAU', 'summer', '150','flower'),
+          ('Zinnia Orange seeds','320', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT4ZXoMD2BaD-waN1YwsLIHgc6lOyDd4RJ6A&s', 'summer', '150','flower'),
+          ('Amaranthus Pygmy Torch Seeds','320', 'https://cdn11.bigcommerce.com/s-er6we2l3gw/images/stencil/1280x1280/products/26411/141859/153067_1__18681.1616088630.jpg?c=1', 'summer', '150','flower'),
           ('Aster duchess Formula Mix Seeds','340', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTctbHfAZ20ZEtpGakEaepwbnCvTWPRt0UjIw&usqp=CAU', 'spring', '150','flower'),
-          ('Gaillardia Aristata Tokajer Seeds','310', '	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1Nd6ULEctO_7UipDi0UuWavKHn9r5r84A5Q&usqp=CAU', 'spring', '0','flower'),
+          ('Gaillardia Aristata Tokajer Seeds','310', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGzX0K2wXDTFsi8lXKnPp4VZyKTAlTWU8y6Q&s', 'spring', '0','flower'),
           ('Dahlia Seeds','240', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBI6fC8i8Ipt9GP9XICSsxj2PIUn-ncazF3Q&usqp=CAU', 'spring', '150','flower'),
           ('Dimorphotheca Pluviali Seeds','420', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLThpxw4EZ2BSzHLMCD-_x1Fw5FWAbpM6adw&usqp=CAU', 'winter', '150','flower'),
-          ('Daisy Seeds','430', '	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSStjGdS_kpr1QLaavGl3rZtFhafpCN0IAvMA&usqp=CAU', 'winter', '150','flower'),
+          ('Daisy Seeds','430', 'https://m.media-amazon.com/images/I/61IVs6EX7GL.jpg', 'winter', '150','flower'),
           ('Schizanthus Angel Wings Seeds','340', 'https://m.media-amazon.com/images/I/41n3WKip1CL._AC_UF1000,1000_QL80_.jpg', 'spring', '150','flower'),
-          ('Vinca Red Cherry Dwarf Seeds','420', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRukJppKjt5JtZvO7JkytJw2iSxL__8e-HPsA&usqp=CAU', 'summer', '150','flower'),
-          ('Vinca Dwarf White Seeds','290', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBrw2xpHk25Bnurs8-GibIQFp-6UXWrvyUDw&usqp=CAU', 'summer', '150','flower'),
+          ('Vinca Red Cherry Dwarf Seeds','420', 'https://casadeamor.in/cdn/shop/products/VinkaMix-1.jpg?v=1666939355&width=1445', 'summer', '150','flower'),
+          ('Vinca Dwarf White Seeds','290', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Ss1CkQ6nwWkyv86z61u_nsXvDQviL55Y9w&s', 'summer', '150','flower'),
           ('Zinnia Dahlia Mix seeds','310', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRABTOiRevq-udbC4JIQ36WKz8ODiHwDtu5AA&usqp=CAU', 'spring', '150','flower'),
           ('Indian Shirley Poppy Mix Seeds','330', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx4XGKzHlImaflVc1aIAGc5AEO4FHPA7ad7w&usqp=CAU', 'winter', '150','flower'),
           ('French Marigold Red Seeds','420', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvQVNupy7nlFy9FTsH1tL9aP6CT438aH1s5Q&usqp=CAU', 'spring', '0','flower'),
           ('Candituft Ebress Alba Seeds','190', '	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkaTpLtxsFlx9dotdjlZfezIYBpJ6bOtoycA&usqp=CAU', 'summer', '150','flower'),
           ('Blueberry Seeds','700', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd30oqTpSvCnNutL6WBYnORuRO2APVbw7Iew&usqp=CAU', 'rainy', '150','fruit'),
           ('Apple Seeds','290', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4frIBWP3727X7T5A6T1mZul2K8BjvH4WE8g&usqp=CAU', 'spring', '150','fruit'),
-          ('Mango Seeds','220', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJZLPcOkiSTSwU2wcVshT0fxGzWCEPqHiXbg&usqp=CAU', 'summer', '150','fruit'),
+          ('Mango Seeds','220', 'https://rukminim2.flixcart.com/image/850/1000/xif0q/plant-seed/6/n/4/100-mh-1-aam-beej-original-imagrhpmfppcygag.jpeg?q=90&crop=false', 'summer', '150','fruit'),
           ('Banana Seeds','200', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3RSO0QNb-a76obyzKLI_xUiD9cShKIpdJtA&usqp=CAU', 'rainy', '150','fruit'),
           ('Orange Seeds','190', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQki6YJoksD0eM_syR_BcAjdHXuh75LuIQgjg&usqp=CAU', 'rainy', '150','fruit'),
           ('Kiwi Seeds','450', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKVDqfEy4JmTkoGBq3P-xaeaDzwTqF3aYmrA&usqp=CAU', 'spring', '150','fruit'),
@@ -205,7 +217,7 @@ foreach ($queries as $description => $query) {
 }
 
 if (empty($errors)) {
-  echo "Tables created successfully and data entered";
+  echo "<script>alert('Tables created successfully and data entered.'); location.href = 'index.php';</script>";
 } else {
   foreach ($errors as $error) {
     echo $error . "<br>";

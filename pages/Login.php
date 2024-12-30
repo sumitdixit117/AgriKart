@@ -6,24 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log in</title>
     <style>
-        <?php include "css/register.css"; ?>
+        <?php include "../css/register.css"; ?>
     </style>
     <script src="https://kit.fontawesome.com/2cf05c34d2.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="topnav">
-        <a class="active" href="index.php"><img src="images/logo.png" alt="AgriKart" width="170px"></a>
+        <a class="active" href="../index.php"><img src="../images/logo.png" alt="AgriKart" width="170px"></a>
         <a href="Register.php">Register</a>
         <a style="pointer-events: none;">|</a>
-        <a href="index.php">Home</a>
+        <a href="../index.php">Home</a>
     </div>
     <div class="heading">
         <h1>AgriKart</h1>
         <h2>Register to Buy Farming Essentials at Best Price.</h2>
     </div>
     <div class="box">
-        <form method="post" action="login_script.php">
+        <form method="post" action="../scripts/login_script.php">
             <div class="form-content form-div">
                 <h3>Enter the following details: </h3>
                 <label for="email">Email Address: </label><br>
@@ -32,7 +32,7 @@
                 <input type="password" id="pass" size="40px" name="pass" required><br>
                 <label for="captcha">Enter Captcha: </label><br>
                 <input type="text" id="captcha" size="20px" name="captcha" required>
-                <img src="captcha.php" alt="Captcha">
+                <img src="../scripts/captcha.php" alt="Captcha">
             </div>
             <center>
                 <?php if (isset($_GET["imessage"])) { ?>

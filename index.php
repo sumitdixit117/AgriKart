@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>AgriKart</title>
     <style>
-        <?php include "css/home.css" ?>
+        <?php include "css/index.css" ?>
     </style>
     <script src="https://kit.fontawesome.com/2cf05c34d2.js" crossorigin="anonymous"></script>
 </head>
@@ -20,9 +20,9 @@
             </td>
             <td class="right-div">
                 <div class="topnav">
-                    <a href="Register.php" style="margin-right: 40px">Register</a>
+                    <a href="pages/Register.php" style="margin-right: 40px">Register</a>
                     <a style="pointer-events: none;">|</a>
-                    <a href="Login.php">Login</a>
+                    <a href="pages/Login.php">Login</a>
                 </div>
                 <div class="about">
                     <h2>ABOUT US</h2>
@@ -31,7 +31,7 @@
                         was established in 2013 and is based in Namma Bengaluru. AgriKart believes in farming being a
                         pillar for the world and farmers are the backbone of the nation.
                     </p>
-                    <a href="Register.php"><button class="contact-button">REGISTER NOW </button></a>
+                    <a href="pages/Register.php"><button class="contact-button">REGISTER NOW </button></a>
                 </div>
             </td>
         </tr>
@@ -65,9 +65,9 @@
     <section id="download">
         <div class="cont">
             <h3>Sign up now.</h3>
-            <button class="download login" type="button"><a href="Login.php"><i class="fas fa-sign-in-alt"></i> Login
+            <button class="download login" type="button"><a href="pages/Login.php"><i class="fas fa-sign-in-alt"></i> Login
                 </a></button>
-            <button class="download register" type="button"><a href="Register.php"><i class="fas fa-user-plus"></i>
+            <button class="download register" type="button"><a href="pages/Register.php"><i class="fas fa-user-plus"></i>
                     Register
                 </a></button><br>
             <i>
@@ -87,7 +87,7 @@
             <div class="wheels"></div>
         </div>
     </section>
-    <?php require_once 'Footer.php'; ?>
+    <?php require_once 'pages/Footer.php'; ?>
 </body>
 
 </html>

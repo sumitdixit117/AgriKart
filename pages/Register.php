@@ -6,24 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <style>
-        <?php include "css/register.css" ?>
+        <?php include "../css/register.css" ?>
     </style>
     <script src="https://kit.fontawesome.com/2cf05c34d2.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="topnav">
-        <a class="active" href="index.php"><img src="images/logo.png" alt="AgriKart" width="170px"></a>
+        <a class="active" href="../index.php"><img src="images/logo.png" alt="AgriKart" width="170px"></a>
         <a href="Login.php">Login</a>
         <a style="pointer-events: none;">|</a>
-        <a href="index.php">Home</a>
+        <a href="../index.php">Home</a>
     </div>
     <div class="heading">
         <h1>AgriKart</h1>
         <h2>Register to Buy Farming Essentials at Best Price.</h2>
     </div>
     <div class="box">
-        <form method="post" action="register_script.php">
+        <form method="post" action="../scripts/register_script.php">
             <div class="form-content">
                 <h3>Enter the following details: </h3>
                 <p class="warning">* All fields are required!</p>

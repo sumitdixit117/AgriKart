@@ -13,7 +13,7 @@ function val($data)
     return $data;
 }
 
-require_once '_conn.php';
+require_once '../_conn.php';
 $conn = getDatabaseConnection();
 
 $query = "SELECT * FROM cart";
@@ -29,7 +29,7 @@ while ($row = $result->fetch_assoc()) {
         $found = true;
 
         if ($stmt->execute()) {
-            header("location:Home.php");
+            header("location:../pages/Home.php");
         } else {
             echo "Error: " . $stmt->error;
         }
@@ -43,7 +43,7 @@ if (!$found) {
     $stmt->bind_param("issd", $productid, $productname, $productimage, $productprice);
 
     if ($stmt->execute()) {
-        header("location:Home.php");
+        header("location:../pages/Home.php");
     } else {
         echo "Error: " . $stmt->error;
     }

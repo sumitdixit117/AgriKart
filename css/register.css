@@ -100,6 +100,20 @@ form select {
     background: #edf2ff;
 }
 
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+    width: 300px;
+}
+
+#captcha {
+    width: 150px;
+}
+
+form input[type="captcha"] {
+    width: 50px;
+}
+
 .form-content {
     margin-left: 20px;
     margin-right: 20px;

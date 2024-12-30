@@ -4,10 +4,8 @@
 <head>
   <title>Contact Form</title>
   <style>
-    <?php include "css/contact_form.css"; ?>
-  </style>
-  <style>
-    <?php include "css/header.css" ?>
+    <?php include "../css/header.css" ?>
+    <?php include "../css/contact_form.css"; ?>
   </style>
   <script src="https://kit.fontawesome.com/2cf05c34d2.js" crossorigin="anonymous"></script>
 </head>
@@ -36,10 +34,10 @@
         </td>
       </tr>
     </table>
-  </div>
+  </div>  
 
   <?php
-  require_once '_conn.php';
+  require_once '../_conn.php';
   $conn = getDatabaseConnection();
 
   if (isset($_POST['submitForm'])) {

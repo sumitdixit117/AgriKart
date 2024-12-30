@@ -8,7 +8,7 @@ function val($data)
     return $data;
 }
 
-require_once '_conn.php';
+require_once '../_conn.php';
 $conn = getDatabaseConnection();
 
 if (!empty($_POST['email']) && !empty($_POST['pass']) && !empty($_POST['captcha'])) {
@@ -38,18 +38,18 @@ if (!empty($_POST['email']) && !empty($_POST['pass']) && !empty($_POST['captcha'
                 if ($stmt2->execute()) {
                     $conn->query("TRUNCATE TABLE `cart`");
                     $conn->query("TRUNCATE TABLE `order history`");
-                    header("location:Home.php");
+                    header("location:../pages/Home.php");
                 } else {
                     echo "Error: " . $conn->error;
                 }
             } else {
-                header("location:Login.php?imessage=invalid");
+                header("location:../pages/Login.php?imessage=invalid");
             }
         } else {
-            header("location:Login.php?imessage=invalid");
+            header("location:../pages/Login.php?imessage=invalid");
         }
     } else {
-        header("location:Login.php?cmessage=invalid");
+        header("location:../pages/Login.php?cmessage=invalid");
     }
 } else {
     echo "All fields are required!";

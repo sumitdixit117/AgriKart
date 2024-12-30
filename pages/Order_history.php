@@ -6,10 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order History</title>
     <style>
-        <?php include "css/order_history.css"; ?>
-    </style>
-    <style>
-        <?php include "css/header.css"; ?>
+        <?php include "../css/header.css"; ?>
+        <?php include "../css/order_history.css"; ?>
     </style>
     <script src="https://kit.fontawesome.com/2cf05c34d2.js" crossorigin="anonymous"></script>
 </head>
@@ -17,7 +15,7 @@
 <body>
     <?php require_once 'Header.php'; ?>
     <?php
-    require_once '_conn.php';
+    require_once '../_conn.php';
     $conn = getDatabaseConnection();
 
     $user_stmt = $conn->prepare("SELECT email FROM `user curr`");
@@ -69,7 +67,7 @@
                 </tbody>
             </table>
         <?php } else { ?>
-            <p>No orders found.</p>
+            <p class="no-orders">No orders found.</p>
         <?php } ?>
     </div>
 

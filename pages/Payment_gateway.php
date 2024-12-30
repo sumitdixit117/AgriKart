@@ -6,10 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment Gateway</title>
     <style>
-        <?php include "css/payment_gateway.css"; ?>
-    </style>
-    <style>
-        <?php include "css/header.css"; ?>
+        <?php include "../css/header.css"; ?>
+        <?php include "../css/payment_gateway.css"; ?>
     </style>
     <script src="https://kit.fontawesome.com/2cf05c34d2.js" crossorigin="anonymous"></script>
 </head>
@@ -20,12 +18,12 @@
     <div class="payment-div">
         <h1 id="heading">Checkout</h1>
         <div class="container">
-            <form action="payment.php" method="post">
+            <form action="../scripts/payment.php" method="post">
                 <div class="row">
                     <div class="col-50">
                         <h3>Billing Address</h3>
-                        <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-                        <input type="text" id="fname" name="fullname" placeholder="Your Name" required>
+                        <label for="flname"><i class="fa fa-user"></i> Full Name</label>
+                        <input type="text" id="flname" name="fullname" placeholder="Your Name" required>
                         <label for="email"><i class="fa fa-envelope"></i> Email</label>
                         <input type="text" id="email" name="email" placeholder="Your Email" required>
                         <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
@@ -74,7 +72,7 @@
                                 <input type="text" id="captcha" name="captcha" placeholder="Enter Captcha" required>
                             </div>
                             <div class="col-50">
-                                <img src="captcha.php" alt="Captcha">
+                                <img src="../scripts/captcha.php" alt="Captcha">
                             </div>
                         </div>
                     </div>

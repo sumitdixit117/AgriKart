@@ -4,10 +4,8 @@
 <head>
     <title>Home</title>
     <style>
-        <?php include "css/explore.css"; ?>
-    </style>
-    <style>
-        <?php include "css/header.css"; ?>
+        <?php include "../css/header.css"; ?>
+        <?php include "../css/explore.css"; ?>
     </style>
     <script src="https://kit.fontawesome.com/2cf05c34d2.js" crossorigin="anonymous"></script>
 </head>
@@ -21,7 +19,7 @@
     </div>
 
     <?php
-    require_once '_conn.php';
+    require_once '../_conn.php';
     $conn = getDatabaseConnection();
 
     function findseason($x)
@@ -50,7 +48,7 @@
         <?php
         while ($row = $result->fetch_assoc()) {
             ?>
-            <form method="post" action="add_to_cart.php">
+            <form method="post" action="../scripts/add_to_cart.php">
                 <div class="product">
                     <div class="img-div">
                         <img src="<?php echo $row["image_link"]; ?>" alt="Image">
